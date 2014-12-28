@@ -141,12 +141,31 @@ window.Modernizr = function (a, b, c) {
     Zoomer.prototype.scroll = function (event) {
         // normalize scroll value from 0 to 1
         this.scrolled = window.scrollY / ( this.docHeight - window.innerHeight );
+        var scrollRatio = this.scrolled * this.levels;
+        var scale = Math.pow(2, scrollRatio);
+        var translateY;
 
-        console.log('this.scrolled: ' + this.scrolled + ',this.levels: ' + this.levels);
-        var scale = Math.pow(2, this.scrolled * this.levels);
-        var transformValue = 'translateY(-' + 195 * this.scrolled * this.levels + 'px) scale(' + scale + ')';
+        if (scrollRatio <= 1) {
+            translateY = 41.5 * scrollRatio;
+        }
+        else if (scrollRatio <= 2) {
+            translateY = 41.5 + 41.5 * 2 * (scrollRatio - 1);
+        }
+        else if (scrollRatio <= 3) {
+            translateY = 41.5 + 41.5 * 2 + 41.5 * 4 * (scrollRatio - 2);
+        }
+        else if (scrollRatio <= 4) {
+            translateY = 41.5 + 41.5 * 2 + 41.5 * 4 + 41.5 * 8 * (scrollRatio - 3);
+        }
+        translateY = '-' + translateY + '%';
 
-        console.log('scale: ' + scale + ', translateY: ' + '-' + 195 * this.scrolled * this.levels + 'px');
+        var transformValue = ' translateY(' + translateY + ') scale(' + scale + ') ';
+
+        console.log('this.scrolled: ' + this.scrolled);
+        console.log('this.levels: ' + this.levels);
+        console.log('scrollRatio: ' + scrollRatio);
+        console.log('scale: ' + scale);
+        console.log('translateY: ' + translateY);
 
         this.content.style.WebkitTransform = transformValue;
         this.content.style.MozTransform = transformValue;

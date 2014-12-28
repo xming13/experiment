@@ -99,14 +99,13 @@ p {
 #nav li a {
     text-decoration: none;
     display: block;
-    background: #EEF;
-    background: hsla( 0, 0%, 90%, 0.85 );
+    background: #FFF;
     color: blue;
     padding: 8px 15px;
 }
 
 #nav li a:hover {
-    background: red;
+    background: #0091EA;
     color: white;
 }
 
@@ -114,55 +113,55 @@ p {
 
 /* Section-specific layout */
 
-#web-dev h1 {
+#red h1 {
     font-size: 100px;
     font-weight: 600;
     line-height: 105px;
 }
 
-#front-end header,
-#css header,
-#css3 header { padding-top: 0;}
+#lime header,
+#green header,
+#blue header { padding-top: 0;}
 
-#front-end h1 {
+#lime h1 {
     line-height: 85px;
     font-size: 92px;
 }
 
-#css header,
-#css3 header { padding: 0;}
+#green header,
+#blue header { padding: 0;}
 
-#css h1 {
+#green h1 {
     font-size: 150px;
     line-height: 180px;
 }
 
-#css3 h1 {
+#blue h1 {
     font-size: 110px;
     line-height: 105px;
 }
 
-#transforms h1 {
+#purple h1 {
     font-size: 160px;
     line-height: 180px;
 }
 
 /* Section colors */
 
-#web-dev { color: hsl( 0, 90%, 45% ); }
-#web-dev p, #web-dev .img { background: hsla( 0, 90%, 45%, 0.3 ); }
+#red { color: #ef9a9a; }
+#red p, #red .img { background: hsla( 0, 90%, 45%, 0.3 ); }
 
-#front-end { color: hsl( 72, 90%, 40% ); }
-#front-end p, #front-end .img { background: hsla( 72, 90%, 40%, 0.3 ); }
+#lime { color: #f0f4c3; }
+#lime p, #lime .img { background: hsla( 72, 90%, 40%, 0.3 ); }
 
-#css { color: hsl( 144, 90%, 45% ); }
-#css p, #css .img { background: hsla( 144, 90%, 45%, 0.3 ); }
+#green { color: #c8e6c9; }
+#green p, #green .img { background: hsla( 144, 90%, 45%, 0.3 ); }
 
-#css3 { color: hsl( 216, 90%, 45% ); }
-#css3 p, #css3 .img { background: hsla( 216, 90%, 45%, 0.3 ); }
+#blue { color: #bbdefb; }
+#blue p, #blue .img { background: hsla( 216, 90%, 45%, 0.3 ); }
 
-#transforms { color: hsl( 288, 90%, 45% ); }
-#transforms p, #transforms .img { background: hsla( 288, 90%, 45%, 0.3 ); }
+#purple { color: #e1bee7; }
+#purple p, #purple .img { background: hsla( 288, 90%, 45%, 0.3 ); }
 
 /* step 2 */
 
@@ -176,28 +175,28 @@ p {
     position: absolute;
 }
 
-.csstransforms #front-end {
+.csstransforms #lime {
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -o-transform: scale(0.5);
     transform: scale(0.5) translateY(50%);
 }
 
-.csstransforms #css {
+.csstransforms #green {
     -webkit-transform: scale(0.25);
     -moz-transform: scale(0.25);
     -o-transform: scale(0.25);
     transform: scale(0.25) translateY(150%);
 }
 
-.csstransforms #css3 {
+.csstransforms #blue {
     -webkit-transform: scale(0.125);
     -moz-transform: scale(0.125);
     -o-transform: scale(0.125);
     transform: scale(0.125) translateY(350%);
 }
 
-.csstransforms #transforms {
+.csstransforms #purple {
     -webkit-transform: scale(0.0625);
     -moz-transform: scale(0.0625);
     -o-transform: scale(0.0625);

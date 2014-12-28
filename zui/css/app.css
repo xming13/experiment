@@ -1,0 +1,230 @@
+body {
+    font-family: 'Proxima Nova','proxima-nova-1','proxima-nova-2', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section, header {
+    display: block;
+}
+
+#container {
+    position: relative;
+    width: 320px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+section {
+    width: 320px;
+    height: 426px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, p {
+    margin: 0 0 15px;
+}
+
+section header {
+    padding: 0 10px;
+}
+
+section h2 {
+    font-size: 28px;
+    line-height: 30px;
+}
+
+p {
+    background: hsla( 0, 0%, 0%, 0.3 );
+    height: 15px;
+}
+
+.w3, .w6 {
+    position: absolute;
+    margin: 0 10px;
+    padding-top: 15px;
+}
+
+.w3 { width: 280px; }
+.w3.box { width: 250px; }
+
+.h3.box { height: 150px; }
+.h3.box .img { line-height: 150px; }
+
+.h6.box { height: 315px; }
+.h6.box .img { line-height: 315px; }
+
+.w6 { width: 580px; }
+.w6.box { width: 550px; }
+
+.x3 { left: 300px; }
+.x6 { left: 600px; }
+
+.y3 { top: 180px; }
+.y6 { top: 360px; }
+
+.box {
+    padding-top: 0;
+    border: 5px solid;
+    padding: 10px;
+}
+
+.img {
+    background: hsla( 0, 0%, 0%, 0.3 );
+    color: white;
+    text-align: center;
+    height: 100%;
+    font-size: 100px;
+}
+
+/* nav */
+
+#nav {
+    padding: 0;
+    margin: 0 auto 10px;
+    overflow: auto;
+    width: 320px;
+    position: relative;
+    z-index: 100;
+}
+
+#nav li {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#nav li a {
+    text-decoration: none;
+    display: block;
+    background: #EEF;
+    background: hsla( 0, 0%, 90%, 0.85 );
+    color: blue;
+    padding: 8px 15px;
+}
+
+#nav li a:hover {
+    background: red;
+    color: white;
+}
+
+
+
+/* Section-specific layout */
+
+#web-dev h1 {
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 105px;
+}
+
+#front-end header,
+#css header,
+#css3 header { padding-top: 0;}
+
+#front-end h1 {
+    line-height: 85px;
+    font-size: 92px;
+}
+
+#css header,
+#css3 header { padding: 0;}
+
+#css h1 {
+    font-size: 150px;
+    line-height: 180px;
+}
+
+#css3 h1 {
+    font-size: 110px;
+    line-height: 105px;
+}
+
+#transforms h1 {
+    font-size: 160px;
+    line-height: 180px;
+}
+
+/* Section colors */
+
+#web-dev { color: hsl( 0, 90%, 45% ); }
+#web-dev p, #web-dev .img { background: hsla( 0, 90%, 45%, 0.3 ); }
+
+#front-end { color: hsl( 72, 90%, 40% ); }
+#front-end p, #front-end .img { background: hsla( 72, 90%, 40%, 0.3 ); }
+
+#css { color: hsl( 144, 90%, 45% ); }
+#css p, #css .img { background: hsla( 144, 90%, 45%, 0.3 ); }
+
+#css3 { color: hsl( 216, 90%, 45% ); }
+#css3 p, #css3 .img { background: hsla( 216, 90%, 45%, 0.3 ); }
+
+#transforms { color: hsl( 288, 90%, 45% ); }
+#transforms p, #transforms .img { background: hsla( 288, 90%, 45%, 0.3 ); }
+
+/* step 2 */
+
+.csstransforms #content {
+    position: absolute;
+    width: 320px;
+    height: 426px;
+}
+
+.csstransforms section {
+    position: absolute;
+}
+
+.csstransforms #front-end {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5) translateY(50%);
+}
+
+.csstransforms #css {
+    -webkit-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    transform: scale(0.25) translateY(150%);
+}
+
+.csstransforms #css3 {
+    -webkit-transform: scale(0.125);
+    -moz-transform: scale(0.125);
+    -o-transform: scale(0.125);
+    transform: scale(0.125) translateY(350%);
+}
+
+.csstransforms #transforms {
+    -webkit-transform: scale(0.0625);
+    -moz-transform: scale(0.0625);
+    -o-transform: scale(0.0625);
+    transform: scale(0.0625) translateY(750%);
+}
+
+/* step 3 */
+
+/* set arbitrary height on proxy scroller */
+.csstransforms #scroller { height: 4000px; }
+
+/* prevent content from scrolling */
+.csstransforms #wrap {
+    position: fixed;
+    width: 100%;
+}
+
+/* step 4 */
+
+.csstransitions #content.transitions-enabled {
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition:    -moz-transform 1s;
+    -o-transition:      -o-transform 1s;
+    transition:         transform 1s;
+}
+
+#nav li a.current {
+    background: blue;
+    color: white;
+}

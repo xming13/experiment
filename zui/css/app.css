@@ -261,3 +261,67 @@ section {
     border-right: 80px solid transparent;
     border-bottom: 80px solid;
 }
+
+/* Decoration */
+.deco {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+}
+.deco-top {
+    top: -12px;
+    left: 145px;
+    width: 30px;
+    height: 30px;
+    background-color: #FFD700;
+}
+.deco1 {
+    top: 118px;
+    left: 175px;
+}
+.deco2 {
+    top: 278px;
+    left: 207px;
+}
+.deco3 {
+    top: 273px;
+    left: 113px;
+}
+.deco4 {
+    top: 349px;
+    left: 188px;
+}
+.deco5 {
+    top: 334px;
+    left: 92px;
+}
+.deco6 {
+    top: 231px;
+    left: 174px;
+}
+.deco7 {
+    top: 205px;
+    left: 83px;
+}
+.deco8 {
+    top: 164px;
+    left: 198px;
+}
+.deco9 {
+    top: 129px;
+    left: 102px;
+}
+.deco10 {
+    top: 175px;
+    left: 144px;
+}
+.deco11 {
+    top: 60px;
+    left: 129px;
+}
+.deco12 {
+    top: 71px;
+    left: 180px;
+}

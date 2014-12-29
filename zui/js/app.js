@@ -143,21 +143,7 @@ window.Modernizr = function (a, b, c) {
         this.scrolled = window.scrollY / ( this.docHeight - window.innerHeight );
         var scrollRatio = this.scrolled * this.levels;
         var scale = Math.pow(2, scrollRatio);
-        var translateY;
-
-        if (scrollRatio <= 1) {
-            translateY = 41.5 * scrollRatio;
-        }
-        else if (scrollRatio <= 2) {
-            translateY = 41.5 + 41.5 * 2 * (scrollRatio - 1);
-        }
-        else if (scrollRatio <= 3) {
-            translateY = 41.5 + 41.5 * 2 + 41.5 * 4 * (scrollRatio - 2);
-        }
-        else if (scrollRatio <= 4) {
-            translateY = 41.5 + 41.5 * 2 + 41.5 * 4 + 41.5 * 8 * (scrollRatio - 3);
-        }
-        translateY = '-' + translateY + '%';
+        var translateY = '-' + (41.5 * (scale - 1)) + '%';
 
         var transformValue = ' translateY(' + translateY + ') scale(' + scale + ') ';
 

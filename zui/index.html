@@ -3,129 +3,6 @@
     <title>Zoomable/Scrollable Colorful Christmas Tree</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css"/>
-    <style>
-        body {
-            background: #E1F5FE;
-        }
-
-        .top {
-            text-align: center;
-        }
-
-        .y3 {
-            top: 100px;
-        }
-
-        .ground {
-            position: absolute;
-            top: 444px;
-            width: 100%;
-            height: 250px;
-            background: #FFF;
-        }
-
-        #green .tree-center, #red {
-            background-color: #66BB6A;
-        }
-        #red .tree-center, #blue {
-            background-color: #EF5350;
-        }
-        #blue .tree-center, #pink {
-            background-color: #29B6F6;
-        }
-        #pink .tree-center, #white {
-            background-color: #EC407A;
-        }
-        #white .tree-center {
-            background-color: #FFFFFF;
-        }
-        #white .center {
-            height: 290px;
-        }
-
-        .tree-top {
-            width: 0;
-            height: 0;
-            border-right: 120px solid transparent;
-            border-left: 120px solid transparent;
-            border-bottom: 100px solid;
-            display: inline-block;
-        }
-        .center {
-            width: 160px;
-            height: 95px;
-            position: absolute;
-            left: 80px;
-        }
-        .tree-center {
-            height: 100%;
-            width: 100%;
-            display: inline-block;
-        }
-
-        .left {
-            border: none;
-            margin: 0;
-            padding: 0;
-            width: 80px !important;
-            text-align: right;
-        }
-
-        .tree-left {
-            width: 0;
-            height: 0;
-            float: right;
-            clear: both;
-        }
-        .tree-left1 {
-            border-left: 65px solid transparent;
-            border-bottom: 65px solid;
-        }
-        .tree-left2 {
-            border-left: 70px solid transparent;
-            border-bottom: 70px solid;
-        }
-        .tree-left3 {
-            border-left: 75px solid transparent;
-            border-bottom: 75px solid;
-        }
-        .tree-left4 {
-            border-left: 80px solid transparent;
-            border-bottom: 80px solid;
-        }
-
-        .right {
-            border: none;
-            margin: 0;
-            padding: 0;
-            width: 80px !important;
-            text-align: right;
-            left: 240px;
-        }
-
-        .tree-right {
-            width: 0;
-            height: 0;
-            float: left;
-            clear: both;
-        }
-        .tree-right1 {
-            border-right: 65px solid transparent;
-            border-bottom: 65px solid;
-        }
-        .tree-right2 {
-            border-right: 70px solid transparent;
-            border-bottom: 70px solid;
-        }
-        .tree-right3 {
-            border-right: 75px solid transparent;
-            border-bottom: 75px solid;
-        }
-        .tree-right4 {
-            border-right: 80px solid transparent;
-            border-bottom: 80px solid;
-        }
-    </style>
 </head>
 <body>
 
@@ -134,124 +11,82 @@
     <div id="container">
 
         <ul id="nav">
-            <li><a href="#green">1</a></li>
-            <li><a href="#blue">2</a></li>
-            <li><a href="#red">3</a></li>
-            <li><a href="#pink">4</a></li>
-            <li><a href="#white">5</a></li>
+            <li><a href="#green" class="green"></a></li>
+            <li><a href="#yellow" class="yellow"></a></li>
+            <li><a href="#red" class="red"></a></li>
+            <li><a href="#purple" class="purple"></a></li>
+            <li><a href="#white" class="white"></a></li>
         </ul>
 
         <div id="content">
 
             <section id="green">
-                <div class="top">
-                    <span class="tree-top"></span>
-                </div>
-                <div class="center">
-                    <span class="tree-center"></span>
-                </div>
-                <div class="box w3 y3 left">
-                    <span class="tree-left tree-left1"></span>
-                    <span class="tree-left tree-left2"></span>
-                    <span class="tree-left tree-left3"></span>
-                    <span class="tree-left tree-left4"></span>
-                </div>
-                <div class="box w3 h3 y3 x6 right">
-                    <span class="tree-right tree-right1"></span>
-                    <span class="tree-right tree-right2"></span>
-                    <span class="tree-right tree-right3"></span>
-                    <span class="tree-right tree-right4"></span>
-                </div>
+                <span class="tree-top"></span>
+                <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
+            </section>
+
+            <section id="yellow">
+                <span class="tree-top"></span>
+                <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
             </section>
 
             <section id="red">
-                <div class="top">
-                    <span class="tree-top"></span>
-                </div>
-                <div class="center">
-                    <span class="tree-center"></span>
-                </div>
-                <div class="w3 y3 left">
-                    <span class="tree-left tree-left1"></span>
-                    <span class="tree-left tree-left2"></span>
-                    <span class="tree-left tree-left3"></span>
-                    <span class="tree-left tree-left4"></span>
-                </div>
-                <div class="w3 x6 right">
-                    <span class="tree-right tree-right1"></span>
-                    <span class="tree-right tree-right2"></span>
-                    <span class="tree-right tree-right3"></span>
-                    <span class="tree-right tree-right4"></span>
-                </div>
+                <span class="tree-top"></span>
+                <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
             </section>
 
-            <section id="blue">
-                <div class="top">
-                    <span class="tree-top"></span>
-                </div>
-                <div class="center">
-                    <span class="tree-center"></span>
-                </div>
-                <div class="w3 y3 left">
-                    <span class="tree-left tree-left1"></span>
-                    <span class="tree-left tree-left2"></span>
-                    <span class="tree-left tree-left3"></span>
-                    <span class="tree-left tree-left4"></span>
-                </div>
-                <div class="w3 x6 right">
-                    <span class="tree-right tree-right1"></span>
-                    <span class="tree-right tree-right2"></span>
-                    <span class="tree-right tree-right3"></span>
-                    <span class="tree-right tree-right4"></span>
-                </div>
-            </section>
-
-            <section id="pink">
-                <div class="top">
-                    <span class="tree-top"></span>
-                </div>
-                <div class="center">
-                    <span class="tree-center"></span>
-                </div>
-                <div class="w3 y3 left">
-                    <span class="tree-left tree-left1"></span>
-                    <span class="tree-left tree-left2"></span>
-                    <span class="tree-left tree-left3"></span>
-                    <span class="tree-left tree-left4"></span>
-                </div>
-                <div class="w3 x6 right">
-                    <span class="tree-right tree-right1"></span>
-                    <span class="tree-right tree-right2"></span>
-                    <span class="tree-right tree-right3"></span>
-                    <span class="tree-right tree-right4"></span>
-                </div>
+            <section id="purple">
+                <span class="tree-top"></span>
+                <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
             </section>
 
             <section id="white">
-                <div class="top">
-                    <span class="tree-top"></span>
-                </div>
-                <div class="center">
-                    <span class="tree-center"></span>
-                </div>
-                <div class="w3 y3 left">
-                    <span class="tree-left tree-left1"></span>
-                    <span class="tree-left tree-left2"></span>
-                    <span class="tree-left tree-left3"></span>
-                    <span class="tree-left tree-left4"></span>
-                </div>
-                <div class="w3 x6 right">
-                    <span class="tree-right tree-right1"></span>
-                    <span class="tree-right tree-right2"></span>
-                    <span class="tree-right tree-right3"></span>
-                    <span class="tree-right tree-right4"></span>
-                </div>
-
+                <span class="tree-top"></span>
+                <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
             </section>
 
         </div>
         <!-- #content -->
-
 
     </div>
     <!-- #container -->

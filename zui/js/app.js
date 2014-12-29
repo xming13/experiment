@@ -115,9 +115,9 @@ window.Modernizr = function (a, b, c) {
 
         this.levelGuide = {
             '#green': 0,
-            '#blue': 1,
+            '#yellow': 1,
             '#red': 2,
-            '#pink': 3,
+            '#purple': 3,
             '#white': 4
         };
 
@@ -156,11 +156,11 @@ window.Modernizr = function (a, b, c) {
         if (this.currentLevel !== this.previousLevel) {
             // remove previous currentNavItem
             if (this.currentNavLink) {
-                this.currentNavLink.className = '';
+                toggleClass(this.currentNavLink, 'current');
             }
             // select new currentNavItem
             this.currentNavLink = this.navLinks[ this.currentLevel ];
-            this.currentNavLink.className = 'current';
+            toggleClass(this.currentNavLink, 'current');
             this.previousLevel = this.currentLevel;
         }
     };
@@ -213,6 +213,22 @@ window.Modernizr = function (a, b, c) {
         this.content.removeEventListener('transitionend', this, false);
         this.content.removeEventListener('oTransitionEnd', this, false);
     };
+
+    function toggleClass(el, className) {
+        if (el.classList) {
+            el.classList.toggle(className);
+        } else {
+            var classes = el.className.split(' ');
+            var existingIndex = classes.indexOf(className);
+
+            if (existingIndex >= 0)
+                classes.splice(existingIndex, 1);
+            else
+                classes.push(className);
+
+            el.className = classes.join(' ');
+        }
+    }
 
     function init() {
         var content = document.getElementById('content'),

@@ -114,11 +114,11 @@ window.Modernizr = function (a, b, c) {
         this.docHeight = document.documentElement.offsetHeight;
 
         this.levelGuide = {
-            '#red': 0,
-            '#lime': 1,
-            '#green': 2,
-            '#blue': 3,
-            '#purple': 4
+            '#green': 0,
+            '#blue': 1,
+            '#red': 2,
+            '#pink': 3,
+            '#white': 4
         };
 
         // bind Zoomer to scroll event
@@ -141,17 +141,9 @@ window.Modernizr = function (a, b, c) {
     Zoomer.prototype.scroll = function (event) {
         // normalize scroll value from 0 to 1
         this.scrolled = window.scrollY / ( this.docHeight - window.innerHeight );
-        var scrollRatio = this.scrolled * this.levels;
-        var scale = Math.pow(2, scrollRatio);
+        var scale = Math.pow(2, this.scrolled * this.levels);
         var translateY = '-' + (41.5 * (scale - 1)) + '%';
-
         var transformValue = ' translateY(' + translateY + ') scale(' + scale + ') ';
-
-        console.log('this.scrolled: ' + this.scrolled);
-        console.log('this.levels: ' + this.levels);
-        console.log('scrollRatio: ' + scrollRatio);
-        console.log('scale: ' + scale);
-        console.log('translateY: ' + translateY);
 
         this.content.style.WebkitTransform = transformValue;
         this.content.style.MozTransform = transformValue;

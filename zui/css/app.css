@@ -17,8 +17,7 @@ section, header {
 
 section {
     width: 320px;
-    height: 426px;
-    margin-bottom: 80px;
+    height: 390px;
     position: relative;
     z-index: 1;
 }
@@ -148,20 +147,11 @@ p {
 
 /* Section colors */
 
-#red { color: #ef9a9a; }
-#red p, #red .img { background: hsla( 0, 90%, 45%, 0.3 ); }
-
-#lime { color: #f0f4c3; }
-#lime p, #lime .img { background: hsla( 72, 90%, 40%, 0.3 ); }
-
-#green { color: #c8e6c9; }
-#green p, #green .img { background: hsla( 144, 90%, 45%, 0.3 ); }
-
-#blue { color: #bbdefb; }
-#blue p, #blue .img { background: hsla( 216, 90%, 45%, 0.3 ); }
-
-#purple { color: #e1bee7; }
-#purple p, #purple .img { background: hsla( 288, 90%, 45%, 0.3 ); }
+#green { color: #66BB6A; }
+#red { color: #EF5350; }
+#blue { color: #29B6F6; }
+#pink { color: #EC407A; }
+#white { color: #FFFFFF; }
 
 /* step 2 */
 
@@ -175,28 +165,28 @@ p {
     position: absolute;
 }
 
-.csstransforms #lime {
+.csstransforms #red {
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -o-transform: scale(0.5);
     transform: scale(0.5) translateY(50%);
 }
 
-.csstransforms #green {
+.csstransforms #blue {
     -webkit-transform: scale(0.25);
     -moz-transform: scale(0.25);
     -o-transform: scale(0.25);
     transform: scale(0.25) translateY(150%);
 }
 
-.csstransforms #blue {
+.csstransforms #pink {
     -webkit-transform: scale(0.125);
     -moz-transform: scale(0.125);
     -o-transform: scale(0.125);
     transform: scale(0.125) translateY(350%);
 }
 
-.csstransforms #purple {
+.csstransforms #white {
     -webkit-transform: scale(0.0625);
     -moz-transform: scale(0.0625);
     -o-transform: scale(0.0625);

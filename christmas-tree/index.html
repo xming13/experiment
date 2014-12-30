@@ -85,6 +85,15 @@
             <section id="white">
                 <span class="tree-top"></span>
                 <span class="tree-center"></span>
+                <span class="tree-left tree-left1"></span>
+                <span class="tree-left tree-left2"></span>
+                <span class="tree-left tree-left3"></span>
+                <span class="tree-left tree-left4"></span>
+                <span class="tree-right tree-right1"></span>
+                <span class="tree-right tree-right2"></span>
+                <span class="tree-right tree-right3"></span>
+                <span class="tree-right tree-right4"></span>
+
                 <span class="deco deco-top"></span>
                 <span class="deco deco1"></span>
                 <span class="deco deco2"></span>
@@ -98,14 +107,6 @@
                 <span class="deco deco10"></span>
                 <span class="deco deco11"></span>
                 <span class="deco deco12"></span>
-                <span class="tree-left tree-left1"></span>
-                <span class="tree-left tree-left2"></span>
-                <span class="tree-left tree-left3"></span>
-                <span class="tree-left tree-left4"></span>
-                <span class="tree-right tree-right1"></span>
-                <span class="tree-right tree-right2"></span>
-                <span class="tree-right tree-right3"></span>
-                <span class="tree-right tree-right4"></span>
             </section>
 
         </div>
@@ -116,6 +117,14 @@
     <div class="ground"></div>
 </div>
 <div id="scroller"></div>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/snowstorm.min.js"></script>
+<script>
+    snowStorm.className = 'snow';
+    snowStorm.animationInterval = 100;
+    snowStorm.snowStick = false;
+    snowStorm.usePositionFixed = true;
+    snowStorm.zIndex = 2;
+</script>
+<script type="text/javascript" src="js/zui.js"></script>
 </body>
 </html>

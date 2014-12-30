@@ -12,7 +12,8 @@ section, header {
 #container {
     position: relative;
     width: 320px;
-    margin: 10px auto;
+    height: 450px;
+    margin: 10px auto 0;
     text-align: center;
 }
 
@@ -21,6 +22,10 @@ section {
     height: 390px;
     position: relative;
     z-index: 1;
+}
+
+.snow {
+    font-size: 28px !important;
 }
 
 /* nav */
@@ -126,7 +131,7 @@ section {
 .csstransforms #content {
     position: absolute;
     width: 320px;
-    height: 426px;
+    height: 390px;
 }
 
 .csstransforms section {
@@ -324,4 +329,9 @@ section {
 .deco12 {
     top: 71px;
     left: 180px;
+}
+
+/* Snowman */
+.snowman-head {
+
 }

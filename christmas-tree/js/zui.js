@@ -147,7 +147,7 @@ window.Modernizr = function (a, b, c) {
         // normalize scroll value from 0 to 1
         this.scrolled = window.scrollY / ( this.docHeight - window.innerHeight );
         var scale = Math.pow(2, this.scrolled * this.levels);
-        var translateY = '-' + (41.5 * (scale - 1)) + '%';
+        var translateY = '-' + (50 * (scale - 1)) + '%';
         var transformValue = ' translateY(' + translateY + ') scale(' + scale + ') ';
 
         this.content.style.WebkitTransform = transformValue;

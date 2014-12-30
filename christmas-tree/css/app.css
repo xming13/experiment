@@ -296,7 +296,7 @@ section {
 }
 .deco4 {
     top: 349px;
-    left: 188px;
+    left: 198px;
 }
 .deco5 {
     top: 334px;
@@ -332,6 +332,113 @@ section {
 }
 
 /* Snowman */
-.snowman-head {
 
+.snowman-hat {
+    position: absolute;
+    background-color: #6E6E6E;
+    top: 311px;
+    height: 20px;
+    left: 151px;
+    width: 18px;
+}
+
+.snowman-hat-bottom {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: rgb(110, 110, 110);
+    top: 327px;
+    left: 145px;
+}
+
+.snowman-hat-stripe {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: white;
+    top: 325px;
+    left: 152px;
+}
+
+.snowman-head {
+    position: absolute;
+    width: 38px;
+    height: 34px;
+    background-color: #F1F1F1;
+    border-radius: 50%;
+    top: 329px;
+    left: 141px;
+}
+
+.snowman-left-eye {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 4px;
+    height: 6px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.snowman-right-eye {
+    position: absolute;
+    top: 8px;
+    left: 22px;
+    width: 4px;
+    height: 6px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.snowman-nose {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    color: rgb(255, 182, 27);
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-top: 15px solid;
+    -webkit-transform: rotateZ(105deg);
+    -moz-transform: rotateZ(105deg);
+    -o-transform: rotateZ(105deg);
+    transform: rotateZ(105deg);
+}
+
+.snowman-mouth {
+    position: absolute;
+    width: 10px;
+    height: 7px;
+    top: 16px;
+    left: 14px;
+    border-radius: 50%;
+    border-bottom: 2px solid rgb(110, 110, 110);
+}
+
+.snowman-body {
+    position: absolute;
+    width: 48px;
+    height: 44px;
+    background-color: #F1F1F1;
+    border-radius: 50%;
+    top: 352px;
+    left: 136px;
+}
+
+.snowman-button {
+    position: absolute;
+    background-color: #6E6E6E;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    left: 22px;
+}
+
+.button1 {
+    top: 11px;
+}
+.button2 {
+    top: 20px;
+}
+.button3 {
+    top: 29px;
 }

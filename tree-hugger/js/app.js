@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 }
 
-                pop.play();
+                //pop.play();
             }
             console.log(lrcArr);
         } else {

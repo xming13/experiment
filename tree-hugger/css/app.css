@@ -100,6 +100,20 @@ body {
     width: 100%;
     background-color: #A67C52;
 }
+.scene-first .ground:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background:
+        linear-gradient( -25deg, #A67C52 30%, transparent 30%),
+        linear-gradient( 25deg, #A67C52 30%, transparent 30%),
+        linear-gradient( -25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60% ),
+        linear-gradient( 25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60% );
+    background-size: 100px 72px;
+}
 
 .scene-first .grass {
     position: absolute;
@@ -117,7 +131,7 @@ body {
     background:
         linear-gradient( -45deg, transparent 66.6%, #8DC63F 66.67% ),
         linear-gradient( 45deg, transparent 66.6%, #8DC63F 66.67% );
-     background-size: 20px 10px;
+     background-size: 15px 10px;
 }
 
 /* Flower Animation */
@@ -133,13 +147,13 @@ body {
 
 .scene-first .bubble {
     position: absolute;
-    width: 25px;
-    height: 25px;
     background: #FFF;
     border-radius: 50%;
     opacity: 0;
 }
 .scene-first .bubble1 {
+    width: 40px;
+    height: 40px;
     left: 45%;
     top: 50%;
     -webkit-animation:
@@ -148,8 +162,8 @@ body {
         fadeIn .5s steps(2) 134.1s forwards;
 }
 .scene-first .bubble2 {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     left: 40%;
     top: 30%;
     -webkit-animation:
@@ -158,8 +172,8 @@ body {
         fadeIn .5s steps(2) 134.5s forwards;
 }
 .scene-first .bubble3 {
-    width: 35px;
-    height: 35px;
+    width: 80px;
+    height: 80px;
     left: 45%;
     top: 10%;
     -webkit-animation:

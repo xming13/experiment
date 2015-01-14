@@ -11,6 +11,47 @@ body {
     font-family: 'Happy Monkey', cursive;;
 }
 
+.container {
+    background: pink;
+    height: 100%;
+    width: 100%;
+}
+
+.lyrics-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    background-color: #FFF;
+    opacity: 0.8;
+    z-index: 100;
+}
+#lyrics,
+#loading {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-size: 20px;
+    color: #000;
+    transform: translateY(-50%);
+}
+
+#btn-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 144px;
+    width: 200px;
+    background: #DBFF00;
+    font-size: 32px;
+    line-height: 144px;
+    border-radius: 20px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
 .flick {
     width: 50px;
     height: 50px;
@@ -31,26 +72,8 @@ body {
     100% {background-position: 0 -100px; }
 }
 
-.lyrics-wrapper {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 75px;
-    text-align: center;
-    background-color: #FFF;
-    opacity: 0.8;
-    z-index: 100;
-}
-#lyrics {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    font-size: 20px;
-    color: #000;
-    transform: translateY(-50%);
-}
 /* First Scene */
-.scene-first {
+.loaded .scene-first {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -59,14 +82,14 @@ body {
         fadeOut .5s linear 28.5s forwards,
         fadeIn .1s linear 114s forwards;
 }
-.scene-first section {
+.loaded .scene-first section {
     position: absolute;
     top: 0;
     height: 80%;
     width: 100%;
 }
 
-.scene-first .flower-wrapper {
+.loaded .scene-first .flower-wrapper {
     top: 0;
     background-color: #f8bbd0;
     -webkit-animation:
@@ -75,7 +98,7 @@ body {
         slideDown .8s linear 135s forwards;
 }
 
-.scene-first .tree-wrapper {
+.loaded .scene-first .tree-wrapper {
     top: -80%;
     background-color: #aed581;
     -webkit-animation:
@@ -84,7 +107,7 @@ body {
         slideDown .8s linear 135s forwards;
 }
 
-.scene-first .cat-wrapper {
+.loaded .scene-first .cat-wrapper {
     left: 100%;
     background-color: #fff176;
     -webkit-animation:
@@ -93,14 +116,14 @@ body {
         slideLeft .5s ease-out 140s forwards;
 }
 
-.scene-first .ground {
+.loaded .scene-first .ground {
     position: absolute;
     bottom: 0;
     height: 20%;
     width: 100%;
     background-color: #A67C52;
 }
-.scene-first .ground:after {
+.loaded .scene-first .ground:after {
     content: "";
     display: block;
     position: absolute;
@@ -115,13 +138,13 @@ body {
     background-size: 100px 72px;
 }
 
-.scene-first .grass {
+.loaded .scene-first .grass {
     position: absolute;
     width: 100%;
     height: 30%;
     background: #8DC63F;
 }
-.scene-first .grass:after {
+.loaded .scene-first .grass:after {
     content: "";
     display: block;
     position: absolute;
@@ -135,7 +158,7 @@ body {
 }
 
 /* Flower Animation */
-.scene-first .flower {
+.loaded .scene-first .flower {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -145,14 +168,14 @@ body {
     transform: translateX(-50%);
 }
 
-.scene-first .bubble {
+.loaded .scene-first .bubble {
     position: absolute;
     background: #FFF;
     border-radius: 50%;
     opacity: 0;
     transform: translateX(-50%);
 }
-.scene-first .bubble1 {
+.loaded .scene-first .bubble1 {
     width: 40px;
     height: 40px;
     left: 45%;
@@ -162,7 +185,7 @@ body {
         fadeOut .1s steps(2) 28.5s forwards,
         fadeIn .5s steps(2) 134.1s forwards;
 }
-.scene-first .bubble2 {
+.loaded .scene-first .bubble2 {
     width: 60px;
     height: 60px;
     left: 40%;
@@ -172,7 +195,7 @@ body {
         fadeOut .1s steps(2) 28.5s forwards,
         fadeIn .5s steps(2) 134.5s forwards;
 }
-.scene-first .bubble3 {
+.loaded .scene-first .bubble3 {
     width: 80px;
     height: 80px;
     left: 45%;
@@ -184,7 +207,7 @@ body {
 }
 
 /* Tree Animation */
-.scene-first .tree {
+.loaded .scene-first .tree {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -194,7 +217,7 @@ body {
     transform: translateX(-50%);
 }
 
-.scene-first .wish-tree {
+.loaded .scene-first .wish-tree {
     position: absolute;
     top: 100px;
     left: 50%;
@@ -207,26 +230,26 @@ body {
     transform: translateX(-50%);
 }
 
-.scene-first .wish-tree1 {
+.loaded .scene-first .wish-tree1 {
     background-color: orange;
     z-index: 1;
     -webkit-animation: fadeIn .5s steps(2) 22s forwards;
 }
 
-.scene-first .wish-tree2 {
+.loaded .scene-first .wish-tree2 {
     background-color: red;
     z-index: 2;
     -webkit-animation: fadeIn .5s steps(2) 23s forwards;
 }
 
-.scene-first .wish-tree3 {
+.loaded .scene-first .wish-tree3 {
     background-color: yellow;
     z-index: 3;
     -webkit-animation: fadeIn .5s steps(2) 24s forwards;
 }
 
 /* Cat Animation */
-.scene-first .cat {
+.loaded .scene-first .cat {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -236,7 +259,7 @@ body {
     transform: translateX(-50%);
 }
 
-.scene-first .bee {
+.loaded .scene-first .bee {
     position: absolute;
     left: 65%;
     bottom: 125px;
@@ -248,7 +271,7 @@ body {
 }
 
 /* Second Scene */
-.scene-second {
+.loaded .scene-second {
     position: absolute;
     top: 0;
     left: 50%;
@@ -259,14 +282,14 @@ body {
     -webkit-animation: slideInFromCenter .5s ease-out 28s forwards;
 }
 
-.scene-second section {
+.loaded .scene-second section {
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
 }
 
-.scene-second .sea {
+.loaded .scene-second .sea {
     position: absolute;
     bottom: 0;
     height: 20%;
@@ -278,7 +301,7 @@ body {
         sea-slideUp .5s ease-in 36s forwards,
         sea-wave-left 1s linear infinite;
 }
-.scene-second .sea:before {
+.loaded .scene-second .sea:before {
     content: "";
     display: block;
     position: absolute;
@@ -289,7 +312,7 @@ body {
     background-size: 50px 75px;
     transform: scaleY(-1);
 }
-.scene-second .sea-front {
+.loaded .scene-second .sea-front {
     position: absolute;
     bottom: 0;
     height: 15%;
@@ -301,7 +324,7 @@ body {
         sea-front-slideUp .5s ease-in 36s forwards,
         sea-wave-left .5s linear infinite;
 }
-.scene-second .sea-front:before {
+.loaded .scene-second .sea-front:before {
     content: "";
     display: block;
     position: absolute;
@@ -313,11 +336,11 @@ body {
     transform: scaleY(-1);
 }
 
-.scene-second .turtle-wrapper {
+.loaded .scene-second .turtle-wrapper {
     background-color: #00BFF3;
 }
 
-.scene-second .turtle {
+.loaded .scene-second .turtle {
     position: absolute;
     left: 50%;
     bottom: 20%;
@@ -331,7 +354,7 @@ body {
         turtle-dive 2s ease-in 36.5s forwards;
 }
 
-.scene-second .cloud {
+.loaded .scene-second .cloud {
     position: absolute;
     width: 175px;
     height: 60px;
@@ -342,27 +365,27 @@ body {
     /*fadeOut .5s ease-in 36s forwards;*/
 }
 
-.scene-second .cloud1 {
+.loaded .scene-second .cloud1 {
     left: 35%;
     top: -60px;
 }
-.scene-second .cloud2 {
+.loaded .scene-second .cloud2 {
     left: 70%;
     top: -60px;
 }
-.scene-second .cloud3 {
+.loaded .scene-second .cloud3 {
     left: 55%;
     top: -60px;
 }
 
-.scene-second .fish-wrapper {
+.loaded .scene-second .fish-wrapper {
     z-index: 1;
     transform: scaleX(-1);
     -webkit-animation:
         flip-back .1s linear 48.5s forwards;
 }
 
-.scene-second .fish {
+.loaded .scene-second .fish {
     position: absolute;
     left: 25%;
     bottom: 15%;
@@ -380,14 +403,14 @@ body {
         /*fish-wander-left 5s linear 48.5s forwards;*/
 }
 
-.scene-second .bubble {
+.loaded .scene-second .bubble {
     position: absolute;
     background: #FFF;
     border-radius: 50%;
     opacity: 0;
     overflow: hidden;
 }
-.scene-second .bubble1 {
+.loaded .scene-second .bubble1 {
     left: 57%;
     bottom: 33%;
     width: 30px;
@@ -398,7 +421,7 @@ body {
         fadeOut .1s linear 48s forwards,
         fadeIn .8s steps(2) 51.5s forwards;
 }
-.scene-second .bubble2 {
+.loaded .scene-second .bubble2 {
     left: 53%;
     bottom: 38%;
     width: 50px;
@@ -409,7 +432,7 @@ body {
         fadeOut .1s linear 48s forwards,
         fadeIn .8s steps(2) 51.9s forwards;
 }
-.scene-second .bubble3 {
+.loaded .scene-second .bubble3 {
     left: 50%;
     bottom: 47%;
     width: 175px;
@@ -424,14 +447,14 @@ body {
         zoom 1s ease-out 56s forwards;
 }
 
-.scene-second .desert {
+.loaded .scene-second .desert {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 40px;
     background: rgb(254, 222, 196);
 }
-.scene-second .cactus {
+.loaded .scene-second .cactus {
     position: absolute;
     left: 50%;
     bottom: 40px;
@@ -442,7 +465,7 @@ body {
     background-color: greenyellow;
     transform: translateX(-50%);
 }
-.scene-second .pink-flower {
+.loaded .scene-second .pink-flower {
     position: absolute;
     left: 45%;
     bottom: 120px;

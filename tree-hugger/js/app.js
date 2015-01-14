@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
 
     var pop = Popcorn("#audio");
 
@@ -22,10 +22,34 @@ document.addEventListener("DOMContentLoaded", function () {
                         target: 'lyrics'
                     });
                 }
-
-                //pop.play();
             }
             console.log(lrcArr);
+
+            // hide #loading
+            var loading = document.getElementById('loading');
+            loading.style.display = 'none';
+
+            // show #btn-start
+            var btnStart = document.getElementById('btn-start');
+            btnStart.style.display = '';
+
+            btnStart.addEventListener("click", function() {
+                // hide #btn-start
+                btnStart.style.display = 'none';
+
+                // Add class 'loaded' to container
+                var container = document.getElementsByClassName('container')[0];
+                if (container.classList) {
+                    container.classList.add('loaded');
+                }
+                else {
+                    container.className += ' loaded';
+                }
+
+                // start
+                pop.play();
+            });
+
         } else {
             console.log('request reached server but error is returned.');
         }

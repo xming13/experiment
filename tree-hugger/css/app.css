@@ -261,11 +261,11 @@ body {
 
 .loaded .scene-first .bee {
     position: absolute;
-    left: 65%;
+    left: 50%;
     bottom: 125px;
-    height: 75px;
-    width: 75px;
-    background-color: #FFFF00;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/bee.png');
     transform: translateX(-50%);
     -webkit-animation: bee-wander 1.5s linear 26.5s forwards;
 }
@@ -497,8 +497,8 @@ body {
     100% { transform: translateX(-100%); }
 }
 @-webkit-keyframes bee-wander {
-    0% { transform: translate(-100%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg); }
-    100% { transform: translate(100%, 0%) rotate(180deg) translate(-100px, 0%) rotate(-180deg); }
+    0% { transform: rotate(0deg) translate(-100px, 0%) rotate(0deg); }
+    100% { transform: rotate(180deg) translate(-100px, 0%) rotate(-180deg); }
 }
 @-webkit-keyframes bee-wander-backup {
     0% { transform: rotate(0deg) translate(100px, 0%) rotate(0deg); }

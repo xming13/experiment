@@ -162,9 +162,9 @@ body {
     position: absolute;
     left: 50%;
     bottom: 0;
-    height: 150px;
-    width: 150px;
-    background-color: #ff4081;
+    height: 100px;
+    width: 60px;
+    background: url('../img/flower.png');
     transform: translateX(-50%);
 }
 
@@ -266,7 +266,7 @@ body {
     height: 80px;
     width: 80px;
     background-image: url('../img/bee.png');
-    transform: translateX(-50%);
+    transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
     -webkit-animation: bee-wander 1.5s linear 26.5s forwards;
 }
 
@@ -356,9 +356,9 @@ body {
 
 .loaded .scene-second .cloud {
     position: absolute;
-    width: 175px;
-    height: 60px;
-    background: #FFF;
+    width: 120px;
+    height: 90px;
+    background: url('../img/cloud.png');
     -webkit-animation:
         cloud-fly 2s ease-in 31s forwards,
         cloud-move 5.5s linear 33s forwards;
@@ -367,15 +367,15 @@ body {
 
 .loaded .scene-second .cloud1 {
     left: 35%;
-    top: -60px;
+    top: -120px;
 }
 .loaded .scene-second .cloud2 {
     left: 70%;
-    top: -60px;
+    top: -90px;
 }
 .loaded .scene-second .cloud3 {
     left: 55%;
-    top: -60px;
+    top: -115px;
 }
 
 .loaded .scene-second .fish-wrapper {
@@ -497,8 +497,8 @@ body {
     100% { transform: translateX(-100%); }
 }
 @-webkit-keyframes bee-wander {
-    0% { transform: rotate(0deg) translate(-100px, 0%) rotate(0deg); }
-    100% { transform: rotate(180deg) translate(-100px, 0%) rotate(-180deg); }
+    0% { transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg); }
+    100% { transform: translate(-50%, 0) rotate(180deg) translate(-100px, 0%) rotate(-180deg); }
 }
 @-webkit-keyframes bee-wander-backup {
     0% { transform: rotate(0deg) translate(100px, 0%) rotate(0deg); }
@@ -544,11 +544,11 @@ body {
 }
 @-webkit-keyframes cloud-fly {
     0% { transform: translateY(0); }
-    100% { transform: translateY(600%) }
+    100% { transform: translateY(400px) }
 }
 @-webkit-keyframes cloud-move {
-    0% { transform: translate(0%, 600%); }
-    100% { transform: translate(-600%, 600%); }
+    0% { transform: translate(0%, 400px); }
+    100% { transform: translate(-600px, 400px); }
 }
 @-webkit-keyframes fish-wander {
     0% { transform: translateX(-50%); }

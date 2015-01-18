@@ -1,0 +1,657 @@
+@import "bourbon/bourbon";
+
+@font-face {
+    font-family: 'Happy Monkey';
+    src: url('../fonts/HappyMonkey-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Happy Monkey', cursive;
+}
+
+.container {
+    background: #FAE0E4;
+    height: 100%;
+    width: 100%;
+}
+
+.lyrics-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    background-color: #FFF;
+    opacity: 0.8;
+    z-index: 100;
+}
+#lyrics,
+#loading {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-size: 20px;
+    color: #000;
+    @include transform(translateY(-50%));
+}
+
+#btn-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 144px;
+    width: 200px;
+    background: #DBFF00;
+    font-size: 32px;
+    line-height: 144px;
+    border-radius: 20px;
+    text-align: center;
+    @include transform(translate(-50%, -50%));
+    cursor: pointer;
+}
+
+.loaded {
+  .left-eye,
+  .right-eye {
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border-radius: 25px;
+    background-color: #333;
+    @include transform(scale(1,1.6));
+    @include animation(eye-blink 3s linear infinite);
+  }
+
+  /* First Scene */
+  .scene-first {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    @include animation(
+      fadeOut .5s linear 28.5s forwards,
+      fadeIn .1s linear 114s forwards);
+  }
+  .scene-first {
+    section {
+      position: absolute;
+      top: 0;
+      height: 80%;
+      width: 100%;
+    }
+
+    .flower-wrapper {
+      top: 0;
+      background-color: #FAE0E4;
+      @include animation(
+        slideDown .8s linear 21s forwards,
+        slideUp .8s linear 100s forwards,
+        slideDown .8s linear 114s forwards);
+    }
+
+    .tree-wrapper {
+      top: -80%;
+      background-color: #E0FAE3;
+      @include animation(
+        slideDown .8s linear 21s forwards,
+        slideUp .8s linear 100s forwards,
+        slideDown .8s linear 114s forwards);
+    }
+
+    .cat-wrapper {
+      left: 100%;
+      background-color: #fff176;
+      @include animation(
+        slideLeft .5s ease-out 26s forwards,
+        slideRight .1s linear 100s forwards,
+        slideLeft .5s ease-out 119s forwards);
+    }
+
+    .ground {
+      position: absolute;
+      bottom: 0;
+      height: 20%;
+      width: 100%;
+      background-color: #A67C52;
+    }
+
+    .ground:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60%; /* 80px */
+      @include background(
+        linear-gradient(-25deg, #A67C52 30%, transparent 30%),
+        linear-gradient(25deg, #A67C52 30%, transparent 30%),
+        linear-gradient(-25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%),
+        linear-gradient(25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%));
+      background-size: 100px 72px;
+    }
+    .grass {
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      background-color: #8DC63F;
+    }
+    .grass:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      height: 10px;
+      @include background(
+        linear-gradient(-45deg, transparent 66.6%, #8DC63F 66.67%),
+        linear-gradient(45deg, transparent 66.6%, #8DC63F 66.67%));
+      background-size: 15px 10px;
+    }
+
+    /* Flower Animation */
+    .flower {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 100px;
+      width: 60px;
+      background: url('../img/flower.png') 0px;
+      @include transform(translateX(-50%));
+      @include animation(sprite-flower .5s 1s infinite);
+    }
+    .flower  {
+      .left-eye {
+        top: 29px;
+        left: 22px;
+      }
+      .right-eye {
+        top: 29px;
+        left: 34px;
+      }
+    }
+    .bubble {
+      position: absolute;
+      background: #FFF;
+      border-radius: 50%;
+      opacity: 0;
+      @include transform(translateX(-50%));
+    }
+    .bubble1 {
+      width: 40px;
+      height: 40px;
+      left: 45%;
+      top: 50%;
+      @include animation(
+        fadeIn .5s steps(2) 20.1s forwards,
+        fadeOut .1s steps(2) 28.5s forwards,
+        fadeIn .5s steps(2) 113.1s forwards);
+    }
+    .bubble2 {
+      width: 60px;
+      height: 60px;
+      left: 40%;
+      top: 33%;
+      @include animation(
+        fadeIn .5s steps(2) 20.5s forwards,
+        fadeOut .1s steps(2) 28.5s forwards,
+        fadeIn .5s steps(2) 113.5s forwards);
+    }
+    .bubble3 {
+      width: 80px;
+      height: 80px;
+      left: 45%;
+      top: 10%;
+      @include animation(
+        fadeIn .5s steps(2) 20.8s forwards,
+        fadeOut .1s steps(2) 28.5s forwards,
+        fadeIn .5s steps(2) 113.8s forwards);
+    }
+    /* Tree Animation */
+    .tree {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 240px;
+      width: 120px;
+      background: url('../img/tree.png');
+      @include transform(translateX(-50%));
+    }
+    .tree {
+      .left-eye {
+        top: 99px;
+        left: 45px;
+        width: 10px;
+        height: 10px;
+      }
+      .right-eye {
+        top: 99px;
+        left: 69px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    .wish-tree {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      background-color: #00A513;
+      border: 5px solid #095A00;
+      border-radius: 50%;
+      opacity: 0;
+      @include transform(translateX(-50%));
+    }
+    .wish-tree {
+      .left-eye {
+        top: 54px;
+        left: 59px;
+        width: 10px;
+        height: 10px;
+      }
+      .right-eye {
+        top: 54px;
+        left: 83px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    .wish-tree1 {
+      background-image: url('../img/tree-circle.png');
+      @include animation(
+        fadeIn .5s ease-out 22s forwards,
+        fadeOut .5s ease-out 23s forwards,
+        fadeIn .5s ease-out 115s forwards);
+    }
+    .wish-tree2 {
+      background-image: url('../img/tree-triangle.png');
+      @include animation(
+          fadeIn .5s ease-out 23s forwards,
+          fadeOut .5s ease-out 24s forwards,
+          fadeIn .5s ease-out 116s forwards
+      );
+    }
+    .wish-tree3 {
+      background-image: url('../img/tree-club.png');
+      @include animation(
+        fadeIn .5s ease-out 24s forwards,
+        fadeOut .5s ease-out 25s forwards,
+        fadeIn .5s ease-out 117s forwards);
+    }
+
+    /* Cat Animation */
+    .cat {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 100px;
+      width: 100px;
+      background-color: #FFFF00;
+      @include transform(translateX(-50%));
+    }
+    .bee {
+      position: absolute;
+      left: 50%;
+      bottom: 125px;
+      height: 70px;
+      width: 80px;
+      background-image: url('../img/bee.png');
+      @include transform(translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg));
+      @include animation(
+          bee-wander 1.5s linear 26.5s forwards,
+          bee-wander 1.5s linear 119.5s forwards);
+    }
+    .bee {
+      .left-eye {
+        top: 39px;
+        left: 56px;
+      }
+      .right-eye {
+        top: 39px;
+        left: 68px;
+      }
+    }
+  }
+
+  /* Second Scene */
+  .scene-second {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0%;
+    overflow: hidden;
+    @include transform(translateX(-50%));
+    @include animation(slideInFromCenter .5s ease-out 28s forwards);
+  }
+  .scene-second {
+    section {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .sea {
+      position: absolute;
+      bottom: 0;
+      height: 20%;
+      width: 200%;
+      background-color: #0081f3;
+      @include animation(
+        sea-slideDown 1s ease-out 30s forwards,
+        sea-slideUp .5s ease-in 36s forwards,
+        sea-wave-left 1s linear infinite);
+    }
+    .sea:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -25px;
+      width: 100%;
+      height: 25px;
+      @include background(radial-gradient(circle, transparent 70% ,#0081f3 70%));
+      background-size: 50px 75px;
+      @include transform(scaleY(-1));
+    }
+    .sea-front {
+      position: absolute;
+      bottom: 0;
+      height: 15%;
+      width: 200%;
+      background-color: #0054A6;
+      @include animation(
+        sea-front-slideDown 1s ease-out 30s forwards,
+        sea-front-slideUp .5s ease-in 36s forwards,
+        sea-wave-left .5s linear infinite);
+    }
+    .sea-front:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -25px;
+      width: 100%;
+      height: 25px;
+      @include background(radial-gradient(circle, transparent 70% ,#0054A6 70%));
+      background-size: 50px 75px;
+      @include transform(scaleY(-1));
+    }
+    .turtle-wrapper {
+      background-color: #00BFF3;
+    }
+    .turtle {
+      position: absolute;
+      left: 50%;
+      bottom: 20%;
+      height: 150px;
+      width: 150px;
+      background-color: #90EE90;
+      z-index: 1;
+      @include transform(translateX(-50%));
+      @include animation(
+        turtle-fly 2s ease-in 30s forwards,
+        turtle-dive 2s ease-in 36s forwards);
+    }
+    .cloud {
+      position: absolute;
+      width: 170px;
+      height: 110px;
+      background: url('../img/cloud.png');
+      @include animation(
+        cloud-down 2s ease-out 31s forwards,
+        cloud-left 3.5s linear 33s forwards,
+        cloud-up .5s ease-out 36s forwards);
+    }
+    .cloud {
+      .left-eye {
+        top: 46px;
+        left: 72px;
+        height: 10px;
+        width: 10px;
+      }
+      .right-eye {
+        top: 46px;
+        left: 96px;
+        height: 10px;
+        width: 10px;
+      }
+    }
+    .cloud1 {
+      left: 35%;
+      top: -200px;
+    }
+    .cloud2 {
+      left: 70%;
+      top: -170px;
+    }
+    .cloud3 {
+      left: 55%;
+      top: -195px;
+    }
+    .fish-wrapper {
+      z-index: 1;
+      @include transform(scaleX(-1));
+      @include animation(flip-back .1s linear 48.5s forwards);
+    }
+    .fish {
+      position: absolute;
+      left: 25%;
+      bottom: 15%;
+      width: 150px;
+      height: 100px;
+      background: #e57373;
+      border-right: 10px solid red;
+      opacity: 0;
+      @include transform(translateX(-50%));
+      @include animation(
+        fadeIn .5s ease-in 38.5s forwards,
+        fish-wander 5s linear 39s forwards,
+        fish-wander 5s linear 48.5s forwards);
+      /*fish-flip .5s linear 48s forwards,*/
+      /*fish-wander-left 5s linear 48.5s forwards;*/
+    }
+    .bubble {
+      position: absolute;
+      background: #FFF;
+      border-radius: 50%;
+      opacity: 0;
+      overflow: hidden;
+    }
+    .bubble1 {
+      left: 57%;
+      bottom: 33%;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #A9FFC9;
+      @include animation(
+        fadeIn .8s steps(2) 42s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 51.5s forwards);
+    }
+    .bubble2 {
+      left: 53%;
+      bottom: 38%;
+      width: 50px;
+      height: 50px;
+      border: 5px solid #A9FFC9;
+      @include animation(
+        fadeIn .8s steps(2) 42.4s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 51.9s forwards);
+    }
+    .bubble3 {
+      left: 50%;
+      bottom: 47%;
+      width: 175px;
+      height: 175px;
+      border: 8px solid #A9FFC9;
+      background-color: #F0F8FF;
+      @include transform(translate(-50%));
+      @include animation(
+        fadeIn .8s steps(2) 42.8s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 52.3s forwards,
+        zoom 1s ease-out 56s forwards);
+    }
+    .desert {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background-color: rgb(254, 222, 196);
+    }
+    .cactus {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      width: 40px;
+      height: 90px;
+      @include border-top-radius(19px);
+      background-color: greenyellow;
+      @include transform(translateX(-50%));
+    }
+    .pink-flower {
+      position: absolute;
+      left: 45%;
+      bottom: 120px;
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      border: 2px solid #df0000;
+      background-color: #FFAFF7;
+      @include animation(scaleUp-pink-flower 1s ease-out 43.6s forwards);
+    }
+  }
+}
+
+@include keyframes(fadeIn) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@include keyframes(fadeOut) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@include keyframes(slideInFromCenter) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@include keyframes(slideDown) {
+  100% { @include transform(translateY(100%)); }
+}
+@include keyframes(slideUp ) {
+  100% { @include transform(translateY(-100%)); }
+}
+@include keyframes(slideLeft) {
+  100% { @include transform(translateX(-100%)); }
+}
+@include keyframes(slideRight) {
+  100% { @include transform(translateX(100%)); }
+}
+@include keyframes(bee-wander) {
+  0% { @include transform(translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg)); }
+  100% { @include transform(translate(-50%, 0) rotate(180deg) translate(-100px, 0%) rotate(-180deg)); }
+}
+@include keyframes(bee-wander-backup) {
+  0% { @include transform(rotate(0deg) translate(100px, 0%) rotate(0deg)); }
+  25% { @include transform(rotate(90deg) translate(100px, 0%) rotate(-90deg)); }
+  50% { @include transform(rotate(180deg) translate(100px, 0%) rotate(-180deg)); }
+  75% { @include transform(translate(-300px, 0%) rotate(90deg) translate(-100px, 0%) rotate(-90deg)); }
+  100% { @include transform(translate(-300px, 0%) rotate(180deg) translate(-100px, 0%) rotate(-180deg)); }
+}
+@include keyframes(sea-slideDown) {
+  100% {
+    height: 5%;
+    bottom: -10%;
+  }
+}
+@include keyframes(sea-front-slideDown) {
+  100% {
+    height: 0%;
+    bottom: -10%;
+  }
+}
+@include keyframes(sea-slideUp) {
+  100% {
+    height: 80%;
+    bottom: 0px;
+  }
+}
+@include keyframes(sea-front-slideUp) {
+  100% {
+    height: 75%;
+    bottom: 0px;
+  }
+}
+@include keyframes(sea-wave-left) {
+  100% { @include transform(translateX(-50px)); }
+}
+@include keyframes(turtle-fly) {
+  100% { @include transform(translate(-50%, -200%)); }
+}
+@include keyframes(turtle-dive) {
+  0% {
+    @include transform(translate(-50%, -200%));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate(-50%, 200%));
+    opacity: 0;
+  }
+}
+@include keyframes(cloud-down) {
+  0% { @include transform(translateY(0)); }
+  100% { @include transform(translateY(500px)); }
+}
+@include keyframes(cloud-left) {
+  0% { @include transform(translate(0%, 500px)); }
+  100% { @include transform(translate(-600px, 500px)); }
+}
+@include keyframes(cloud-up) {
+  0% { @include transform(translate(-600px, 500px)); }
+  100% { @include transform(translate(-600px, 0)); }
+}
+@include keyframes(fish-wander) {
+  0% { @include transform(translateX(-50%)); }
+  100% { @include transform(translateX(300%)); }
+}
+@include keyframes(fish-flip) {
+  0% { @include transform(translateX(300%) scaleX(1)); }
+  1% { @include transform(translateX(300%) scaleX(-1)); }
+  100% { @include transform(translateX(300%) scaleX(-1)); }
+}
+@include keyframes(fish-wander-left) {
+  0% { @include transform(translateX(300%) scaleX(-1)); }
+  100% { @include transform(translateX(-50%) scaleX(-1)); }
+}
+@include keyframes(scaleUp-pink-flower) {
+  100% { width: 20px; height: 20px;  }
+}
+@include keyframes(pink-flower-flip-reset) {
+  1%, 100% { width: 1px; height: 1px; left: 45%; }
+}
+@include keyframes(flip-back) {
+  1%, 100% { @include transform(scaleX(1)); }
+}
+@include keyframes(zoom) {
+  1% {
+    border: 0;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    @include transform(translateX(0));
+  }
+}
+@include keyframes(eye-blink) {
+  0% { @include transform(scale(1,1.6)); }
+  2% { @include transform(scale(1,0)); }
+  4% { @include transform(scale(1,0)); }
+  5% { @include transform(scale(1,1.6)); }
+  100% { @include transform(scale(1,1.6)); }
+}

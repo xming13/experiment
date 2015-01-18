@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    background: pink;
+    background: #FAE0E4;
     height: 100%;
     width: 100%;
 }
@@ -91,7 +91,7 @@ body {
 
 .loaded .scene-first .flower-wrapper {
     top: 0;
-    background-color: #f8bbd0;
+    background-color: #FAE0E4;
     -webkit-animation:
         slideDown .8s linear 21s forwards,
         slideUp .8s linear 114s forwards,
@@ -100,7 +100,7 @@ body {
 
 .loaded .scene-first .tree-wrapper {
     top: -80%;
-    background-color: #aed581;
+    background-color: #E0FAE3;
     -webkit-animation:
         slideDown .8s linear 21s forwards,
         slideUp .8s linear 114s forwards,
@@ -211,9 +211,9 @@ body {
     position: absolute;
     left: 50%;
     bottom: 0;
-    height: 220px;
-    width: 150px;
-    background-color: greenyellow;
+    height: 240px;
+    width: 120px;
+    background: url('../img/tree.png');
     transform: translateX(-50%);
 }
 
@@ -223,29 +223,32 @@ body {
     left: 50%;
     width: 150px;
     height: 150px;
-    background: #aed581;
-    border: 5px solid #DDD;
+    background-color: #00A513;
+    border: 5px solid #095A00;
     border-radius: 50%;
     opacity: 0;
     transform: translateX(-50%);
 }
 
 .loaded .scene-first .wish-tree1 {
-    background-color: orange;
-    z-index: 1;
-    -webkit-animation: fadeIn .5s steps(2) 22s forwards;
+    background-image: url('../img/tree-circle.png');
+    -webkit-animation:
+        fadeIn .5s ease-out 22s forwards,
+        fadeOut .5s ease-out 23s forwards;
 }
 
 .loaded .scene-first .wish-tree2 {
-    background-color: red;
-    z-index: 2;
-    -webkit-animation: fadeIn .5s steps(2) 23s forwards;
+    background-image: url('../img/tree-triangle.png');
+    -webkit-animation:
+        fadeIn .5s ease-out 23s forwards,
+        fadeOut .5s ease-out 24s forwards;
 }
 
 .loaded .scene-first .wish-tree3 {
-    background-color: yellow;
-    z-index: 3;
-    -webkit-animation: fadeIn .5s steps(2) 24s forwards;
+    background-image: url('../img/tree-club.png');
+    -webkit-animation:
+        fadeIn .5s ease-out 24s forwards,
+        fadeOut .5s ease-out 25s forwards;
 }
 
 /* Cat Animation */
@@ -351,31 +354,31 @@ body {
     transform: translateX(-50%);
     -webkit-animation:
         turtle-fly 2s ease-in 30s forwards,
-        turtle-dive 2s ease-in 36.5s forwards;
+        turtle-dive 2s ease-in 36s forwards;
 }
 
 .loaded .scene-second .cloud {
     position: absolute;
-    width: 120px;
-    height: 90px;
+    width: 170px;
+    height: 110px;
     background: url('../img/cloud.png');
     -webkit-animation:
-        cloud-fly 2s ease-in 31s forwards,
-        cloud-move 5.5s linear 33s forwards;
-    /*fadeOut .5s ease-in 36s forwards;*/
+        cloud-down 2s ease-out 31s forwards,
+        cloud-left 3.5s linear 33s forwards,
+        cloud-up .5s ease-out 36s forwards;
 }
 
 .loaded .scene-second .cloud1 {
     left: 35%;
-    top: -120px;
+    top: -200px;
 }
 .loaded .scene-second .cloud2 {
     left: 70%;
-    top: -90px;
+    top: -170px;
 }
 .loaded .scene-second .cloud3 {
     left: 55%;
-    top: -115px;
+    top: -195px;
 }
 
 .loaded .scene-second .fish-wrapper {
@@ -542,13 +545,17 @@ body {
     0% { transform: translate(-50%, -200%); }
     100% { transform: translate(-50%, 200%); opacity: 0; }
 }
-@-webkit-keyframes cloud-fly {
+@-webkit-keyframes cloud-down {
     0% { transform: translateY(0); }
-    100% { transform: translateY(400px) }
+    100% { transform: translateY(500px) }
 }
-@-webkit-keyframes cloud-move {
-    0% { transform: translate(0%, 400px); }
-    100% { transform: translate(-600px, 400px); }
+@-webkit-keyframes cloud-left {
+    0% { transform: translate(0%, 500px); }
+    100% { transform: translate(-600px, 500px); }
+}
+@-webkit-keyframes cloud-up {
+    0% { transform: translate(-600px, 500px); }
+    100% { transform: translate(-600px, 0); }
 }
 @-webkit-keyframes fish-wander {
     0% { transform: translateX(-50%); }

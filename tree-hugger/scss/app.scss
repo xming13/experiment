@@ -87,22 +87,22 @@ body {
       background-color: #FAE0E4;
       @include animation(
         slideDown .8s linear 21s forwards,
-        slideUp .8s linear 100s forwards,
+        slideUpCenter .8s linear 100s forwards,
         slideDown .8s linear 114s forwards);
     }
 
     .tree-wrapper {
-      top: -80%;
       background-color: #E0FAE3;
+      @include transform(translateY(-100%));
       @include animation(
-        slideDown .8s linear 21s forwards,
+        slideDownCenter .8s linear 21s forwards,
         slideUp .8s linear 100s forwards,
-        slideDown .8s linear 114s forwards);
+        slideDownCenter .8s linear 114s forwards);
     }
 
     .cat-wrapper {
-      left: 100%;
       background-color: #fff176;
+      @include transform(translateX(100%));
       @include animation(
         slideLeft .5s ease-out 26s forwards,
         slideRight .1s linear 100s forwards,
@@ -541,6 +541,60 @@ body {
           pink-flower-scale-up 1s ease-out 53.1s forwards);
     }
   }
+
+  /* Third Scene */
+  .scene-third {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000025;
+    @include transform(scale(0));
+    @include animation(zoom-out-center 1.5s linear 60s forwards);
+  }
+  .scene-third {
+    section {
+      position: absolute;
+      top: 0;
+      height: 80%;
+      width: 100%;
+    }
+    .snow-ground {
+      position: absolute;
+      bottom: 0;
+      height: 20%;
+      width: 100%;
+      background-color: #FFF;
+    }
+
+    .jackalope {
+      height: 50px;
+      width: 50px;
+      background-color: #CCC;
+      position: absolute;
+      bottom: 0;
+      left: 315px;
+    }
+    .jackalope {
+      .left-eye {
+        top: 10px;
+        left: 20px;
+      }
+      .right-eye {
+        top: 10px;
+        left: 30px;
+      }
+    }
+
+    .shadow {
+      @include transform-origin(bottom);
+      @include transform(scaleY(-1));
+      opacity: 0.3;
+      z-index: 1;
+    }
+  }
 }
 
 @include keyframes(fadeIn) {
@@ -561,8 +615,14 @@ body {
 @include keyframes(slideUp ) {
   100% { @include transform(translateY(-100%)); }
 }
+@include keyframes(slideDownCenter) {
+  100% { @include transform(translateY(0%)); }
+}
+@include keyframes(slideUpCenter) {
+  100% { @include transform(translateY(0%)); }
+}
 @include keyframes(slideLeft) {
-  100% { @include transform(translateX(-100%)); }
+  100% { @include transform(translateX(0%)); }
 }
 @include keyframes(slideRight) {
   100% { @include transform(translateX(100%)); }
@@ -658,8 +718,8 @@ body {
   0% {
     left: 70px;
     bottom: 90px;
-    width: 1px;
-    height: 1px;
+//    width: 1px;
+//    height: 1px;
   }
   100% {
     left: 55px;
@@ -671,7 +731,7 @@ body {
 @include keyframes(pink-flower-reset) {
   1%, 100% {
     left: 70px;
-    bottom: 60px;
+    bottom: 90px;
     width: 1px;
     height: 1px;
   }
@@ -702,7 +762,20 @@ body {
   0% { @include transform(translate(-50%, 0)); }
   100% { @include transform(translate(-50%, -40px)); }
 }
-
+@include keyframes(zoom-out-center) {
+  0% {
+    @include transform(scale(0));
+    border-radius: 50%;
+  }
+  99% {
+    @include transform(scale(0.99));
+    border-radius: 50%;
+  }
+  100% {
+    @include transform(scale(1));
+    border-radius: 0;
+  }
+}
 @include keyframes(eye-blink) {
   0% { @include transform(scale(1,1.6)); }
   2% { @include transform(scale(1,0)); }

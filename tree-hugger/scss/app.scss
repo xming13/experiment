@@ -498,8 +498,10 @@ body {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 40px;
+      height: 80px;
       background-color: rgb(254, 222, 196);
+      @include transform(translateY(40px));
+      @include animation(desert-zoom 1s linear 56s forwards);
     }
     .cactus {
       position: absolute;
@@ -510,6 +512,7 @@ body {
       background-image: url('../img/cactus.png');
 //      background-color: #ACFE2F;
       @include transform(translateX(-50%));
+      @include animation(cactus-zoom 1s linear 56s forwards);
     }
     .cactus {
       .left-eye {
@@ -527,13 +530,11 @@ body {
     }
     .pink-flower {
       position: absolute;
-      left: 55px;
-      bottom: 75px;
+      left: 70px;
+      bottom: 90px;
       width: 1px;
       height: 1px;
-      border-radius: 50%;
-      border: 2px solid #df0000;
-      background-color: #FFAFF7;
+      background: url('../img/cactus-flower.png');
       @include animation(
           pink-flower-scale-up 1s ease-out 43.6s forwards,
           pink-flower-reset .1s linear 48.5s forwards,
@@ -634,19 +635,46 @@ body {
   100% { @include transform(translateX(300%)); }
 }
 @include keyframes(fish-flip) {
-  0% { @include transform(translateX(300%) scaleX(1)); }
-  1% { @include transform(translateX(300%) scaleX(-1)); }
-  100% { @include transform(translateX(300%) scaleX(-1)); }
+  0% {
+    @include transform(translateX(300%)
+    scaleX(1));
+  }
+  1%, 100% {
+    @include transform(translateX(300%)
+    scaleX(-1));
+  }
 }
 @include keyframes(fish-wander-left) {
-  0% { @include transform(translateX(300%) scaleX(-1)); }
-  100% { @include transform(translateX(-50%) scaleX(-1)); }
+  0% {
+    @include transform(translateX(300%)
+    scaleX(-1));
+  }
+  100% {
+    @include transform(translateX(-50%)
+    scaleX(-1));
+  }
 }
 @include keyframes(pink-flower-scale-up) {
-  100% { width: 20px; height: 20px;  }
+  0% {
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px;
+  }
+  100% {
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px;
+  }
 }
 @include keyframes(pink-flower-reset) {
-  1%, 100% { width: 1px; height: 1px; }
+  1%, 100% {
+    left: 70px;
+    bottom: 60px;
+    width: 1px;
+    height: 1px;
+  }
 }
 @include keyframes(flip-back) {
   1%, 100% { @include transform(scaleX(1)); }
@@ -665,6 +693,16 @@ body {
     @include transform(translateX(0));
   }
 }
+
+@include keyframes(desert-zoom) {
+  0% { @include transform(translateY(40px)); }
+  100% { @include transform(translateY(0)); }
+}
+@include keyframes(cactus-zoom) {
+  0% { @include transform(translate(-50%, 0)); }
+  100% { @include transform(translate(-50%, -40px)); }
+}
+
 @include keyframes(eye-blink) {
   0% { @include transform(scale(1,1.6)); }
   2% { @include transform(scale(1,0)); }

@@ -472,8 +472,16 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40px;
-    background-color: #fedec4; }
+    height: 80px;
+    background-color: #fedec4;
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    transform: translateY(40px);
+    -webkit-animation: desert-zoom 1s linear 56s forwards;
+    -moz-animation: desert-zoom 1s linear 56s forwards;
+    animation: desert-zoom 1s linear 56s forwards; }
   .loaded .scene-second .cactus {
     position: absolute;
     left: 50%;
@@ -485,7 +493,10 @@ body {
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    -webkit-animation: cactus-zoom 1s linear 56s forwards;
+    -moz-animation: cactus-zoom 1s linear 56s forwards;
+    animation: cactus-zoom 1s linear 56s forwards; }
   .loaded .scene-second .cactus .left-eye {
     left: 34px;
     top: 40px;
@@ -498,13 +509,11 @@ body {
     width: 10px; }
   .loaded .scene-second .pink-flower {
     position: absolute;
-    left: 55px;
-    bottom: 75px;
+    left: 70px;
+    bottom: 90px;
     width: 1px;
     height: 1px;
-    border-radius: 50%;
-    border: 2px solid #df0000;
-    background-color: #FFAFF7;
+    background: url("../img/cactus-flower.png");
     -webkit-animation: pink-flower-scale-up 1s ease-out 43.6s forwards, pink-flower-reset 0.1s linear 48.5s forwards, pink-flower-scale-up 1s ease-out 53.1s forwards;
     -moz-animation: pink-flower-scale-up 1s ease-out 43.6s forwards, pink-flower-reset 0.1s linear 48.5s forwards, pink-flower-scale-up 1s ease-out 53.1s forwards;
     animation: pink-flower-scale-up 1s ease-out 43.6s forwards, pink-flower-reset 0.1s linear 48.5s forwards, pink-flower-scale-up 1s ease-out 53.1s forwards; }
@@ -880,16 +889,12 @@ body {
 @-webkit-keyframes fish-flip {
   0% {
     -webkit-transform: translateX(300%) scaleX(1); }
-  1% {
-    -webkit-transform: translateX(300%) scaleX(-1); }
-  100% {
+  1%, 100% {
     -webkit-transform: translateX(300%) scaleX(-1); } }
 @-moz-keyframes fish-flip {
   0% {
     -moz-transform: translateX(300%) scaleX(1); }
-  1% {
-    -moz-transform: translateX(300%) scaleX(-1); }
-  100% {
+  1%, 100% {
     -moz-transform: translateX(300%) scaleX(-1); } }
 @keyframes fish-flip {
   0% {
@@ -898,13 +903,7 @@ body {
     -ms-transform: translateX(300%) scaleX(1);
     -o-transform: translateX(300%) scaleX(1);
     transform: translateX(300%) scaleX(1); }
-  1% {
-    -webkit-transform: translateX(300%) scaleX(-1);
-    -moz-transform: translateX(300%) scaleX(-1);
-    -ms-transform: translateX(300%) scaleX(-1);
-    -o-transform: translateX(300%) scaleX(-1);
-    transform: translateX(300%) scaleX(-1); }
-  100% {
+  1%, 100% {
     -webkit-transform: translateX(300%) scaleX(-1);
     -moz-transform: translateX(300%) scaleX(-1);
     -ms-transform: translateX(300%) scaleX(-1);
@@ -934,27 +933,54 @@ body {
     -o-transform: translateX(-50%) scaleX(-1);
     transform: translateX(-50%) scaleX(-1); } }
 @-webkit-keyframes pink-flower-scale-up {
+  0% {
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px; }
   100% {
-    width: 20px;
-    height: 20px; } }
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px; } }
 @-moz-keyframes pink-flower-scale-up {
+  0% {
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px; }
   100% {
-    width: 20px;
-    height: 20px; } }
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px; } }
 @keyframes pink-flower-scale-up {
+  0% {
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px; }
   100% {
-    width: 20px;
-    height: 20px; } }
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px; } }
 @-webkit-keyframes pink-flower-reset {
   1%, 100% {
+    left: 70px;
+    bottom: 60px;
     width: 1px;
     height: 1px; } }
 @-moz-keyframes pink-flower-reset {
   1%, 100% {
+    left: 70px;
+    bottom: 60px;
     width: 1px;
     height: 1px; } }
 @keyframes pink-flower-reset {
   1%, 100% {
+    left: 70px;
+    bottom: 60px;
     width: 1px;
     height: 1px; } }
 @-webkit-keyframes flip-back {
@@ -1007,6 +1033,52 @@ body {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0); } }
+@-webkit-keyframes desert-zoom {
+  0% {
+    -webkit-transform: translateY(40px); }
+  100% {
+    -webkit-transform: translateY(0); } }
+@-moz-keyframes desert-zoom {
+  0% {
+    -moz-transform: translateY(40px); }
+  100% {
+    -moz-transform: translateY(0); } }
+@keyframes desert-zoom {
+  0% {
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    transform: translateY(40px); }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+@-webkit-keyframes cactus-zoom {
+  0% {
+    -webkit-transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, -40px); } }
+@-moz-keyframes cactus-zoom {
+  0% {
+    -moz-transform: translate(-50%, 0); }
+  100% {
+    -moz-transform: translate(-50%, -40px); } }
+@keyframes cactus-zoom {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, -40px);
+    -moz-transform: translate(-50%, -40px);
+    -ms-transform: translate(-50%, -40px);
+    -o-transform: translate(-50%, -40px);
+    transform: translate(-50%, -40px); } }
 @-webkit-keyframes eye-blink {
   0% {
     -webkit-transform: scale(1, 1.6); }

@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
 
     var pop = Popcorn("#audio");
+    pop.load();
 
     var request = new XMLHttpRequest();
     request.open('GET', 'audio/Antsy_Pants_-_Tree_Hugger.txt', true);
@@ -25,31 +26,32 @@ window.addEventListener("load", function () {
             }
             console.log(lrcArr);
 
-            // hide #loading
-            var loading = document.getElementById('loading');
-            loading.style.display = 'none';
+            pop.on('canplay', function() {
+                // hide #loading
+                var loading = document.getElementById('loading');
+                loading.style.display = 'none';
 
-            // show #btn-start
-            var btnStart = document.getElementById('btn-start');
-            btnStart.style.display = '';
+                // show #btn-start
+                var btnStart = document.getElementById('btn-start');
+                btnStart.style.display = '';
 
-            btnStart.addEventListener("click", function() {
-                // hide #btn-start
-                btnStart.style.display = 'none';
+                btnStart.addEventListener("click", function() {
+                    // hide #btn-start
+                    btnStart.style.display = 'none';
 
-                // Add class 'loaded' to container
-                var container = document.getElementsByClassName('container')[0];
-                if (container.classList) {
-                    container.classList.add('loaded');
-                }
-                else {
-                    container.className += ' loaded';
-                }
+                    // Add class 'loaded' to container
+                    var container = document.getElementsByClassName('container')[0];
+                    if (container.classList) {
+                        container.classList.add('loaded');
+                    }
+                    else {
+                        container.className += ' loaded';
+                    }
 
-                // start
-                pop.play();
+                    // start
+                    pop.play();
+                });
             });
-
         } else {
             console.log('request reached server but error is returned.');
         }

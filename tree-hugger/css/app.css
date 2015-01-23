@@ -61,7 +61,7 @@ body {
     width: 6px;
     height: 6px;
     position: absolute;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #333;
     -webkit-transform: scale(1, 1.6);
     -moz-transform: scale(1, 1.6);
@@ -562,10 +562,26 @@ body {
     left: 315px; }
   .loaded .scene-third .jackalope .left-eye {
     top: 10px;
-    left: 20px; }
+    left: 20px;
+    -webkit-transform: scale(1, 1.6);
+    -moz-transform: scale(1, 1.6);
+    -ms-transform: scale(1, 1.6);
+    -o-transform: scale(1, 1.6);
+    transform: scale(1, 1.6);
+    -webkit-animation: eye-blink 3s linear 61.5s infinite;
+    -moz-animation: eye-blink 3s linear 61.5s infinite;
+    animation: eye-blink 3s linear 61.5s infinite; }
   .loaded .scene-third .jackalope .right-eye {
     top: 10px;
-    left: 30px; }
+    left: 30px;
+    -webkit-transform: scale(1, 1.6);
+    -moz-transform: scale(1, 1.6);
+    -ms-transform: scale(1, 1.6);
+    -o-transform: scale(1, 1.6);
+    transform: scale(1, 1.6);
+    -webkit-animation: eye-blink 3s linear 61.5s infinite;
+    -moz-animation: eye-blink 3s linear 61.5s infinite;
+    animation: eye-blink 3s linear 61.5s infinite; }
   .loaded .scene-third .shadow {
     -webkit-transform-origin: bottom;
     -moz-transform-origin: bottom;
@@ -1166,7 +1182,7 @@ body {
     -webkit-transform: scale(0);
     border-radius: 50%; }
   99% {
-    -webkit-transform: scale();
+    -webkit-transform: scale(0.99);
     border-radius: 50%; }
   100% {
     -webkit-transform: scale(1);
@@ -1176,7 +1192,7 @@ body {
     -moz-transform: scale(0);
     border-radius: 50%; }
   99% {
-    -moz-transform: scale();
+    -moz-transform: scale(0.99);
     border-radius: 50%; }
   100% {
     -moz-transform: scale(1);
@@ -1190,11 +1206,11 @@ body {
     transform: scale(0);
     border-radius: 50%; }
   99% {
-    -webkit-transform: scale();
-    -moz-transform: scale();
-    -ms-transform: scale();
-    -o-transform: scale();
-    transform: scale();
+    -webkit-transform: scale(0.99);
+    -moz-transform: scale(0.99);
+    -ms-transform: scale(0.99);
+    -o-transform: scale(0.99);
+    transform: scale(0.99);
     border-radius: 50%; }
   100% {
     -webkit-transform: scale(1);

@@ -58,7 +58,7 @@ body {
     width: 6px;
     height: 6px;
     position: absolute;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #333;
     @include transform(scale(1,1.6));
     @include animation(eye-blink 3s linear infinite);
@@ -581,10 +581,14 @@ body {
       .left-eye {
         top: 10px;
         left: 20px;
+        @include transform(scale(1,1.6));
+        @include animation(eye-blink 3s linear 61.5s infinite);
       }
       .right-eye {
         top: 10px;
         left: 30px;
+        @include transform(scale(1,1.6));
+        @include animation(eye-blink 3s linear 61.5s infinite);
       }
     }
 

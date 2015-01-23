@@ -569,13 +569,20 @@ body {
       background-color: #FFF;
     }
 
+    .shadow {
+      @include transform-origin(bottom);
+      @include transform(scaleY(-1));
+      opacity: 0.3;
+      z-index: 1;
+    }
+
     .jackalope {
+      position: absolute;
+      left: 315px;
+      bottom: 0;
       height: 50px;
       width: 50px;
       background-color: #CCC;
-      position: absolute;
-      bottom: 0;
-      left: 315px;
     }
     .jackalope {
       .left-eye {
@@ -592,11 +599,24 @@ body {
       }
     }
 
-    .shadow {
-      @include transform-origin(bottom);
-      @include transform(scaleY(-1));
+    .snow-ball {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      height: 40px;
+      width: 40px;
+      background-color: #FFF;
+      border-radius: 50%;
+      @include transform(translate(-50%, 0));
+      @include animation(snow-ball-fall 2s ease-in 65s forwards);
+    }
+    .snow-ball.reflect {
+      bottom: -100%;
       opacity: 0.3;
       z-index: 1;
+      @include transform-origin(bottom);
+      @include transform(translate(-50%, 0) scaleY(-1));
+      @include animation(snow-ball-fall-reflect 2s ease-in 65s forwards);
     }
   }
 }
@@ -780,6 +800,29 @@ body {
     border-radius: 0;
   }
 }
+
+@include keyframes(snow-ball-fall) {
+  0% {
+    bottom: 100%;
+    @include transform(translate(-50%, 0) scale(1));
+  }
+  100% {
+    bottom: 0;
+    @include transform(translate(-50%, 0) scale(4));
+  }
+}
+
+@include keyframes(snow-ball-fall-reflect) {
+  0% {
+    bottom: -100%;
+    @include transform(translate(-50%) scale(-1));
+  }
+  100% {
+    bottom: 0;
+    @include transform(translate(-50%) scale(-4));
+  }
+}
+
 @include keyframes(eye-blink) {
   0% { @include transform(scale(1,1.6)); }
   2% { @include transform(scale(1,0)); }

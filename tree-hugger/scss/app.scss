@@ -569,20 +569,15 @@ body {
       background-color: #FFF;
     }
 
-    .shadow {
-      @include transform-origin(bottom);
-      @include transform(scaleY(-1));
-      opacity: 0.3;
-      z-index: 1;
-    }
-
     .jackalope {
       position: absolute;
-      left: 315px;
+      left: -25px;
       bottom: 0;
       height: 50px;
       width: 50px;
-      background-color: #CCC;
+      background-color: #C6886A;
+      @include transform(translateX(-50%));
+      @include animation(jackalope-run 4s linear 61.5s forwards);
     }
     .jackalope {
       .left-eye {
@@ -599,24 +594,31 @@ body {
       }
     }
 
+    .shadow {
+      @include transform-origin(bottom);
+      @include transform(translateX(-50%) scaleY(-1));
+      opacity: 0.3;
+      z-index: 1;
+    }
+
     .snow-ball {
       position: absolute;
       bottom: 100%;
       left: 50%;
       height: 40px;
       width: 40px;
-      background-color: #FFF;
+      background-color: #C5C5C5;
       border-radius: 50%;
-      @include transform(translate(-50%, 0));
-      @include animation(snow-ball-fall 2s ease-in 65s forwards);
+      @include transform-origin(bottom);
+      @include transform(translateX(-50%));
+      @include animation(snow-ball-fall 1s ease-in 65s forwards);
     }
     .snow-ball.reflect {
       bottom: -100%;
       opacity: 0.3;
       z-index: 1;
-      @include transform-origin(bottom);
-      @include transform(translate(-50%, 0) scaleY(-1));
-      @include animation(snow-ball-fall-reflect 2s ease-in 65s forwards);
+      @include transform(translateX(-50%) scaleY(-1));
+      @include animation(snow-ball-fall-reflect 1s ease-in 65s forwards);
     }
   }
 }
@@ -792,7 +794,7 @@ body {
     border-radius: 50%;
   }
   99% {
-    @include transform(scale(0.99));
+    @include transform(scale(2));
     border-radius: 50%;
   }
   100% {
@@ -801,13 +803,17 @@ body {
   }
 }
 
+@include keyframes(jackalope-run) {
+  0% { left: -25px; }
+  100% { left: 50%; }
+}
 @include keyframes(snow-ball-fall) {
   0% {
     bottom: 100%;
     @include transform(translate(-50%, 0) scale(1));
   }
   100% {
-    bottom: 0;
+    bottom: -50px;
     @include transform(translate(-50%, 0) scale(4));
   }
 }
@@ -815,11 +821,13 @@ body {
 @include keyframes(snow-ball-fall-reflect) {
   0% {
     bottom: -100%;
-    @include transform(translate(-50%) scale(-1));
+    border-radius: 50%;
+    @include transform(translate(-50%, 0) scale(-1));
   }
   100% {
-    bottom: 0;
-    @include transform(translate(-50%) scale(-4));
+    bottom: 50px;
+    border-radius: 50%;
+    @include transform(translate(-50%, 0) scale(-4));
   }
 }
 

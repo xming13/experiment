@@ -119,6 +119,25 @@
     @include transform(scaleX(-1));
     @include animation(flip-back .1s linear 48.5s forwards);
   }
+  .sea-grass {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+  }
+  .sea-grass.one {
+    width: 64px;
+    height: 183px;
+    left: 50px;
+    background: url('../img/sea-grass-1.png') 0 0 no-repeat;
+    @include animation(fadeIn 1s ease-in 38.5s forwards);
+  }
+  .sea-grass.two {
+    width: 64px;
+    height: 154px;
+    left: 130px;
+    background: url('../img/sea-grass-2.png') 0 0 no-repeat;
+    @include animation(fadeIn .5s ease-in 38.5s forwards);
+  } 
   .fish {
     position: absolute;
     left: 25%;

@@ -1,0 +1,352 @@
+@import "bourbon/bourbon";
+
+/* Second Scene */
+.scene-second {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  @include transform(translateX(-50%));
+  @include animation(slideInFromCenter .5s ease-out 28s forwards);
+}
+.scene-second {
+  section {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .sea {
+    position: absolute;
+    bottom: 0;
+    height: 20%;
+    width: 200%;
+    background-color: #0081f3;
+    @include animation(
+        sea-slideDown 1s ease-out 30s forwards,
+        sea-slideUp .5s ease-in 36s forwards,
+        sea-wave-left 1s linear infinite);
+  }
+  .sea:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -25px;
+    width: 100%;
+    height: 25px;
+    @include background(radial-gradient(circle, transparent 70% ,#0081f3 70%));
+    background-size: 50px 75px;
+    @include transform(scaleY(-1));
+  }
+  .sea-front {
+    position: absolute;
+    bottom: 0;
+    height: 15%;
+    width: 200%;
+    background-color: #0054A6;
+    @include animation(
+        sea-front-slideDown 1s ease-out 30s forwards,
+        sea-front-slideUp .5s ease-in 36s forwards,
+        sea-wave-left .5s linear infinite);
+  }
+  .sea-front:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -25px;
+    width: 100%;
+    height: 25px;
+    @include background(radial-gradient(circle, transparent 70% ,#0054A6 70%));
+    background-size: 50px 75px;
+    @include transform(scaleY(-1));
+  }
+  .turtle-wrapper {
+    background-color: #00BFF3;
+  }
+  .turtle {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    height: 150px;
+    width: 150px;
+    background-color: #90EE90;
+    z-index: 1;
+    @include transform(translateX(-50%));
+    @include animation(
+        turtle-fly 2s ease-in 30s forwards,
+        turtle-dive 2s ease-in 36s forwards);
+  }
+  .cloud {
+    position: absolute;
+    width: 170px;
+    height: 110px;
+    background: url('../img/cloud.png');
+    @include animation(
+        cloud-down 2s ease-out 31s forwards,
+        cloud-left 3.5s linear 33s forwards,
+        cloud-up .5s ease-out 36s forwards);
+  }
+  .cloud {
+    .left-eye {
+      top: 46px;
+      left: 72px;
+      height: 10px;
+      width: 10px;
+    }
+    .right-eye {
+      top: 46px;
+      left: 96px;
+      height: 10px;
+      width: 10px;
+    }
+  }
+  .cloud1 {
+    left: 35%;
+    top: -200px;
+  }
+  .cloud2 {
+    left: 70%;
+    top: -170px;
+  }
+  .cloud3 {
+    left: 55%;
+    top: -195px;
+  }
+  .fish-wrapper {
+    z-index: 1;
+    @include transform(scaleX(-1));
+    @include animation(flip-back .1s linear 48.5s forwards);
+  }
+  .fish {
+    position: absolute;
+    left: 25%;
+    bottom: 15%;
+    width: 150px;
+    height: 100px;
+    background: #e57373;
+    border-right: 10px solid red;
+    opacity: 0;
+    @include transform(translateX(-50%));
+    @include animation(
+        fadeIn .5s ease-in 38.5s forwards,
+        fish-wander 5s linear 39s forwards,
+        fish-wander 5s linear 48.5s forwards);
+    /*fish-flip .5s linear 48s forwards,*/
+    /*fish-wander-left 5s linear 48.5s forwards;*/
+  }
+  .bubble {
+    position: absolute;
+    background: #FFF;
+    border-radius: 50%;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .bubble1 {
+    left: 57%;
+    bottom: 33%;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #A9FFC9;
+    @include animation(
+        fadeIn .8s steps(2) 42s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 51.5s forwards);
+  }
+  .bubble2 {
+    left: 53%;
+    bottom: 38%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #A9FFC9;
+    @include animation(
+        fadeIn .8s steps(2) 42.4s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 51.9s forwards);
+  }
+  .bubble3 {
+    left: 50%;
+    bottom: 47%;
+    width: 175px;
+    height: 175px;
+    border: 8px solid #A9FFC9;
+    background-color: #F0F8FF;
+    @include transform(translate(-50%));
+    @include animation(
+        fadeIn .8s steps(2) 42.8s forwards,
+        fadeOut .1s linear 48s forwards,
+        fadeIn .8s steps(2) 52.3s forwards,
+        zoom 1s linear 56s forwards);
+  }
+  .desert {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(254, 222, 196);
+    @include transform(translateY(40px));
+    @include animation(desert-zoom 1s linear 56s forwards);
+  }
+  .cactus {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/cactus.png');
+    //      background-color: #ACFE2F;
+    @include transform(translateX(-50%));
+    @include animation(cactus-zoom 1s linear 56s forwards);
+  }
+  .cactus {
+    .left-eye {
+      left: 34px;
+      top: 40px;
+      height: 10px;
+      width: 10px;
+    }
+    .right-eye {
+      left: 58px;
+      top: 40px;
+      height: 10px;
+      width: 10px;
+    }
+  }
+  .pink-flower {
+    position: absolute;
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px;
+    background: url('../img/cactus-flower.png');
+    @include animation(
+        pink-flower-scale-up 1s ease-out 43.6s forwards,
+        pink-flower-reset .1s linear 48.5s forwards,
+        pink-flower-scale-up 1s ease-out 53.1s forwards);
+  }
+}
+
+@include keyframes(sea-slideDown) {
+  100% {
+    height: 5%;
+    bottom: -10%;
+  }
+}
+@include keyframes(sea-front-slideDown) {
+  100% {
+    height: 0%;
+    bottom: -10%;
+  }
+}
+@include keyframes(sea-slideUp) {
+  100% {
+    height: 80%;
+    bottom: 0px;
+  }
+}
+@include keyframes(sea-front-slideUp) {
+  100% {
+    height: 75%;
+    bottom: 0px;
+  }
+}
+@include keyframes(sea-wave-left) {
+  100% { @include transform(translateX(-50px)); }
+}
+@include keyframes(turtle-fly) {
+  100% { @include transform(translate(-50%, -200%)); }
+}
+@include keyframes(turtle-dive) {
+  0% {
+    @include transform(translate(-50%, -200%));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate(-50%, 200%));
+    opacity: 0;
+  }
+}
+@include keyframes(cloud-down) {
+  0% { @include transform(translateY(0)); }
+  100% { @include transform(translateY(500px)); }
+}
+@include keyframes(cloud-left) {
+  0% { @include transform(translate(0%, 500px)); }
+  100% { @include transform(translate(-600px, 500px)); }
+}
+@include keyframes(cloud-up) {
+  0% { @include transform(translate(-600px, 500px)); }
+  100% { @include transform(translate(-600px, 0)); }
+}
+@include keyframes(fish-wander) {
+  0% { @include transform(translateX(-50%)); }
+  100% { @include transform(translateX(300%)); }
+}
+@include keyframes(fish-flip) {
+  0% {
+    @include transform(translateX(300%)
+    scaleX(1));
+  }
+  1%, 100% {
+    @include transform(translateX(300%)
+    scaleX(-1));
+  }
+}
+@include keyframes(fish-wander-left) {
+  0% {
+    @include transform(translateX(300%)
+    scaleX(-1));
+  }
+  100% {
+    @include transform(translateX(-50%)
+    scaleX(-1));
+  }
+}
+@include keyframes(pink-flower-scale-up) {
+  0% {
+    left: 70px;
+    bottom: 90px;
+    //    width: 1px;
+    //    height: 1px;
+  }
+  100% {
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px;
+  }
+}
+@include keyframes(pink-flower-reset) {
+  1%, 100% {
+    left: 70px;
+    bottom: 90px;
+    width: 1px;
+    height: 1px;
+  }
+}
+@include keyframes(flip-back) {
+  1%, 100% { @include transform(scaleX(1)); }
+}
+@include keyframes(zoom) {
+  1% {
+    border: 0;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    @include transform(translateX(0));
+  }
+}
+@include keyframes(desert-zoom) {
+  0% { @include transform(translateY(40px)); }
+  100% { @include transform(translateY(0)); }
+}
+@include keyframes(cactus-zoom) {
+  0% { @include transform(translate(-50%, 0)); }
+  100% { @include transform(translate(-50%, -40px)); }
+}

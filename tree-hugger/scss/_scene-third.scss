@@ -85,8 +85,8 @@
     @include transform(scale(0));
     border-radius: 50%;
   }
-  99% {
-    @include transform(scale(2));
+  80% {
+    @include transform(scale(1));
     border-radius: 50%;
   }
   100% {

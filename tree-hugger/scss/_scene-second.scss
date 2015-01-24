@@ -45,7 +45,7 @@
     bottom: 0;
     height: 15%;
     width: 200%;
-    background-color: #0054A6;
+    background-color: #02315F;
     @include animation(
         sea-front-slideDown 1s ease-out 30s forwards,
         sea-front-slideUp .5s ease-in 36s forwards,
@@ -58,7 +58,7 @@
     top: -25px;
     width: 100%;
     height: 25px;
-    @include background(radial-gradient(circle, transparent 70% ,#0054A6 70%));
+    @include background(radial-gradient(circle, transparent 70% ,#02315F 70%));
     background-size: 50px 75px;
     @include transform(scaleY(-1));
   }
@@ -135,6 +135,60 @@
         fish-wander 5s linear 48.5s forwards);
     /*fish-flip .5s linear 48s forwards,*/
     /*fish-wander-left 5s linear 48.5s forwards;*/
+  }
+
+  .fishes-small {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include animation(
+        fadeIn .5s ease-in 38.5s forwards,
+        fishes-small-move 9.5s linear 38.5s forwards,
+        fishes-small-move 9.5s linear 48s forwards);
+  }
+  .fishes-small {
+    .fish-small {
+      position: absolute;
+      height: 18px;
+      width: 54px;
+    }
+    .fish-small-1 {
+      background-image: url('../img/fish-small-1.png');
+    }
+    .fish-small-1.one {
+      top: 45px;
+      left: 279px;
+    }
+    .fish-small-1.two {
+      top: 135px;
+      left: 306px;
+    }
+    .fish-small-1.three {
+      top: 81px;
+      left: 424px;
+    }
+    .fish-small-2 {
+      background-image: url('../img/fish-small-2.png');
+    }
+    .fish-small-2.one {
+      top: 81px;
+      left: 216px;
+    }
+    .fish-small-2.two {
+      top: 81px;
+      left: 360px;
+    }
+    .fish-small-2.three {
+      top: 45px;
+      left: 392px;
+    }
+    .fish-small-2.four {
+      top: 117px;
+      left: 392px;
+    }
   }
   .bubble {
     position: absolute;
@@ -284,24 +338,16 @@
   100% { @include transform(translateX(300%)); }
 }
 @include keyframes(fish-flip) {
-  0% {
-    @include transform(translateX(300%)
-    scaleX(1));
-  }
-  1%, 100% {
-    @include transform(translateX(300%)
-    scaleX(-1));
-  }
+  0% { @include transform(translateX(300%) scaleX(1)); }
+  1%, 100% { @include transform(translateX(300%) scaleX(-1)); }
 }
 @include keyframes(fish-wander-left) {
-  0% {
-    @include transform(translateX(300%)
-    scaleX(-1));
-  }
-  100% {
-    @include transform(translateX(-50%)
-    scaleX(-1));
-  }
+  0% { @include transform(translateX(300%) scaleX(-1)); }
+  100% { @include transform(translateX(-50%) scaleX(-1)); }
+}
+@include keyframes(fishes-small-move) {
+  0% { @include transform(translateX(100%)); }
+  100% { @include transform(translateX(-100%)); }
 }
 @include keyframes(pink-flower-scale-up) {
   0% {

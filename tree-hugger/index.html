@@ -16,7 +16,7 @@
 <body>
 
 <div class="content">
-    <audio id="audio" src="audio/Antsy_Pants_-_Tree_Hugger.mp3"></audio>
+    <audio id="audio" src="audio/Antsy_Pants_-_Tree_Hugger.mp3" preload="none"></audio>
     <div class="container">
         <div class="lyrics-wrapper">
             <div id="lyrics"></div>
@@ -41,7 +41,6 @@
                     <span class="left-eye"></span>
                     <span class="right-eye"></span>
                 </span>
-
                 <span class="wish-tree wish-tree1">
                     <span class="left-eye"></span>
                     <span class="right-eye"></span>
@@ -64,6 +63,7 @@
             </section>
             <div class="ground">
                 <div class="grass"></div>
+                <div class="earth"></div>
             </div>
         </div>
         <div class="scene-second">
@@ -83,10 +83,6 @@
                 </span>
             </section>
             <section class="fish-wrapper">
-                <span class="sea-grass one"></span>
-                <span class="sea-grass two"></span>
-                <span class="fish"></span>
-
                 <span class="fishes-small">
                     <span class="fish-small fish-small-1 one"></span>
                     <span class="fish-small fish-small-1 two"></span>
@@ -96,6 +92,8 @@
                     <span class="fish-small fish-small-2 three"></span>
                     <span class="fish-small fish-small-2 four"></span>
                 </span>
+
+                <span class="fish"></span>
                 <span class="bubble bubble1"></span>
                 <span class="bubble bubble2"></span>
                 <span class="bubble bubble3">
@@ -107,9 +105,21 @@
                     </span>
                 </span>
             </section>
-            <div class="sea">
-            </div>
-            <div class="sea-front">
+            <section class="sea-lives">
+                <span class="sea-grass one"></span>
+                <span class="sea-grass two"></span>
+
+                <span class="sea-grass-bubble sea-grass-bubble-1 one"></span>
+                <span class="sea-grass-bubble sea-grass-bubble-1 two"></span>
+                <span class="sea-grass-bubble sea-grass-bubble-1 three"></span>
+
+                <span class="sea-grass-bubble sea-grass-bubble-2 one"></span>
+                <span class="sea-grass-bubble sea-grass-bubble-2 two"></span>
+                <span class="sea-grass-bubble sea-grass-bubble-2 three"></span>
+            </section>
+            <div class="sea-layers">
+                <span class="sea-layer sea-layer-1"></span>
+                <span class="sea-layer sea-layer-2"></span>
             </div>
         </div>
         <div class="scene-third">
@@ -138,9 +148,7 @@
             </div>
         </div>
     </div>
-    <!-- #container -->
-
-    <!--<div class="flick flick-working"></div>-->
+    <!-- container -->
 </div>
 
 <script type="text/javascript" src="js/popcorn-complete.min.js"></script>

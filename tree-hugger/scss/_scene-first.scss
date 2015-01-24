@@ -11,13 +11,13 @@
       fadeIn .1s linear 114s forwards);
 }
 .scene-first {
+  /* Sections */
   section {
     position: absolute;
     top: 0;
     height: 80%;
     width: 100%;
   }
-
   .flower-wrapper {
     top: 0;
     background-color: #FAE0E4;
@@ -26,7 +26,6 @@
         slideUpCenter .8s linear 100s forwards,
         slideDown .8s linear 114s forwards);
   }
-
   .tree-wrapper {
     background-color: #E0FAE3;
     @include transform(translateY(-100%));
@@ -35,7 +34,6 @@
         slideUp .8s linear 100s forwards,
         slideDownCenter .8s linear 114s forwards);
   }
-
   .cat-wrapper {
     background-color: #fff176;
     @include transform(translateX(100%));
@@ -45,27 +43,13 @@
         slideLeft .5s ease-out 119s forwards);
   }
 
+  /* Ground */
   .ground {
     position: absolute;
     bottom: 0;
     height: 20%;
     width: 100%;
     background-color: #A67C52;
-  }
-
-  .ground:after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60%; /* 80px */
-    @include background(
-        linear-gradient(-25deg, #A67C52 30%, transparent 30%),
-        linear-gradient(25deg, #A67C52 30%, transparent 30%),
-        linear-gradient(-25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%),
-        linear-gradient(25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%));
-    background-size: 100px 72px;
   }
   .grass {
     position: absolute;
@@ -85,8 +69,21 @@
         linear-gradient(45deg, transparent 66.6%, #8DC63F 66.67%));
     background-size: 15px 10px;
   }
+  .earth {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%; /* Fallback (80px) */
+    @include calc(height, "70% - 15px");
+    @include background(
+        linear-gradient(-25deg, #A67C52 30%, transparent 30%),
+        linear-gradient(25deg, #A67C52 30%, transparent 30%),
+        linear-gradient(-25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%),
+        linear-gradient(25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%));
+    background-size: 100px 72px;
+  }
 
-  /* Flower Animation */
+  /* Flower */
   .flower {
     position: absolute;
     left: 50%;
@@ -144,7 +141,8 @@
         fadeOut .1s steps(2) 28.5s forwards,
         fadeIn .5s steps(2) 113.8s forwards);
   }
-  /* Tree Animation */
+
+  /* Tree */
   .tree {
     position: absolute;
     left: 50%;
@@ -217,7 +215,7 @@
         fadeIn .5s ease-out 117s forwards);
   }
 
-  /* Cat Animation */
+  /* Cat */
   .cat {
     position: absolute;
     left: 50%;
@@ -251,6 +249,7 @@
   }
 }
 
+/* Animation Keyframes */
 @include keyframes(fadeIn) {
   0% { opacity: 0; }
   100% { opacity: 1; }

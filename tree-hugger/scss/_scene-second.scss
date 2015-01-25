@@ -182,17 +182,32 @@ $scene-second-reverse: 100s;
     position: absolute;
     bottom: 0;
   }
-  .sea-grass.one {
+  .sea-grass-1 {
     width: 64px;
     height: 183px;
     left: 50px;
     background: url('../img/sea-grass-1.png') 0 0 no-repeat;
   }
-  .sea-grass.two {
+  .sea-grass-2 {
     width: 64px;
     height: 154px;
     left: 130px;
     background: url('../img/sea-grass-2.png') 0 0 no-repeat;
+  }
+  .sea-grass-3 {
+    width: 84px;
+    height: 180px;
+    right: 50px;
+    background: url('../img/sea-grass-3.png') 0 0 no-repeat;
+    opacity: 0.5;
+    @include animation(sea-grass-3 1s linear infinite);
+  }
+  .sea-grass-4 {
+    width: 84px;
+    height: 110px;
+    right: 100px;
+    background: url('../img/sea-grass-3.png') 0 0 no-repeat;
+    @include animation(sea-grass-3 1s linear infinite);
   }
   .sea-grass-bubble {
     position: absolute;
@@ -221,17 +236,17 @@ $scene-second-reverse: 100s;
   .sea-grass-bubble-1.two,
   .sea-grass-bubble-2.two {
     @include animation(
-        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 11.5s) 4,
+        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 10.5s) 4,
         sea-grass-bubble .1s ease-in ($scene-second-reverse) reverse 4,
-        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 11.5s) 4
+        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 10.5s) 4
     );
   }
   .sea-grass-bubble-1.three,
   .sea-grass-bubble-2.three {
     @include animation(
-        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 12.5s) 4,
+        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 11.5s) 4,
         sea-grass-bubble .1s ease-in ($scene-second-reverse) reverse 4,
-        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 12.5s) 4
+        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 11.5s) 4
     );
   }
 
@@ -513,6 +528,10 @@ $scene-second-reverse: 100s;
   0% { @include transform(translate(-600px, 500px)); }
   100% { @include transform(translate(-600px, 0)); }
 }
+@include keyframes(sea-grass-3) {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -90px; }
+}
 @include keyframes(sea-grass-bubble) {
   0% {
     @include transform(translate(0) scale(0));
@@ -544,7 +563,7 @@ $scene-second-reverse: 100s;
 }
 @include keyframes(pink-flower-in) {
   0% { @include transform(scale(0)); }
-  80% { @include transform(scale(1.4)); }
+  80% { @include transform(scale(1.5)); }
   100% { @include transform(scale(1)); }
 }
 @include keyframes(pink-flower-out) {

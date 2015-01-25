@@ -27,7 +27,6 @@ $scene-second-reverse: 100s;
 
   /* Sea Layers */
   .sea-layers {
-    background: red;
     position: absolute;
     bottom: 0;
     height: 100%;
@@ -150,11 +149,10 @@ $scene-second-reverse: 100s;
   /* Sea Lives Wrapper */
   .sea-lives-wrapper {
     z-index: 1;
-
   }
   .sea-lives {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -168,13 +166,109 @@ $scene-second-reverse: 100s;
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 30px;
+    height: 40px;
     background: #A96747;
     opacity: 0;
     @include animation(
         fadeIn .5s ease-in ($scene-second-start-1 + 6.5s) forwards,
         fadeIn .1s ease-in ($scene-second-reverse) reverse forwards,
         fadeIn .5s ease-in ($scene-second-start-2 + 6.5s) forwards
+    );
+  }
+
+  .fishes-slow {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include animation(
+        fadeIn .5s ease-in ($scene-second-start-1 + 8.5s) forwards,
+        fishes-slow-move 17s ease-in ($scene-second-start-1 + 8.5s) forwards,
+
+        fishes-slow-move .1s ease-in ($scene-second-reverse) reverse forwards,
+        fadeIn .1s ease-in ($scene-second-reverse + .1s) reverse forwards,
+
+        fadeIn .5s ease-in ($scene-second-start-2 + 8.5s) forwards,
+        fishes-slow-move 17s ease-in ($scene-second-start-2 + 8.5s) forwards
+    );
+  }
+  .fish-slow {
+    position: absolute;
+    height: 18px;
+    width: 54px;
+    background-image: url('../img/fish-small-2.png');
+    opacity: 0.5;
+    @include transform(scaleX(-1));
+  }
+  .fish-slow-1 {
+    top: 238px;
+    right: 0px;
+  }
+  .fish-slow-2 {
+    top: 202px;
+    right: 44px;
+  }
+  .fish-slow-3 {
+    top: 238px;
+    right: 88px;
+  }
+
+  .clam-top {
+    position: absolute;
+    bottom: 18px;
+    right: 200px;
+    width: 130px;
+    height: 50px;
+    background: url('../img/clam-top.png') 0 0 no-repeat;
+    @include animation(
+        claim-top-up 1s ease-out ($scene-second-start-1 + 11s) forwards,
+        claim-top-down .5s ease-out ($scene-second-start-1 + 22s) forwards,
+
+        claim-top-down .1s ease-out ($scene-second-reverse) reverse forwards,
+        claim-top-up .1s ease-out ($scene-second-reverse + .1s) reverse forwards,
+
+        claim-top-up 1s ease-out ($scene-second-start-2 + 11s) forwards,
+        claim-top-down .5s ease-out ($scene-second-start-2 + 22s) forwards
+    );
+
+    .left-eye {
+      top: 15px;
+      left: 47px;
+      width: 8px;
+      height: 8px;
+    }
+    .right-eye {
+      top: 15px;
+      left: 75px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .clam-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 199px;
+    width: 130px;
+    height: 41px;
+    background: url('../img/clam-bottom.png') 0 0 no-repeat;
+  }
+  .pearl {
+    position: absolute;
+    bottom: 22px;
+    right: 245px;
+    width: 45px;
+    height: 45px;
+    background: #FFFF97;
+    border-radius: 50%;
+    opacity: 0;
+    @include animation(
+        pearl-shining 1.5s linear ($scene-second-start-1 + 11.5s) alternate infinite,
+        fadeIn .5s ease-out ($scene-second-start-1 + 11.5s) forwards,
+        fadeOut .5s ease-out ($scene-second-start-1 + 22s) forwards,
+
+        fadeIn .5s ease-out ($scene-second-start-2 + 11.5s) forwards,
+        fadeOut .5s ease-out ($scene-second-start-2 + 22s) forwards
     );
   }
 
@@ -545,6 +639,24 @@ $scene-second-reverse: 100s;
     opacity: 0;
   }
 }
+@include keyframes(claim-top-up) {
+  0% { @include transform(translateY(0)); }
+  100% { @include transform(translateY(-40px)); }
+}
+@include keyframes(claim-top-down) {
+  0% { @include transform(translateY(-40px)); }
+  100% { @include transform(translateY(0)); }
+}
+@include keyframes(pearl-shining) {
+  0% {
+    opacity: 0.7;
+    box-shadow: 0px 0px 10px 3px #fcff00;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0px 0px 20px 5px #f0f400;
+  }
+}
 @include keyframes(fish-move) {
   0% { @include transform(translateX(-50%)); }
   100% { @include transform(translateX(300%)); }
@@ -552,6 +664,10 @@ $scene-second-reverse: 100s;
 @include keyframes(fishes-small-move) {
   0% { @include transform(translateX(100%)); }
   100% { @include transform(translateX(-100%)); }
+}
+@include keyframes(fishes-slow-move) {
+  0% { @include transform(translateX(-100%)); }
+  100% { @include transform(translateX(142px)); }
 }
 @include keyframes(bubble-in) {
   0% { @include transform(translateX(-50%) scale(0)); }

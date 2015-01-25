@@ -44,10 +44,11 @@ body {
     left: 50%;
     height: 144px;
     width: 200px;
-    background: #DBFF00;
+    background: #FF6BA7;
+    color: #FFF;
     font-size: 32px;
     line-height: 144px;
-    border-radius: 20px;
+    border-radius: 50%;
     text-align: center;
     @include transform(translate(-50%, -50%));
     cursor: pointer;

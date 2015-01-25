@@ -111,12 +111,10 @@
 @include keyframes(snow-ball-fall-reflect) {
   0% {
     bottom: -100%;
-    border-radius: 50%;
     @include transform(translate(-50%, 0) scale(-1));
   }
   100% {
     bottom: 50px;
-    border-radius: 50%;
     @include transform(translate(-50%, 0) scale(-4));
   }
 }

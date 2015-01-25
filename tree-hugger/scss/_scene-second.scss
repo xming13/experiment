@@ -118,28 +118,43 @@
     top: -195px;
   }
 
-  /* Sea Lives */
-  .sea-lives {
+  /* Sea Lives Wrapper */
+  .sea-lives-wrapper {
     z-index: 1;
+
+  }
+  .sea-lives {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include animation(fadeIn 1s ease-in 38.5s forwards);
+  }
+  .sea-bed {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    background: #A96747;
+    opacity: 0;
+    @include animation(fadeIn .5s ease-in 36s forwards);
   }
   .sea-grass {
     position: absolute;
     bottom: 0;
-    opacity: 0;
   }
   .sea-grass.one {
     width: 64px;
     height: 183px;
     left: 50px;
     background: url('../img/sea-grass-1.png') 0 0 no-repeat;
-    @include animation(fadeIn 1s ease-in 38.5s forwards);
   }
   .sea-grass.two {
     width: 64px;
     height: 154px;
     left: 130px;
     background: url('../img/sea-grass-2.png') 0 0 no-repeat;
-    @include animation(fadeIn 1s ease-in 38.5s forwards);
   }
   .sea-grass-bubble {
     position: absolute;
@@ -159,8 +174,7 @@
   }
   .sea-grass-bubble-1.one,
   .sea-grass-bubble-2.one {
-    @include animation(
-        sea-grass-bubble 4s ease-in 39.5s 4);
+    @include animation(sea-grass-bubble 4s ease-in 39.5s 4);
   }
   .sea-grass-bubble-1.two,
   .sea-grass-bubble-2.two {
@@ -181,10 +195,9 @@
     position: absolute;
     left: 25%;
     bottom: 15%;
-    width: 150px;
+    width: 160px;
     height: 100px;
-    background: #e57373;
-    border-right: 10px solid red;
+    background-image: url('../img/fish.png');
     opacity: 0;
     @include transform(translateX(-50%));
     @include animation(
@@ -248,30 +261,31 @@
     position: absolute;
     background: #FFF;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
+    @include transform(translateX(-50%) scale(0));
   }
   .bubble1 {
-    left: 57%;
+    left: 60%;
     bottom: 33%;
     width: 30px;
     height: 30px;
     border: 2px solid #A9FFC9;
     @include animation(
-        fadeIn .8s steps(2) 42s forwards,
-        fadeOut .1s linear 48s forwards,
-        fadeIn .8s steps(2) 51.5s forwards);
+        bubble-up .8s ease-in 42s forwards,
+        bubble-down .1s linear 48s forwards,
+        bubble-up .8s ease-in 51.5s forwards);
   }
   .bubble2 {
-    left: 53%;
+    left: 56%;
     bottom: 38%;
     width: 50px;
     height: 50px;
     border: 5px solid #A9FFC9;
     @include animation(
-        fadeIn .8s steps(2) 42.4s forwards,
-        fadeOut .1s linear 48s forwards,
-        fadeIn .8s steps(2) 51.9s forwards);
+        bubble-up .8s ease-in 42.4s forwards,
+        bubble-down .1s linear 48s forwards,
+        bubble-up .8s ease-in 51.9s forwards);
   }
   .bubble3 {
     left: 50%;
@@ -280,11 +294,10 @@
     height: 175px;
     border: 8px solid #A9FFC9;
     background-color: #F0F8FF;
-    @include transform(translate(-50%));
     @include animation(
-        fadeIn .8s steps(2) 42.8s forwards,
-        fadeOut .1s linear 48s forwards,
-        fadeIn .8s steps(2) 52.3s forwards,
+        bubble-up .8s ease-in 42.8s forwards,
+        bubble-down .1s linear 48s forwards,
+        bubble-up .8s ease-in 52.3s forwards,
         bubble-zoom 1s linear 56s forwards);
   }
   .desert {
@@ -304,7 +317,7 @@
     height: 100px;
     background-image: url('../img/cactus.png');
     //      background-color: #ACFE2F;
-    @include transform(translateX(-50%));
+    @include transform(translateX(-50%) scale(1));
     @include animation(cactus-zoom 1s linear 56s forwards);
   }
   .cactus {
@@ -313,25 +326,30 @@
       top: 40px;
       height: 10px;
       width: 10px;
+      @include transform(scale(1,1.6));
+      @include animation(eye-blink 3s linear 43.6s infinite);
     }
     .right-eye {
       left: 58px;
       top: 40px;
       height: 10px;
       width: 10px;
+      @include transform(scale(1,1.6));
+      @include animation(eye-blink 3s linear 43.6s infinite);
     }
   }
   .pink-flower {
     position: absolute;
-    left: 70px;
-    bottom: 90px;
-    width: 1px;
-    height: 1px;
+    left: 55px;
+    bottom: 75px;
+    width: 30px;
+    height: 30px;
     background: url('../img/cactus-flower.png');
+    @include transform(scale(0));
     @include animation(
-        pink-flower-scale-up 1s ease-out 43.6s forwards,
-        pink-flower-reset .1s linear 48.5s forwards,
-        pink-flower-scale-up 1s ease-out 53.1s forwards);
+        pink-flower-up 1s ease-out 43.6s forwards,
+        pink-flower-down .1s linear 48.5s forwards,
+        pink-flower-up 1s ease-out 53.1s forwards);
   }
 }
 
@@ -393,27 +411,21 @@
   0% { @include transform(translateX(100%)); }
   100% { @include transform(translateX(-100%)); }
 }
-@include keyframes(pink-flower-scale-up) {
-  0% {
-    left: 70px;
-    bottom: 90px;
-    //    width: 1px;
-    //    height: 1px;
-  }
-  100% {
-    left: 55px;
-    bottom: 75px;
-    width: 30px;
-    height: 30px;
-  }
+@include keyframes(bubble-up) {
+  0% { @include transform(translateX(-50%) scale(0)); }
+  100% { @include transform(translateX(-50%) scale(1)); }
 }
-@include keyframes(pink-flower-reset) {
-  1%, 100% {
-    left: 70px;
-    bottom: 90px;
-    width: 1px;
-    height: 1px;
-  }
+@include keyframes(bubble-down) {
+  0% { @include transform(translateX(-50%) scale(1)); }
+  100% { @include transform(translateX(-50%) scale(0)); }
+}
+@include keyframes(pink-flower-up) {
+  0% { @include transform(scale(0)); }
+  100% { @include transform(scale(1)); }
+}
+@include keyframes(pink-flower-down) {
+  0% { @include transform(scale(1)); }
+  100% { @include transform(scale(0)); }
 }
 @include keyframes(fish-wrapper-flip) {
   1%, 100% { @include transform(scaleX(1)); }
@@ -421,6 +433,7 @@
 @include keyframes(bubble-zoom) {
   1% {
     border: 0;
+    @include transform(translateX(-50%) scale(1));
   }
   100% {
     left: 0;
@@ -429,7 +442,7 @@
     height: 100%;
     border: 0;
     border-radius: 0;
-    @include transform(translateX(0));
+    @include transform(translateX(0) scale(1));
   }
 }
 @include keyframes(desert-zoom) {

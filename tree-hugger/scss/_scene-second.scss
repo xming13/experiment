@@ -9,9 +9,8 @@
   width: 0%;
   overflow: hidden;
   @include transform(translateX(-50%));
-  @include animation(slideInFromCenter .5s ease-out 28s forwards);
-}
-.scene-second {
+  @include animation(scene-second-center-in .5s ease-out 29s forwards);
+
   section {
     position: absolute;
     height: 100%;
@@ -27,8 +26,8 @@
     width: 100%;
     @include transform(translateY(80%));
     @include animation(
-      sea-layers-down 1s ease-out 30s forwards,
-      sea-layers-up .5s ease-in 36s forwards);
+        sea-layers-down 1s ease-out 30s forwards,
+        sea-layers-up .5s ease-in 36s forwards);
   }
   .sea-layer {
     position: absolute;
@@ -90,8 +89,7 @@
         cloud-down 2s ease-out 31s forwards,
         cloud-left 3.5s linear 33s forwards,
         cloud-up .5s ease-out 36s forwards);
-  }
-  .cloud {
+
     .left-eye {
       top: 46px;
       left: 72px;
@@ -140,6 +138,7 @@
     opacity: 0;
     @include animation(fadeIn .5s ease-in 36s forwards);
   }
+
   .sea-grass {
     position: absolute;
     bottom: 0;
@@ -202,9 +201,10 @@
     @include transform(translateX(-50%));
     @include animation(
         fadeIn .5s ease-in 38.5s forwards,
-        fish-move 5s linear 39s forwards,
-        fish-move 5s linear 48.5s forwards);
+        fish-move 5.5s linear 39s forwards,
+        fish-move 5.5s linear 48.5s forwards);
   }
+
   .fishes-small {
     position: absolute;
     top: 25%;
@@ -257,7 +257,7 @@
     left: 392px;
   }
 
-  .bubble {
+  .fish-bubble {
     position: absolute;
     background: #FFF;
     border-radius: 50%;
@@ -265,29 +265,29 @@
     overflow: hidden;
     @include transform(translateX(-50%) scale(0));
   }
-  .bubble1 {
+  .fish-bubble-1 {
     left: 60%;
     bottom: 33%;
     width: 30px;
     height: 30px;
     border: 2px solid #A9FFC9;
     @include animation(
-        bubble-up .8s ease-in 42s forwards,
-        bubble-down .1s linear 48s forwards,
-        bubble-up .8s ease-in 51.5s forwards);
+        bubble-in 1s ease-in 42s forwards,
+        bubble-out .1s linear 48s forwards,
+        bubble-in 1s ease-in 51.5s forwards);
   }
-  .bubble2 {
+  .fish-bubble-2 {
     left: 56%;
     bottom: 38%;
     width: 50px;
     height: 50px;
     border: 5px solid #A9FFC9;
     @include animation(
-        bubble-up .8s ease-in 42.4s forwards,
-        bubble-down .1s linear 48s forwards,
-        bubble-up .8s ease-in 51.9s forwards);
+        bubble-in 1s ease-in 43s forwards,
+        bubble-out .1s linear 48s forwards,
+        bubble-in 1s ease-in 52.5s forwards);
   }
-  .bubble3 {
+  .fish-bubble-3 {
     left: 50%;
     bottom: 47%;
     width: 175px;
@@ -295,11 +295,12 @@
     border: 8px solid #A9FFC9;
     background-color: #F0F8FF;
     @include animation(
-        bubble-up .8s ease-in 42.8s forwards,
-        bubble-down .1s linear 48s forwards,
-        bubble-up .8s ease-in 52.3s forwards,
+        bubble-in 1s ease-in 44s forwards,
+        bubble-out .1s linear 48s forwards,
+        bubble-in 1s ease-in 53.5s forwards,
         bubble-zoom 1s linear 56s forwards);
   }
+
   .desert {
     position: absolute;
     bottom: 0;
@@ -319,15 +320,14 @@
     //      background-color: #ACFE2F;
     @include transform(translateX(-50%) scale(1));
     @include animation(cactus-zoom 1s linear 56s forwards);
-  }
-  .cactus {
+
     .left-eye {
       left: 34px;
       top: 40px;
       height: 10px;
       width: 10px;
       @include transform(scale(1,1.6));
-      @include animation(eye-blink 3s linear 43.6s infinite);
+      @include animation(eye-blink 3s linear 45s infinite);
     }
     .right-eye {
       left: 58px;
@@ -335,7 +335,7 @@
       height: 10px;
       width: 10px;
       @include transform(scale(1,1.6));
-      @include animation(eye-blink 3s linear 43.6s infinite);
+      @include animation(eye-blink 3s linear 45s infinite);
     }
   }
   .pink-flower {
@@ -347,13 +347,17 @@
     background: url('../img/cactus-flower.png');
     @include transform(scale(0));
     @include animation(
-        pink-flower-up 1s ease-out 43.6s forwards,
-        pink-flower-down .1s linear 48.5s forwards,
-        pink-flower-up 1s ease-out 53.1s forwards);
+        pink-flower-in .8s ease-out 45.5s forwards,
+        pink-flower-out .1s linear 48.5s forwards,
+        pink-flower-in .8s ease-out 55s forwards);
   }
 }
 
 /* Animation Keyframes */
+@include keyframes(scene-second-center-in) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
 @include keyframes(sea-layers-down) {
   0% { @include transform(translateY(80%)); }
   100% { @include transform(translateY(110%)); }
@@ -411,19 +415,20 @@
   0% { @include transform(translateX(100%)); }
   100% { @include transform(translateX(-100%)); }
 }
-@include keyframes(bubble-up) {
+@include keyframes(bubble-in) {
   0% { @include transform(translateX(-50%) scale(0)); }
   100% { @include transform(translateX(-50%) scale(1)); }
 }
-@include keyframes(bubble-down) {
+@include keyframes(bubble-out) {
   0% { @include transform(translateX(-50%) scale(1)); }
   100% { @include transform(translateX(-50%) scale(0)); }
 }
-@include keyframes(pink-flower-up) {
+@include keyframes(pink-flower-in) {
   0% { @include transform(scale(0)); }
+  80% { @include transform(scale(1.4)); }
   100% { @include transform(scale(1)); }
 }
-@include keyframes(pink-flower-down) {
+@include keyframes(pink-flower-out) {
   0% { @include transform(scale(1)); }
   100% { @include transform(scale(0)); }
 }
@@ -431,10 +436,15 @@
   1%, 100% { @include transform(scaleX(1)); }
 }
 @include keyframes(bubble-zoom) {
-  1% {
-    border: 0;
+  0% {
+    left: 50%;
+    bottom: 47%;
+    width: 175px;
+    height: 175px;
+    border: 8px solid #A9FFC9;
     @include transform(translateX(-50%) scale(1));
   }
+  1% { border: 0; }
   100% {
     left: 0;
     bottom: 0;

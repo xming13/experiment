@@ -7,40 +7,39 @@
   width: 100%;
   overflow: hidden;
   @include animation(
-      fadeOut .5s linear 28.5s forwards,
+      fadeOut .5s linear 29.5s forwards,
       fadeIn .1s linear 114s forwards);
-}
-.scene-first {
+
   /* Sections */
   section {
-    position: absolute;
-    top: 0;
-    height: 80%;
-    width: 100%;
-  }
+position: absolute;
+  top: 0;
+  height: 80%;
+  width: 100%;
+}
   .flower-wrapper {
     top: 0;
     background-color: #FAE0E4;
     @include animation(
-        slideDown .8s linear 21s forwards,
-        slideUpCenter .8s linear 100s forwards,
-        slideDown .8s linear 114s forwards);
+        flower-wrapper-slide-down .8s linear 21s forwards,
+        flower-wrapper-slide-up .8s linear 100s forwards,
+        flower-wrapper-slide-down .8s linear 114s forwards);
   }
   .tree-wrapper {
     background-color: #E0FAE3;
     @include transform(translateY(-100%));
     @include animation(
-        slideDownCenter .8s linear 21s forwards,
-        slideUp .8s linear 100s forwards,
-        slideDownCenter .8s linear 114s forwards);
+        tree-wrapper-slide-down .8s linear 21s forwards,
+        tree-wrapper-slide-up .8s linear 100s forwards,
+        tree-wrapper-slide-down .8s linear 114s forwards);
   }
   .cat-wrapper {
     background-color: #fff176;
     @include transform(translateX(100%));
     @include animation(
-        slideLeft .5s ease-out 26s forwards,
-        slideRight .1s linear 100s forwards,
-        slideLeft .5s ease-out 119s forwards);
+        cat-wrapper-slide-left .5s ease-out 26.5s forwards,
+        cat-wrapper-slide-right .1s linear 100s forwards,
+        cat-wrapper-slide-left .5s ease-out 119s forwards);
   }
 
   /* Ground */
@@ -93,8 +92,7 @@
     background: url('../img/flower.png') 0px;
     @include transform(translateX(-50%));
     @include animation(sprite-flower .5s 1s infinite);
-  }
-  .flower  {
+
     .left-eye {
       top: 29px;
       left: 22px;
@@ -111,7 +109,7 @@
     opacity: 0;
     @include transform(translateX(-50%));
   }
-  .bubble1 {
+  .bubble-1 {
     width: 40px;
     height: 40px;
     left: 45%;
@@ -121,7 +119,7 @@
         fadeOut .1s steps(2) 28.5s forwards,
         fadeIn .5s steps(2) 113.1s forwards);
   }
-  .bubble2 {
+  .bubble-2 {
     width: 60px;
     height: 60px;
     left: 40%;
@@ -131,7 +129,7 @@
         fadeOut .1s steps(2) 28.5s forwards,
         fadeIn .5s steps(2) 113.5s forwards);
   }
-  .bubble3 {
+  .bubble-3 {
     width: 80px;
     height: 80px;
     left: 45%;
@@ -151,8 +149,7 @@
     width: 120px;
     background: url('../img/tree.png');
     @include transform(translateX(-50%));
-  }
-  .tree {
+
     .left-eye {
       top: 99px;
       left: 45px;
@@ -168,17 +165,13 @@
   }
   .wish-tree {
     position: absolute;
-    top: 100px;
-    left: 50%;
     width: 150px;
     height: 150px;
     background-color: #00A513;
     border: 5px solid #095A00;
     border-radius: 50%;
-    opacity: 0;
-    @include transform(translateX(-50%));
-  }
-  .wish-tree {
+    @include transform(translateX(-50%) scale(0));
+
     .left-eye {
       top: 54px;
       left: 59px;
@@ -192,27 +185,45 @@
       height: 10px;
     }
   }
-  .wish-tree1 {
+  .wish-tree-1 {
+    top: 220px;
+    left: 40%;
     background-image: url('../img/tree-circle.png');
     @include animation(
-        fadeIn .5s ease-out 22s forwards,
-        fadeOut .5s ease-out 23s forwards,
-        fadeIn .5s ease-out 115s forwards);
+        wish-tree-in .5s ease-out 22.5s forwards,
+        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 115s forwards);
   }
-  .wish-tree2 {
+  .wish-tree-1 .eye {
+    @include transform(scale(1,1.6));
+    @include animation(eye-blink 3s linear 23s infinite);
+  }
+  .wish-tree-2 {
+    top: 100px;
+    left: 50%;
     background-image: url('../img/tree-triangle.png');
     @include animation(
-        fadeIn .5s ease-out 23s forwards,
-        fadeOut .5s ease-out 24s forwards,
-        fadeIn .5s ease-out 116s forwards
+        wish-tree-in .5s ease-out 23.5s forwards,
+        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 116s forwards
     );
   }
-  .wish-tree3 {
+  .wish-tree-2 .eye {
+    @include transform(scale(1,1.6));
+    @include animation(eye-blink 3s linear 24s infinite);
+  }
+  .wish-tree-3 {
+    top: 220px;
+    left: 60%;
     background-image: url('../img/tree-club.png');
     @include animation(
-        fadeIn .5s ease-out 24s forwards,
-        fadeOut .5s ease-out 25s forwards,
-        fadeIn .5s ease-out 117s forwards);
+        wish-tree-in .5s ease-out 24.5s forwards,
+        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 117s forwards);
+  }
+  .wish-tree-3 .eye {
+    @include transform(scale(1,1.6));
+    @include animation(eye-blink 3s linear 25s infinite);
   }
 
   /* Cat */
@@ -234,10 +245,9 @@
     background-image: url('../img/bee.png');
     @include transform(translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg));
     @include animation(
-        bee-wander 1.5s linear 26.5s forwards,
+        bee-wander 1.5s linear 27s forwards,
         bee-wander 1.5s linear 119.5s forwards);
-  }
-  .bee {
+
     .left-eye {
       top: 39px;
       left: 56px;
@@ -258,27 +268,33 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
-@include keyframes(slideInFromCenter) {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-@include keyframes(slideDown) {
-  100% { @include transform(translateY(100%)); }
-}
-@include keyframes(slideUp ) {
+@include keyframes(tree-wrapper-slide-up ) {
   100% { @include transform(translateY(-100%)); }
 }
-@include keyframes(slideDownCenter) {
+@include keyframes(tree-wrapper-slide-down) {
   100% { @include transform(translateY(0%)); }
 }
-@include keyframes(slideUpCenter) {
+@include keyframes(flower-wrapper-slide-up) {
   100% { @include transform(translateY(0%)); }
 }
-@include keyframes(slideLeft) {
+@include keyframes(flower-wrapper-slide-down) {
+  100% { @include transform(translateY(100%)); }
+}
+@include keyframes(cat-wrapper-slide-left) {
   100% { @include transform(translateX(0%)); }
 }
-@include keyframes(slideRight) {
+@include keyframes(cat-wrapper-slide-right) {
   100% { @include transform(translateX(100%)); }
+}
+@include keyframes(wish-tree-in) {
+  0% { @include transform(translateX(-50%) scale(0)); }
+  80% { @include transform(translateX(-50%) scale(1.2)); }
+  100% { @include transform(translateX(-50%) scale(1)); }
+}
+@include keyframes(wish-tree-out) {
+  0% { @include transform(translateX(-50%) scale(1)); }
+  80% { @include transform(translateX(-50%) scale(1.2)); }
+  100% { @include transform(translateX(-50%) scale(0)); }
 }
 @include keyframes(bee-wander) {
   0% { @include transform(translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg)); }

@@ -78,10 +78,9 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    -webkit-animation: fadeOut 0.5s linear 28.5s forwards, fadeIn 0.1s linear 114s forwards;
-    -moz-animation: fadeOut 0.5s linear 28.5s forwards, fadeIn 0.1s linear 114s forwards;
-    animation: fadeOut 0.5s linear 28.5s forwards, fadeIn 0.1s linear 114s forwards; }
-  .loaded .scene-first {
+    -webkit-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
+    -moz-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
+    animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
     /* Sections */
     /* Ground */
     /* Flower */
@@ -95,9 +94,9 @@ body {
     .loaded .scene-first .flower-wrapper {
       top: 0;
       background-color: #FAE0E4;
-      -webkit-animation: slideDown 0.8s linear 21s forwards, slideUpCenter 0.8s linear 100s forwards, slideDown 0.8s linear 114s forwards;
-      -moz-animation: slideDown 0.8s linear 21s forwards, slideUpCenter 0.8s linear 100s forwards, slideDown 0.8s linear 114s forwards;
-      animation: slideDown 0.8s linear 21s forwards, slideUpCenter 0.8s linear 100s forwards, slideDown 0.8s linear 114s forwards; }
+      -webkit-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
+      -moz-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
+      animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards; }
     .loaded .scene-first .tree-wrapper {
       background-color: #E0FAE3;
       -webkit-transform: translateY(-100%);
@@ -105,9 +104,9 @@ body {
       -ms-transform: translateY(-100%);
       -o-transform: translateY(-100%);
       transform: translateY(-100%);
-      -webkit-animation: slideDownCenter 0.8s linear 21s forwards, slideUp 0.8s linear 100s forwards, slideDownCenter 0.8s linear 114s forwards;
-      -moz-animation: slideDownCenter 0.8s linear 21s forwards, slideUp 0.8s linear 100s forwards, slideDownCenter 0.8s linear 114s forwards;
-      animation: slideDownCenter 0.8s linear 21s forwards, slideUp 0.8s linear 100s forwards, slideDownCenter 0.8s linear 114s forwards; }
+      -webkit-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
+      -moz-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
+      animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards; }
     .loaded .scene-first .cat-wrapper {
       background-color: #fff176;
       -webkit-transform: translateX(100%);
@@ -115,9 +114,9 @@ body {
       -ms-transform: translateX(100%);
       -o-transform: translateX(100%);
       transform: translateX(100%);
-      -webkit-animation: slideLeft 0.5s ease-out 26s forwards, slideRight 0.1s linear 100s forwards, slideLeft 0.5s ease-out 119s forwards;
-      -moz-animation: slideLeft 0.5s ease-out 26s forwards, slideRight 0.1s linear 100s forwards, slideLeft 0.5s ease-out 119s forwards;
-      animation: slideLeft 0.5s ease-out 26s forwards, slideRight 0.1s linear 100s forwards, slideLeft 0.5s ease-out 119s forwards; }
+      -webkit-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
+      -moz-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
+      animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards; }
     .loaded .scene-first .ground {
       position: absolute;
       bottom: 0;
@@ -165,12 +164,12 @@ body {
       -webkit-animation: sprite-flower 0.5s 1s infinite;
       -moz-animation: sprite-flower 0.5s 1s infinite;
       animation: sprite-flower 0.5s 1s infinite; }
-    .loaded .scene-first .flower .left-eye {
-      top: 29px;
-      left: 22px; }
-    .loaded .scene-first .flower .right-eye {
-      top: 29px;
-      left: 34px; }
+      .loaded .scene-first .flower .left-eye {
+        top: 29px;
+        left: 22px; }
+      .loaded .scene-first .flower .right-eye {
+        top: 29px;
+        left: 34px; }
     .loaded .scene-first .bubble {
       position: absolute;
       background: #FFF;
@@ -181,7 +180,7 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-    .loaded .scene-first .bubble1 {
+    .loaded .scene-first .bubble-1 {
       width: 40px;
       height: 40px;
       left: 45%;
@@ -189,7 +188,7 @@ body {
       -webkit-animation: fadeIn 0.5s steps(2) 20.1s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.1s forwards;
       -moz-animation: fadeIn 0.5s steps(2) 20.1s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.1s forwards;
       animation: fadeIn 0.5s steps(2) 20.1s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.1s forwards; }
-    .loaded .scene-first .bubble2 {
+    .loaded .scene-first .bubble-2 {
       width: 60px;
       height: 60px;
       left: 40%;
@@ -197,7 +196,7 @@ body {
       -webkit-animation: fadeIn 0.5s steps(2) 20.5s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.5s forwards;
       -moz-animation: fadeIn 0.5s steps(2) 20.5s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.5s forwards;
       animation: fadeIn 0.5s steps(2) 20.5s forwards, fadeOut 0.1s steps(2) 28.5s forwards, fadeIn 0.5s steps(2) 113.5s forwards; }
-    .loaded .scene-first .bubble3 {
+    .loaded .scene-first .bubble-3 {
       width: 80px;
       height: 80px;
       left: 45%;
@@ -217,56 +216,86 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-    .loaded .scene-first .tree .left-eye {
-      top: 99px;
-      left: 45px;
-      width: 10px;
-      height: 10px; }
-    .loaded .scene-first .tree .right-eye {
-      top: 99px;
-      left: 69px;
-      width: 10px;
-      height: 10px; }
+      .loaded .scene-first .tree .left-eye {
+        top: 99px;
+        left: 45px;
+        width: 10px;
+        height: 10px; }
+      .loaded .scene-first .tree .right-eye {
+        top: 99px;
+        left: 69px;
+        width: 10px;
+        height: 10px; }
     .loaded .scene-first .wish-tree {
       position: absolute;
-      top: 100px;
-      left: 50%;
       width: 150px;
       height: 150px;
       background-color: #00A513;
       border: 5px solid #095A00;
       border-radius: 50%;
-      opacity: 0;
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
-      transform: translateX(-50%); }
-    .loaded .scene-first .wish-tree .left-eye {
-      top: 54px;
-      left: 59px;
-      width: 10px;
-      height: 10px; }
-    .loaded .scene-first .wish-tree .right-eye {
-      top: 54px;
-      left: 83px;
-      width: 10px;
-      height: 10px; }
-    .loaded .scene-first .wish-tree1 {
+      -webkit-transform: translateX(-50%) scale(0);
+      -moz-transform: translateX(-50%) scale(0);
+      -ms-transform: translateX(-50%) scale(0);
+      -o-transform: translateX(-50%) scale(0);
+      transform: translateX(-50%) scale(0); }
+      .loaded .scene-first .wish-tree .left-eye {
+        top: 54px;
+        left: 59px;
+        width: 10px;
+        height: 10px; }
+      .loaded .scene-first .wish-tree .right-eye {
+        top: 54px;
+        left: 83px;
+        width: 10px;
+        height: 10px; }
+    .loaded .scene-first .wish-tree-1 {
+      top: 220px;
+      left: 40%;
       background-image: url("../img/tree-circle.png");
-      -webkit-animation: fadeIn 0.5s ease-out 22s forwards, fadeOut 0.5s ease-out 23s forwards, fadeIn 0.5s ease-out 115s forwards;
-      -moz-animation: fadeIn 0.5s ease-out 22s forwards, fadeOut 0.5s ease-out 23s forwards, fadeIn 0.5s ease-out 115s forwards;
-      animation: fadeIn 0.5s ease-out 22s forwards, fadeOut 0.5s ease-out 23s forwards, fadeIn 0.5s ease-out 115s forwards; }
-    .loaded .scene-first .wish-tree2 {
+      -webkit-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards;
+      animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards; }
+    .loaded .scene-first .wish-tree-1 .eye {
+      -webkit-transform: scale(1, 1.6);
+      -moz-transform: scale(1, 1.6);
+      -ms-transform: scale(1, 1.6);
+      -o-transform: scale(1, 1.6);
+      transform: scale(1, 1.6);
+      -webkit-animation: eye-blink 3s linear 23s infinite;
+      -moz-animation: eye-blink 3s linear 23s infinite;
+      animation: eye-blink 3s linear 23s infinite; }
+    .loaded .scene-first .wish-tree-2 {
+      top: 100px;
+      left: 50%;
       background-image: url("../img/tree-triangle.png");
-      -webkit-animation: fadeIn 0.5s ease-out 23s forwards, fadeOut 0.5s ease-out 24s forwards, fadeIn 0.5s ease-out 116s forwards;
-      -moz-animation: fadeIn 0.5s ease-out 23s forwards, fadeOut 0.5s ease-out 24s forwards, fadeIn 0.5s ease-out 116s forwards;
-      animation: fadeIn 0.5s ease-out 23s forwards, fadeOut 0.5s ease-out 24s forwards, fadeIn 0.5s ease-out 116s forwards; }
-    .loaded .scene-first .wish-tree3 {
+      -webkit-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards;
+      animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards; }
+    .loaded .scene-first .wish-tree-2 .eye {
+      -webkit-transform: scale(1, 1.6);
+      -moz-transform: scale(1, 1.6);
+      -ms-transform: scale(1, 1.6);
+      -o-transform: scale(1, 1.6);
+      transform: scale(1, 1.6);
+      -webkit-animation: eye-blink 3s linear 24s infinite;
+      -moz-animation: eye-blink 3s linear 24s infinite;
+      animation: eye-blink 3s linear 24s infinite; }
+    .loaded .scene-first .wish-tree-3 {
+      top: 220px;
+      left: 60%;
       background-image: url("../img/tree-club.png");
-      -webkit-animation: fadeIn 0.5s ease-out 24s forwards, fadeOut 0.5s ease-out 25s forwards, fadeIn 0.5s ease-out 117s forwards;
-      -moz-animation: fadeIn 0.5s ease-out 24s forwards, fadeOut 0.5s ease-out 25s forwards, fadeIn 0.5s ease-out 117s forwards;
-      animation: fadeIn 0.5s ease-out 24s forwards, fadeOut 0.5s ease-out 25s forwards, fadeIn 0.5s ease-out 117s forwards; }
+      -webkit-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards;
+      animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards; }
+    .loaded .scene-first .wish-tree-3 .eye {
+      -webkit-transform: scale(1, 1.6);
+      -moz-transform: scale(1, 1.6);
+      -ms-transform: scale(1, 1.6);
+      -o-transform: scale(1, 1.6);
+      transform: scale(1, 1.6);
+      -webkit-animation: eye-blink 3s linear 25s infinite;
+      -moz-animation: eye-blink 3s linear 25s infinite;
+      animation: eye-blink 3s linear 25s infinite; }
     .loaded .scene-first .cat {
       position: absolute;
       left: 50%;
@@ -291,15 +320,15 @@ body {
       -ms-transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
       -o-transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
       transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
-      -webkit-animation: bee-wander 1.5s linear 26.5s forwards, bee-wander 1.5s linear 119.5s forwards;
-      -moz-animation: bee-wander 1.5s linear 26.5s forwards, bee-wander 1.5s linear 119.5s forwards;
-      animation: bee-wander 1.5s linear 26.5s forwards, bee-wander 1.5s linear 119.5s forwards; }
-    .loaded .scene-first .bee .left-eye {
-      top: 39px;
-      left: 56px; }
-    .loaded .scene-first .bee .right-eye {
-      top: 39px;
-      left: 68px; }
+      -webkit-animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards;
+      -moz-animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards;
+      animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards; }
+      .loaded .scene-first .bee .left-eye {
+        top: 39px;
+        left: 56px; }
+      .loaded .scene-first .bee .right-eye {
+        top: 39px;
+        left: 68px; }
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
@@ -330,99 +359,150 @@ body {
     opacity: 1; }
   100% {
     opacity: 0; } }
-@-webkit-keyframes slideInFromCenter {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-@-moz-keyframes slideInFromCenter {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-@keyframes slideInFromCenter {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-@-webkit-keyframes slideDown {
-  100% {
-    -webkit-transform: translateY(100%); } }
-@-moz-keyframes slideDown {
-  100% {
-    -moz-transform: translateY(100%); } }
-@keyframes slideDown {
-  100% {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    -o-transform: translateY(100%);
-    transform: translateY(100%); } }
-@-webkit-keyframes slideUp {
+@-webkit-keyframes tree-wrapper-slide-up {
   100% {
     -webkit-transform: translateY(-100%); } }
-@-moz-keyframes slideUp {
+@-moz-keyframes tree-wrapper-slide-up {
   100% {
     -moz-transform: translateY(-100%); } }
-@keyframes slideUp {
+@keyframes tree-wrapper-slide-up {
   100% {
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
     transform: translateY(-100%); } }
-@-webkit-keyframes slideDownCenter {
+@-webkit-keyframes tree-wrapper-slide-down {
   100% {
     -webkit-transform: translateY(0%); } }
-@-moz-keyframes slideDownCenter {
+@-moz-keyframes tree-wrapper-slide-down {
   100% {
     -moz-transform: translateY(0%); } }
-@keyframes slideDownCenter {
+@keyframes tree-wrapper-slide-down {
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
     -o-transform: translateY(0%);
     transform: translateY(0%); } }
-@-webkit-keyframes slideUpCenter {
+@-webkit-keyframes flower-wrapper-slide-up {
   100% {
     -webkit-transform: translateY(0%); } }
-@-moz-keyframes slideUpCenter {
+@-moz-keyframes flower-wrapper-slide-up {
   100% {
     -moz-transform: translateY(0%); } }
-@keyframes slideUpCenter {
+@keyframes flower-wrapper-slide-up {
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
     -o-transform: translateY(0%);
     transform: translateY(0%); } }
-@-webkit-keyframes slideLeft {
+@-webkit-keyframes flower-wrapper-slide-down {
+  100% {
+    -webkit-transform: translateY(100%); } }
+@-moz-keyframes flower-wrapper-slide-down {
+  100% {
+    -moz-transform: translateY(100%); } }
+@keyframes flower-wrapper-slide-down {
+  100% {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%); } }
+@-webkit-keyframes cat-wrapper-slide-left {
   100% {
     -webkit-transform: translateX(0%); } }
-@-moz-keyframes slideLeft {
+@-moz-keyframes cat-wrapper-slide-left {
   100% {
     -moz-transform: translateX(0%); } }
-@keyframes slideLeft {
+@keyframes cat-wrapper-slide-left {
   100% {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
     -ms-transform: translateX(0%);
     -o-transform: translateX(0%);
     transform: translateX(0%); } }
-@-webkit-keyframes slideRight {
+@-webkit-keyframes cat-wrapper-slide-right {
   100% {
     -webkit-transform: translateX(100%); } }
-@-moz-keyframes slideRight {
+@-moz-keyframes cat-wrapper-slide-right {
   100% {
     -moz-transform: translateX(100%); } }
-@keyframes slideRight {
+@keyframes cat-wrapper-slide-right {
   100% {
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
     -ms-transform: translateX(100%);
     -o-transform: translateX(100%);
     transform: translateX(100%); } }
+@-webkit-keyframes wish-tree-in {
+  0% {
+    -webkit-transform: translateX(-50%) scale(0); }
+  80% {
+    -webkit-transform: translateX(-50%) scale(1.2); }
+  100% {
+    -webkit-transform: translateX(-50%) scale(1); } }
+@-moz-keyframes wish-tree-in {
+  0% {
+    -moz-transform: translateX(-50%) scale(0); }
+  80% {
+    -moz-transform: translateX(-50%) scale(1.2); }
+  100% {
+    -moz-transform: translateX(-50%) scale(1); } }
+@keyframes wish-tree-in {
+  0% {
+    -webkit-transform: translateX(-50%) scale(0);
+    -moz-transform: translateX(-50%) scale(0);
+    -ms-transform: translateX(-50%) scale(0);
+    -o-transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scale(0); }
+  80% {
+    -webkit-transform: translateX(-50%) scale(1.2);
+    -moz-transform: translateX(-50%) scale(1.2);
+    -ms-transform: translateX(-50%) scale(1.2);
+    -o-transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    -webkit-transform: translateX(-50%) scale(1);
+    -moz-transform: translateX(-50%) scale(1);
+    -ms-transform: translateX(-50%) scale(1);
+    -o-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1); } }
+@-webkit-keyframes wish-tree-out {
+  0% {
+    -webkit-transform: translateX(-50%) scale(1); }
+  80% {
+    -webkit-transform: translateX(-50%) scale(1.2); }
+  100% {
+    -webkit-transform: translateX(-50%) scale(0); } }
+@-moz-keyframes wish-tree-out {
+  0% {
+    -moz-transform: translateX(-50%) scale(1); }
+  80% {
+    -moz-transform: translateX(-50%) scale(1.2); }
+  100% {
+    -moz-transform: translateX(-50%) scale(0); } }
+@keyframes wish-tree-out {
+  0% {
+    -webkit-transform: translateX(-50%) scale(1);
+    -moz-transform: translateX(-50%) scale(1);
+    -ms-transform: translateX(-50%) scale(1);
+    -o-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1); }
+  80% {
+    -webkit-transform: translateX(-50%) scale(1.2);
+    -moz-transform: translateX(-50%) scale(1.2);
+    -ms-transform: translateX(-50%) scale(1.2);
+    -o-transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    -webkit-transform: translateX(-50%) scale(0);
+    -moz-transform: translateX(-50%) scale(0);
+    -ms-transform: translateX(-50%) scale(0);
+    -o-transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scale(0); } }
 @-webkit-keyframes bee-wander {
   0% {
     -webkit-transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg); }
@@ -511,10 +591,9 @@ body {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slideInFromCenter 0.5s ease-out 28s forwards;
-    -moz-animation: slideInFromCenter 0.5s ease-out 28s forwards;
-    animation: slideInFromCenter 0.5s ease-out 28s forwards; }
-  .loaded .scene-second {
+    -webkit-animation: scene-second-center-in 0.5s ease-out 29s forwards;
+    -moz-animation: scene-second-center-in 0.5s ease-out 29s forwards;
+    animation: scene-second-center-in 0.5s ease-out 29s forwards;
     /* Sea Layers */
     /* Turtle Wrapper */
     /* Sea Lives Wrapper */
@@ -602,16 +681,16 @@ body {
       -webkit-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards;
       -moz-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards;
       animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards; }
-    .loaded .scene-second .cloud .left-eye {
-      top: 46px;
-      left: 72px;
-      height: 10px;
-      width: 10px; }
-    .loaded .scene-second .cloud .right-eye {
-      top: 46px;
-      left: 96px;
-      height: 10px;
-      width: 10px; }
+      .loaded .scene-second .cloud .left-eye {
+        top: 46px;
+        left: 72px;
+        height: 10px;
+        width: 10px; }
+      .loaded .scene-second .cloud .right-eye {
+        top: 46px;
+        left: 96px;
+        height: 10px;
+        width: 10px; }
     .loaded .scene-second .cloud1 {
       left: 35%;
       top: -200px; }
@@ -706,9 +785,9 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      -webkit-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5s linear 39s forwards, fish-move 5s linear 48.5s forwards;
-      -moz-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5s linear 39s forwards, fish-move 5s linear 48.5s forwards;
-      animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5s linear 39s forwards, fish-move 5s linear 48.5s forwards; }
+      -webkit-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards;
+      -moz-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards;
+      animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards; }
     .loaded .scene-second .fishes-small {
       position: absolute;
       top: 25%;
@@ -748,7 +827,7 @@ body {
     .loaded .scene-second .fish-small-2.four {
       top: 117px;
       left: 392px; }
-    .loaded .scene-second .bubble {
+    .loaded .scene-second .fish-bubble {
       position: absolute;
       background: #FFF;
       border-radius: 50%;
@@ -759,34 +838,34 @@ body {
       -ms-transform: translateX(-50%) scale(0);
       -o-transform: translateX(-50%) scale(0);
       transform: translateX(-50%) scale(0); }
-    .loaded .scene-second .bubble1 {
+    .loaded .scene-second .fish-bubble-1 {
       left: 60%;
       bottom: 33%;
       width: 30px;
       height: 30px;
       border: 2px solid #A9FFC9;
-      -webkit-animation: bubble-up 0.8s ease-in 42s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.5s forwards;
-      -moz-animation: bubble-up 0.8s ease-in 42s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.5s forwards;
-      animation: bubble-up 0.8s ease-in 42s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.5s forwards; }
-    .loaded .scene-second .bubble2 {
+      -webkit-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards;
+      -moz-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards;
+      animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards; }
+    .loaded .scene-second .fish-bubble-2 {
       left: 56%;
       bottom: 38%;
       width: 50px;
       height: 50px;
       border: 5px solid #A9FFC9;
-      -webkit-animation: bubble-up 0.8s ease-in 42.4s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.9s forwards;
-      -moz-animation: bubble-up 0.8s ease-in 42.4s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.9s forwards;
-      animation: bubble-up 0.8s ease-in 42.4s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 51.9s forwards; }
-    .loaded .scene-second .bubble3 {
+      -webkit-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards;
+      -moz-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards;
+      animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards; }
+    .loaded .scene-second .fish-bubble-3 {
       left: 50%;
       bottom: 47%;
       width: 175px;
       height: 175px;
       border: 8px solid #A9FFC9;
       background-color: #F0F8FF;
-      -webkit-animation: bubble-up 0.8s ease-in 42.8s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 52.3s forwards, bubble-zoom 1s linear 56s forwards;
-      -moz-animation: bubble-up 0.8s ease-in 42.8s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 52.3s forwards, bubble-zoom 1s linear 56s forwards;
-      animation: bubble-up 0.8s ease-in 42.8s forwards, bubble-down 0.1s linear 48s forwards, bubble-up 0.8s ease-in 52.3s forwards, bubble-zoom 1s linear 56s forwards; }
+      -webkit-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards;
+      -moz-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards;
+      animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards; }
     .loaded .scene-second .desert {
       position: absolute;
       bottom: 0;
@@ -816,32 +895,32 @@ body {
       -webkit-animation: cactus-zoom 1s linear 56s forwards;
       -moz-animation: cactus-zoom 1s linear 56s forwards;
       animation: cactus-zoom 1s linear 56s forwards; }
-    .loaded .scene-second .cactus .left-eye {
-      left: 34px;
-      top: 40px;
-      height: 10px;
-      width: 10px;
-      -webkit-transform: scale(1, 1.6);
-      -moz-transform: scale(1, 1.6);
-      -ms-transform: scale(1, 1.6);
-      -o-transform: scale(1, 1.6);
-      transform: scale(1, 1.6);
-      -webkit-animation: eye-blink 3s linear 43.6s infinite;
-      -moz-animation: eye-blink 3s linear 43.6s infinite;
-      animation: eye-blink 3s linear 43.6s infinite; }
-    .loaded .scene-second .cactus .right-eye {
-      left: 58px;
-      top: 40px;
-      height: 10px;
-      width: 10px;
-      -webkit-transform: scale(1, 1.6);
-      -moz-transform: scale(1, 1.6);
-      -ms-transform: scale(1, 1.6);
-      -o-transform: scale(1, 1.6);
-      transform: scale(1, 1.6);
-      -webkit-animation: eye-blink 3s linear 43.6s infinite;
-      -moz-animation: eye-blink 3s linear 43.6s infinite;
-      animation: eye-blink 3s linear 43.6s infinite; }
+      .loaded .scene-second .cactus .left-eye {
+        left: 34px;
+        top: 40px;
+        height: 10px;
+        width: 10px;
+        -webkit-transform: scale(1, 1.6);
+        -moz-transform: scale(1, 1.6);
+        -ms-transform: scale(1, 1.6);
+        -o-transform: scale(1, 1.6);
+        transform: scale(1, 1.6);
+        -webkit-animation: eye-blink 3s linear 45s infinite;
+        -moz-animation: eye-blink 3s linear 45s infinite;
+        animation: eye-blink 3s linear 45s infinite; }
+      .loaded .scene-second .cactus .right-eye {
+        left: 58px;
+        top: 40px;
+        height: 10px;
+        width: 10px;
+        -webkit-transform: scale(1, 1.6);
+        -moz-transform: scale(1, 1.6);
+        -ms-transform: scale(1, 1.6);
+        -o-transform: scale(1, 1.6);
+        transform: scale(1, 1.6);
+        -webkit-animation: eye-blink 3s linear 45s infinite;
+        -moz-animation: eye-blink 3s linear 45s infinite;
+        animation: eye-blink 3s linear 45s infinite; }
     .loaded .scene-second .pink-flower {
       position: absolute;
       left: 55px;
@@ -854,9 +933,24 @@ body {
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0);
-      -webkit-animation: pink-flower-up 1s ease-out 43.6s forwards, pink-flower-down 0.1s linear 48.5s forwards, pink-flower-up 1s ease-out 53.1s forwards;
-      -moz-animation: pink-flower-up 1s ease-out 43.6s forwards, pink-flower-down 0.1s linear 48.5s forwards, pink-flower-up 1s ease-out 53.1s forwards;
-      animation: pink-flower-up 1s ease-out 43.6s forwards, pink-flower-down 0.1s linear 48.5s forwards, pink-flower-up 1s ease-out 53.1s forwards; }
+      -webkit-animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards;
+      -moz-animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards;
+      animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards; }
+@-webkit-keyframes scene-second-center-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+@-moz-keyframes scene-second-center-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+@keyframes scene-second-center-in {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
 @-webkit-keyframes sea-layers-down {
   0% {
     -webkit-transform: translateY(80%); }
@@ -1108,17 +1202,17 @@ body {
     -ms-transform: translateX(-100%);
     -o-transform: translateX(-100%);
     transform: translateX(-100%); } }
-@-webkit-keyframes bubble-up {
+@-webkit-keyframes bubble-in {
   0% {
     -webkit-transform: translateX(-50%) scale(0); }
   100% {
     -webkit-transform: translateX(-50%) scale(1); } }
-@-moz-keyframes bubble-up {
+@-moz-keyframes bubble-in {
   0% {
     -moz-transform: translateX(-50%) scale(0); }
   100% {
     -moz-transform: translateX(-50%) scale(1); } }
-@keyframes bubble-up {
+@keyframes bubble-in {
   0% {
     -webkit-transform: translateX(-50%) scale(0);
     -moz-transform: translateX(-50%) scale(0);
@@ -1131,17 +1225,17 @@ body {
     -ms-transform: translateX(-50%) scale(1);
     -o-transform: translateX(-50%) scale(1);
     transform: translateX(-50%) scale(1); } }
-@-webkit-keyframes bubble-down {
+@-webkit-keyframes bubble-out {
   0% {
     -webkit-transform: translateX(-50%) scale(1); }
   100% {
     -webkit-transform: translateX(-50%) scale(0); } }
-@-moz-keyframes bubble-down {
+@-moz-keyframes bubble-out {
   0% {
     -moz-transform: translateX(-50%) scale(1); }
   100% {
     -moz-transform: translateX(-50%) scale(0); } }
-@keyframes bubble-down {
+@keyframes bubble-out {
   0% {
     -webkit-transform: translateX(-50%) scale(1);
     -moz-transform: translateX(-50%) scale(1);
@@ -1154,40 +1248,50 @@ body {
     -ms-transform: translateX(-50%) scale(0);
     -o-transform: translateX(-50%) scale(0);
     transform: translateX(-50%) scale(0); } }
-@-webkit-keyframes pink-flower-up {
+@-webkit-keyframes pink-flower-in {
   0% {
     -webkit-transform: scale(0); }
+  80% {
+    -webkit-transform: scale(1.4); }
   100% {
     -webkit-transform: scale(1); } }
-@-moz-keyframes pink-flower-up {
+@-moz-keyframes pink-flower-in {
   0% {
     -moz-transform: scale(0); }
+  80% {
+    -moz-transform: scale(1.4); }
   100% {
     -moz-transform: scale(1); } }
-@keyframes pink-flower-up {
+@keyframes pink-flower-in {
   0% {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0); }
+  80% {
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4); }
   100% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1); } }
-@-webkit-keyframes pink-flower-down {
+@-webkit-keyframes pink-flower-out {
   0% {
     -webkit-transform: scale(1); }
   100% {
     -webkit-transform: scale(0); } }
-@-moz-keyframes pink-flower-down {
+@-moz-keyframes pink-flower-out {
   0% {
     -moz-transform: scale(1); }
   100% {
     -moz-transform: scale(0); } }
-@keyframes pink-flower-down {
+@keyframes pink-flower-out {
   0% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -1214,9 +1318,15 @@ body {
     -o-transform: scaleX(1);
     transform: scaleX(1); } }
 @-webkit-keyframes bubble-zoom {
-  1% {
-    border: 0;
+  0% {
+    left: 50%;
+    bottom: 47%;
+    width: 175px;
+    height: 175px;
+    border: 8px solid #A9FFC9;
     -webkit-transform: translateX(-50%) scale(1); }
+  1% {
+    border: 0; }
   100% {
     left: 0;
     bottom: 0;
@@ -1226,9 +1336,15 @@ body {
     border-radius: 0;
     -webkit-transform: translateX(0) scale(1); } }
 @-moz-keyframes bubble-zoom {
-  1% {
-    border: 0;
+  0% {
+    left: 50%;
+    bottom: 47%;
+    width: 175px;
+    height: 175px;
+    border: 8px solid #A9FFC9;
     -moz-transform: translateX(-50%) scale(1); }
+  1% {
+    border: 0; }
   100% {
     left: 0;
     bottom: 0;
@@ -1238,13 +1354,19 @@ body {
     border-radius: 0;
     -moz-transform: translateX(0) scale(1); } }
 @keyframes bubble-zoom {
-  1% {
-    border: 0;
+  0% {
+    left: 50%;
+    bottom: 47%;
+    width: 175px;
+    height: 175px;
+    border: 8px solid #A9FFC9;
     -webkit-transform: translateX(-50%) scale(1);
     -moz-transform: translateX(-50%) scale(1);
     -ms-transform: translateX(-50%) scale(1);
     -o-transform: translateX(-50%) scale(1);
     transform: translateX(-50%) scale(1); }
+  1% {
+    border: 0; }
   100% {
     left: 0;
     bottom: 0;
@@ -1316,104 +1438,104 @@ body {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-animation: zoom-out-center 1.5s linear 60s forwards;
-    -moz-animation: zoom-out-center 1.5s linear 60s forwards;
-    animation: zoom-out-center 1.5s linear 60s forwards; }
-  .loaded .scene-third section {
-    position: absolute;
-    top: 0;
-    height: 80%;
-    width: 100%; }
-  .loaded .scene-third .snow-ground {
-    position: absolute;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    background-color: #FFF; }
-  .loaded .scene-third .jackalope {
-    position: absolute;
-    left: -25px;
-    bottom: 0;
-    height: 50px;
-    width: 50px;
-    background-color: #C6886A;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-animation: jackalope-run 4s linear 61.5s forwards;
-    -moz-animation: jackalope-run 4s linear 61.5s forwards;
-    animation: jackalope-run 4s linear 61.5s forwards; }
-  .loaded .scene-third .jackalope .left-eye {
-    top: 10px;
-    left: 20px;
-    -webkit-transform: scale(1, 1.6);
-    -moz-transform: scale(1, 1.6);
-    -ms-transform: scale(1, 1.6);
-    -o-transform: scale(1, 1.6);
-    transform: scale(1, 1.6);
-    -webkit-animation: eye-blink 3s linear 61.5s infinite;
-    -moz-animation: eye-blink 3s linear 61.5s infinite;
-    animation: eye-blink 3s linear 61.5s infinite; }
-  .loaded .scene-third .jackalope .right-eye {
-    top: 10px;
-    left: 30px;
-    -webkit-transform: scale(1, 1.6);
-    -moz-transform: scale(1, 1.6);
-    -ms-transform: scale(1, 1.6);
-    -o-transform: scale(1, 1.6);
-    transform: scale(1, 1.6);
-    -webkit-animation: eye-blink 3s linear 61.5s infinite;
-    -moz-animation: eye-blink 3s linear 61.5s infinite;
-    animation: eye-blink 3s linear 61.5s infinite; }
-  .loaded .scene-third .shadow {
-    -webkit-transform-origin: bottom;
-    -moz-transform-origin: bottom;
-    -ms-transform-origin: bottom;
-    -o-transform-origin: bottom;
-    transform-origin: bottom;
-    -webkit-transform: translateX(-50%) scaleY(-1);
-    -moz-transform: translateX(-50%) scaleY(-1);
-    -ms-transform: translateX(-50%) scaleY(-1);
-    -o-transform: translateX(-50%) scaleY(-1);
-    transform: translateX(-50%) scaleY(-1);
-    opacity: 0.3;
-    z-index: 1; }
-  .loaded .scene-third .snow-ball {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    height: 40px;
-    width: 40px;
-    background-color: #C5C5C5;
-    border-radius: 50%;
-    -webkit-transform-origin: bottom;
-    -moz-transform-origin: bottom;
-    -ms-transform-origin: bottom;
-    -o-transform-origin: bottom;
-    transform-origin: bottom;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-animation: snow-ball-fall 1s ease-in 65s forwards;
-    -moz-animation: snow-ball-fall 1s ease-in 65s forwards;
-    animation: snow-ball-fall 1s ease-in 65s forwards; }
-  .loaded .scene-third .snow-ball.reflect {
-    bottom: -100%;
-    opacity: 0.3;
-    z-index: 1;
-    -webkit-transform: translateX(-50%) scaleY(-1);
-    -moz-transform: translateX(-50%) scaleY(-1);
-    -ms-transform: translateX(-50%) scaleY(-1);
-    -o-transform: translateX(-50%) scaleY(-1);
-    transform: translateX(-50%) scaleY(-1);
-    -webkit-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
-    -moz-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
-    animation: snow-ball-fall-reflect 1s ease-in 65s forwards; }
-@-webkit-keyframes zoom-out-center {
+    -webkit-animation: scene-third-center-zoom-out 1.5s linear 60s forwards;
+    -moz-animation: scene-third-center-zoom-out 1.5s linear 60s forwards;
+    animation: scene-third-center-zoom-out 1.5s linear 60s forwards; }
+    .loaded .scene-third section {
+      position: absolute;
+      top: 0;
+      height: 80%;
+      width: 100%; }
+    .loaded .scene-third .snow-ground {
+      position: absolute;
+      bottom: 0;
+      height: 20%;
+      width: 100%;
+      background-color: #FFF; }
+    .loaded .scene-third .jackalope {
+      position: absolute;
+      left: -25px;
+      bottom: 0;
+      height: 50px;
+      width: 50px;
+      background-color: #C6886A;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      -webkit-animation: jackalope-run 4s linear 61.5s forwards;
+      -moz-animation: jackalope-run 4s linear 61.5s forwards;
+      animation: jackalope-run 4s linear 61.5s forwards; }
+      .loaded .scene-third .jackalope .left-eye {
+        top: 10px;
+        left: 20px;
+        -webkit-transform: scale(1, 1.6);
+        -moz-transform: scale(1, 1.6);
+        -ms-transform: scale(1, 1.6);
+        -o-transform: scale(1, 1.6);
+        transform: scale(1, 1.6);
+        -webkit-animation: eye-blink 3s linear 61.5s infinite;
+        -moz-animation: eye-blink 3s linear 61.5s infinite;
+        animation: eye-blink 3s linear 61.5s infinite; }
+      .loaded .scene-third .jackalope .right-eye {
+        top: 10px;
+        left: 30px;
+        -webkit-transform: scale(1, 1.6);
+        -moz-transform: scale(1, 1.6);
+        -ms-transform: scale(1, 1.6);
+        -o-transform: scale(1, 1.6);
+        transform: scale(1, 1.6);
+        -webkit-animation: eye-blink 3s linear 61.5s infinite;
+        -moz-animation: eye-blink 3s linear 61.5s infinite;
+        animation: eye-blink 3s linear 61.5s infinite; }
+    .loaded .scene-third .jackalope.shadow {
+      -webkit-transform-origin: bottom;
+      -moz-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+      -o-transform-origin: bottom;
+      transform-origin: bottom;
+      -webkit-transform: translateX(-50%) scaleY(-1);
+      -moz-transform: translateX(-50%) scaleY(-1);
+      -ms-transform: translateX(-50%) scaleY(-1);
+      -o-transform: translateX(-50%) scaleY(-1);
+      transform: translateX(-50%) scaleY(-1);
+      opacity: 0.3;
+      z-index: 1; }
+    .loaded .scene-third .snow-ball {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      height: 40px;
+      width: 40px;
+      background-color: #C5C5C5;
+      border-radius: 50%;
+      -webkit-transform-origin: bottom;
+      -moz-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+      -o-transform-origin: bottom;
+      transform-origin: bottom;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      -webkit-animation: snow-ball-fall 1s ease-in 65s forwards;
+      -moz-animation: snow-ball-fall 1s ease-in 65s forwards;
+      animation: snow-ball-fall 1s ease-in 65s forwards; }
+    .loaded .scene-third .snow-ball.reflect {
+      bottom: -100%;
+      opacity: 0.3;
+      z-index: 1;
+      -webkit-transform: translateX(-50%) scaleY(-1);
+      -moz-transform: translateX(-50%) scaleY(-1);
+      -ms-transform: translateX(-50%) scaleY(-1);
+      -o-transform: translateX(-50%) scaleY(-1);
+      transform: translateX(-50%) scaleY(-1);
+      -webkit-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
+      -moz-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
+      animation: snow-ball-fall-reflect 1s ease-in 65s forwards; }
+@-webkit-keyframes scene-third-center-zoom-out {
   0% {
     -webkit-transform: scale(0);
     border-radius: 50%; }
@@ -1423,7 +1545,7 @@ body {
   100% {
     -webkit-transform: scale(1);
     border-radius: 0; } }
-@-moz-keyframes zoom-out-center {
+@-moz-keyframes scene-third-center-zoom-out {
   0% {
     -moz-transform: scale(0);
     border-radius: 50%; }
@@ -1433,7 +1555,7 @@ body {
   100% {
     -moz-transform: scale(1);
     border-radius: 0; } }
-@keyframes zoom-out-center {
+@keyframes scene-third-center-zoom-out {
   0% {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);

@@ -8,21 +8,21 @@
   overflow: hidden;
   @include animation(
       fadeOut .5s linear 29.5s forwards,
-      fadeIn .1s linear 114s forwards);
+      fadeIn .1s linear 110s forwards);
 
   /* Sections */
   section {
-position: absolute;
-  top: 0;
-  height: 80%;
-  width: 100%;
-}
+    position: absolute;
+    top: 0;
+    height: 80%;
+    width: 100%;
+  }
   .flower-wrapper {
     top: 0;
     background-color: #FAE0E4;
     @include animation(
         flower-wrapper-slide-down .8s linear 21s forwards,
-        flower-wrapper-slide-up .8s linear 100s forwards,
+        flower-wrapper-slide-down .8s linear 100s reverse forwards,
         flower-wrapper-slide-down .8s linear 114s forwards);
   }
   .tree-wrapper {
@@ -30,7 +30,7 @@ position: absolute;
     @include transform(translateY(-100%));
     @include animation(
         tree-wrapper-slide-down .8s linear 21s forwards,
-        tree-wrapper-slide-up .8s linear 100s forwards,
+        tree-wrapper-slide-down .8s linear 100s reverse forwards,
         tree-wrapper-slide-down .8s linear 114s forwards);
   }
   .cat-wrapper {
@@ -38,7 +38,7 @@ position: absolute;
     @include transform(translateX(100%));
     @include animation(
         cat-wrapper-slide-left .5s ease-out 26.5s forwards,
-        cat-wrapper-slide-right .1s linear 100s forwards,
+        cat-wrapper-slide-left .1s linear 100s reverse forwards,
         cat-wrapper-slide-left .5s ease-out 119s forwards);
   }
 
@@ -91,7 +91,6 @@ position: absolute;
     width: 60px;
     background: url('../img/flower.png') 0px;
     @include transform(translateX(-50%));
-    @include animation(sprite-flower .5s 1s infinite);
 
     .left-eye {
       top: 29px;
@@ -191,7 +190,7 @@ position: absolute;
     background-image: url('../img/tree-circle.png');
     @include animation(
         wish-tree-in .5s ease-out 22.5s forwards,
-        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 27s reverse forwards,
         wish-tree-in .5s ease-out 115s forwards);
   }
   .wish-tree-1 .eye {
@@ -204,7 +203,7 @@ position: absolute;
     background-image: url('../img/tree-triangle.png');
     @include animation(
         wish-tree-in .5s ease-out 23.5s forwards,
-        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 27s reverse forwards,
         wish-tree-in .5s ease-out 116s forwards
     );
   }
@@ -218,7 +217,7 @@ position: absolute;
     background-image: url('../img/tree-club.png');
     @include animation(
         wish-tree-in .5s ease-out 24.5s forwards,
-        wish-tree-out .5s ease-out 27s forwards,
+        wish-tree-in .5s ease-out 27s reverse forwards,
         wish-tree-in .5s ease-out 117s forwards);
   }
   .wish-tree-3 .eye {
@@ -246,6 +245,7 @@ position: absolute;
     @include transform(translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg));
     @include animation(
         bee-wander 1.5s linear 27s forwards,
+        bee-wander .5s linear 100s reverse forwards,
         bee-wander 1.5s linear 119.5s forwards);
 
     .left-eye {

@@ -78,9 +78,9 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    -webkit-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
-    -moz-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
-    animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 114s forwards;
+    -webkit-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 110s forwards;
+    -moz-animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 110s forwards;
+    animation: fadeOut 0.5s linear 29.5s forwards, fadeIn 0.1s linear 110s forwards;
     /* Sections */
     /* Ground */
     /* Flower */
@@ -94,9 +94,9 @@ body {
     .loaded .scene-first .flower-wrapper {
       top: 0;
       background-color: #FAE0E4;
-      -webkit-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
-      -moz-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
-      animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-up 0.8s linear 100s forwards, flower-wrapper-slide-down 0.8s linear 114s forwards; }
+      -webkit-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-down 0.8s linear 100s reverse forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
+      -moz-animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-down 0.8s linear 100s reverse forwards, flower-wrapper-slide-down 0.8s linear 114s forwards;
+      animation: flower-wrapper-slide-down 0.8s linear 21s forwards, flower-wrapper-slide-down 0.8s linear 100s reverse forwards, flower-wrapper-slide-down 0.8s linear 114s forwards; }
     .loaded .scene-first .tree-wrapper {
       background-color: #E0FAE3;
       -webkit-transform: translateY(-100%);
@@ -104,9 +104,9 @@ body {
       -ms-transform: translateY(-100%);
       -o-transform: translateY(-100%);
       transform: translateY(-100%);
-      -webkit-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
-      -moz-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
-      animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-up 0.8s linear 100s forwards, tree-wrapper-slide-down 0.8s linear 114s forwards; }
+      -webkit-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-down 0.8s linear 100s reverse forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
+      -moz-animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-down 0.8s linear 100s reverse forwards, tree-wrapper-slide-down 0.8s linear 114s forwards;
+      animation: tree-wrapper-slide-down 0.8s linear 21s forwards, tree-wrapper-slide-down 0.8s linear 100s reverse forwards, tree-wrapper-slide-down 0.8s linear 114s forwards; }
     .loaded .scene-first .cat-wrapper {
       background-color: #fff176;
       -webkit-transform: translateX(100%);
@@ -114,9 +114,9 @@ body {
       -ms-transform: translateX(100%);
       -o-transform: translateX(100%);
       transform: translateX(100%);
-      -webkit-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
-      -moz-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
-      animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-right 0.1s linear 100s forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards; }
+      -webkit-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-left 0.1s linear 100s reverse forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
+      -moz-animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-left 0.1s linear 100s reverse forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards;
+      animation: cat-wrapper-slide-left 0.5s ease-out 26.5s forwards, cat-wrapper-slide-left 0.1s linear 100s reverse forwards, cat-wrapper-slide-left 0.5s ease-out 119s forwards; }
     .loaded .scene-first .ground {
       position: absolute;
       bottom: 0;
@@ -160,10 +160,7 @@ body {
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
-      transform: translateX(-50%);
-      -webkit-animation: sprite-flower 0.5s 1s infinite;
-      -moz-animation: sprite-flower 0.5s 1s infinite;
-      animation: sprite-flower 0.5s 1s infinite; }
+      transform: translateX(-50%); }
       .loaded .scene-first .flower .left-eye {
         top: 29px;
         left: 22px; }
@@ -252,9 +249,9 @@ body {
       top: 220px;
       left: 40%;
       background-image: url("../img/tree-circle.png");
-      -webkit-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards;
-      -moz-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards;
-      animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 115s forwards; }
+      -webkit-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 115s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 115s forwards;
+      animation: wish-tree-in 0.5s ease-out 22.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 115s forwards; }
     .loaded .scene-first .wish-tree-1 .eye {
       -webkit-transform: scale(1, 1.6);
       -moz-transform: scale(1, 1.6);
@@ -268,9 +265,9 @@ body {
       top: 100px;
       left: 50%;
       background-image: url("../img/tree-triangle.png");
-      -webkit-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards;
-      -moz-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards;
-      animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 116s forwards; }
+      -webkit-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 116s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 116s forwards;
+      animation: wish-tree-in 0.5s ease-out 23.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 116s forwards; }
     .loaded .scene-first .wish-tree-2 .eye {
       -webkit-transform: scale(1, 1.6);
       -moz-transform: scale(1, 1.6);
@@ -284,9 +281,9 @@ body {
       top: 220px;
       left: 60%;
       background-image: url("../img/tree-club.png");
-      -webkit-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards;
-      -moz-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards;
-      animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-out 0.5s ease-out 27s forwards, wish-tree-in 0.5s ease-out 117s forwards; }
+      -webkit-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 117s forwards;
+      -moz-animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 117s forwards;
+      animation: wish-tree-in 0.5s ease-out 24.5s forwards, wish-tree-in 0.5s ease-out 27s reverse forwards, wish-tree-in 0.5s ease-out 117s forwards; }
     .loaded .scene-first .wish-tree-3 .eye {
       -webkit-transform: scale(1, 1.6);
       -moz-transform: scale(1, 1.6);
@@ -320,9 +317,9 @@ body {
       -ms-transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
       -o-transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
       transform: translate(-50%, 0) rotate(0deg) translate(-100px, 0%) rotate(0deg);
-      -webkit-animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards;
-      -moz-animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards;
-      animation: bee-wander 1.5s linear 27s forwards, bee-wander 1.5s linear 119.5s forwards; }
+      -webkit-animation: bee-wander 1.5s linear 27s forwards, bee-wander 0.5s linear 100s reverse forwards, bee-wander 1.5s linear 119.5s forwards;
+      -moz-animation: bee-wander 1.5s linear 27s forwards, bee-wander 0.5s linear 100s reverse forwards, bee-wander 1.5s linear 119.5s forwards;
+      animation: bee-wander 1.5s linear 27s forwards, bee-wander 0.5s linear 100s reverse forwards, bee-wander 1.5s linear 119.5s forwards; }
       .loaded .scene-first .bee .left-eye {
         top: 39px;
         left: 56px; }
@@ -591,9 +588,9 @@ body {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: scene-second-center-in 0.5s ease-out 29s forwards;
-    -moz-animation: scene-second-center-in 0.5s ease-out 29s forwards;
-    animation: scene-second-center-in 0.5s ease-out 29s forwards;
+    -webkit-animation: scene-second-center-in 0.5s ease-out 29s forwards, scene-second-center-in 0.1s ease-out 100s reverse forwards, scene-second-center-in 0.5s ease-out 123s forwards;
+    -moz-animation: scene-second-center-in 0.5s ease-out 29s forwards, scene-second-center-in 0.1s ease-out 100s reverse forwards, scene-second-center-in 0.5s ease-out 123s forwards;
+    animation: scene-second-center-in 0.5s ease-out 29s forwards, scene-second-center-in 0.1s ease-out 100s reverse forwards, scene-second-center-in 0.5s ease-out 123s forwards;
     /* Sea Layers */
     /* Turtle Wrapper */
     /* Sea Lives Wrapper */
@@ -613,9 +610,9 @@ body {
       -ms-transform: translateY(80%);
       -o-transform: translateY(80%);
       transform: translateY(80%);
-      -webkit-animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards;
-      -moz-animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards;
-      animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards; }
+      -webkit-animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards, sea-layers-up 0.1s ease-in 100s reverse forwards, sea-layers-down 0.1s ease-out 100.1s reverse forwards, sea-layers-down 1s ease-out 124s forwards, sea-layers-up 0.5s ease-in 130s forwards;
+      -moz-animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards, sea-layers-up 0.1s ease-in 100s reverse forwards, sea-layers-down 0.1s ease-out 100.1s reverse forwards, sea-layers-down 1s ease-out 124s forwards, sea-layers-up 0.5s ease-in 130s forwards;
+      animation: sea-layers-down 1s ease-out 30s forwards, sea-layers-up 0.5s ease-in 36s forwards, sea-layers-up 0.1s ease-in 100s reverse forwards, sea-layers-down 0.1s ease-out 100.1s reverse forwards, sea-layers-down 1s ease-out 124s forwards, sea-layers-up 0.5s ease-in 130s forwards; }
     .loaded .scene-second .sea-layer {
       position: absolute;
       bottom: 0;
@@ -670,17 +667,17 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      -webkit-animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards;
-      -moz-animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards;
-      animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards; }
+      -webkit-animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards, turtle-dive 0.1s ease-in 100s reverse forwards, turtle-fly 0.1s ease-in 100.1s reverse forwards, turtle-fly 2s ease-in 124s forwards, turtle-dive 2s ease-in 130s forwards;
+      -moz-animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards, turtle-dive 0.1s ease-in 100s reverse forwards, turtle-fly 0.1s ease-in 100.1s reverse forwards, turtle-fly 2s ease-in 124s forwards, turtle-dive 2s ease-in 130s forwards;
+      animation: turtle-fly 2s ease-in 30s forwards, turtle-dive 2s ease-in 36s forwards, turtle-dive 0.1s ease-in 100s reverse forwards, turtle-fly 0.1s ease-in 100.1s reverse forwards, turtle-fly 2s ease-in 124s forwards, turtle-dive 2s ease-in 130s forwards; }
     .loaded .scene-second .cloud {
       position: absolute;
       width: 170px;
       height: 110px;
       background: url("../img/cloud.png");
-      -webkit-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards;
-      -moz-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards;
-      animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards; }
+      -webkit-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards, cloud-up 0.1s ease-out 100s reverse forwards, cloud-left 0.1s linear 100.1s reverse forwards, cloud-down 0.1s ease-out 100.2s reverse forwards, cloud-down 2s ease-out 125s forwards, cloud-left 3.5s linear 127s forwards, cloud-up 0.5s ease-out 130s forwards;
+      -moz-animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards, cloud-up 0.1s ease-out 100s reverse forwards, cloud-left 0.1s linear 100.1s reverse forwards, cloud-down 0.1s ease-out 100.2s reverse forwards, cloud-down 2s ease-out 125s forwards, cloud-left 3.5s linear 127s forwards, cloud-up 0.5s ease-out 130s forwards;
+      animation: cloud-down 2s ease-out 31s forwards, cloud-left 3.5s linear 33s forwards, cloud-up 0.5s ease-out 36s forwards, cloud-up 0.1s ease-out 100s reverse forwards, cloud-left 0.1s linear 100.1s reverse forwards, cloud-down 0.1s ease-out 100.2s reverse forwards, cloud-down 2s ease-out 125s forwards, cloud-left 3.5s linear 127s forwards, cloud-up 0.5s ease-out 130s forwards; }
       .loaded .scene-second .cloud .left-eye {
         top: 46px;
         left: 72px;
@@ -708,9 +705,9 @@ body {
       width: 100%;
       height: 100%;
       opacity: 0;
-      -webkit-animation: fadeIn 1s ease-in 38.5s forwards;
-      -moz-animation: fadeIn 1s ease-in 38.5s forwards;
-      animation: fadeIn 1s ease-in 38.5s forwards; }
+      -webkit-animation: fadeIn 1s ease-in 38s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 1s ease-in 132s forwards;
+      -moz-animation: fadeIn 1s ease-in 38s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 1s ease-in 132s forwards;
+      animation: fadeIn 1s ease-in 38s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 1s ease-in 132s forwards; }
     .loaded .scene-second .sea-bed {
       position: absolute;
       bottom: 0px;
@@ -718,9 +715,9 @@ body {
       height: 30px;
       background: #A96747;
       opacity: 0;
-      -webkit-animation: fadeIn 0.5s ease-in 36s forwards;
-      -moz-animation: fadeIn 0.5s ease-in 36s forwards;
-      animation: fadeIn 0.5s ease-in 36s forwards; }
+      -webkit-animation: fadeIn 0.5s ease-in 36s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 0.5s ease-in 130s forwards;
+      -moz-animation: fadeIn 0.5s ease-in 36s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 0.5s ease-in 130s forwards;
+      animation: fadeIn 0.5s ease-in 36s forwards, fadeIn 0.1s ease-in 100s reverse forwards, fadeIn 0.5s ease-in 130s forwards; }
     .loaded .scene-second .sea-grass {
       position: absolute;
       bottom: 0; }
@@ -749,19 +746,19 @@ body {
       bottom: 154px; }
     .loaded .scene-second .sea-grass-bubble-1.one,
     .loaded .scene-second .sea-grass-bubble-2.one {
-      -webkit-animation: sea-grass-bubble 4s ease-in 39.5s 4;
-      -moz-animation: sea-grass-bubble 4s ease-in 39.5s 4;
-      animation: sea-grass-bubble 4s ease-in 39.5s 4; }
+      -webkit-animation: sea-grass-bubble 4s ease-in 39s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 133s 4;
+      -moz-animation: sea-grass-bubble 4s ease-in 39s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 133s 4;
+      animation: sea-grass-bubble 4s ease-in 39s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 133s 4; }
     .loaded .scene-second .sea-grass-bubble-1.two,
     .loaded .scene-second .sea-grass-bubble-2.two {
-      -webkit-animation: sea-grass-bubble 4s ease-in 41s 4;
-      -moz-animation: sea-grass-bubble 4s ease-in 41s 4;
-      animation: sea-grass-bubble 4s ease-in 41s 4; }
+      -webkit-animation: sea-grass-bubble 4s ease-in 41s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 135s 4;
+      -moz-animation: sea-grass-bubble 4s ease-in 41s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 135s 4;
+      animation: sea-grass-bubble 4s ease-in 41s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 135s 4; }
     .loaded .scene-second .sea-grass-bubble-1.three,
     .loaded .scene-second .sea-grass-bubble-2.three {
-      -webkit-animation: sea-grass-bubble 4s ease-in 42.5s 4;
-      -moz-animation: sea-grass-bubble 4s ease-in 42.5s 4;
-      animation: sea-grass-bubble 4s ease-in 42.5s 4; }
+      -webkit-animation: sea-grass-bubble 4s ease-in 42s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 136s 4;
+      -moz-animation: sea-grass-bubble 4s ease-in 42s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 136s 4;
+      animation: sea-grass-bubble 4s ease-in 42s 4, sea-grass-bubble 0.1s ease-in 100s reverse 4, sea-grass-bubble 4s ease-in 136s 4; }
     .loaded .scene-second .fish-wrapper {
       z-index: 2;
       -webkit-transform: scaleX(-1);
@@ -769,9 +766,9 @@ body {
       -ms-transform: scaleX(-1);
       -o-transform: scaleX(-1);
       transform: scaleX(-1);
-      -webkit-animation: fish-wrapper-flip 0.1s linear 48.5s forwards;
-      -moz-animation: fish-wrapper-flip 0.1s linear 48.5s forwards;
-      animation: fish-wrapper-flip 0.1s linear 48.5s forwards; }
+      -webkit-animation: fish-wrapper-flip 0.1s linear 48.5s forwards, fish-wrapper-flip 0.1s linear 100s reverse forwards, fish-wrapper-flip 0.1s linear 142.5s forwards;
+      -moz-animation: fish-wrapper-flip 0.1s linear 48.5s forwards, fish-wrapper-flip 0.1s linear 100s reverse forwards, fish-wrapper-flip 0.1s linear 142.5s forwards;
+      animation: fish-wrapper-flip 0.1s linear 48.5s forwards, fish-wrapper-flip 0.1s linear 100s reverse forwards, fish-wrapper-flip 0.1s linear 142.5s forwards; }
     .loaded .scene-second .fish {
       position: absolute;
       left: 25%;
@@ -785,9 +782,9 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      -webkit-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards;
-      -moz-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards;
-      animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards; }
+      -webkit-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards, fish-move 0.1s linear 100s reverse forwards, fish-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132.5s forwards, fish-move 5.5s linear 133s forwards, fish-move 5.5s linear 142.5s forwards;
+      -moz-animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards, fish-move 0.1s linear 100s reverse forwards, fish-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132.5s forwards, fish-move 5.5s linear 133s forwards, fish-move 5.5s linear 142.5s forwards;
+      animation: fadeIn 0.5s ease-in 38.5s forwards, fish-move 5.5s linear 39s forwards, fish-move 5.5s linear 48.5s forwards, fish-move 0.1s linear 100s reverse forwards, fish-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132.5s forwards, fish-move 5.5s linear 133s forwards, fish-move 5.5s linear 142.5s forwards; }
     .loaded .scene-second .fishes-small {
       position: absolute;
       top: 25%;
@@ -795,9 +792,9 @@ body {
       width: 100%;
       height: 100%;
       opacity: 0;
-      -webkit-animation: fadeIn 0.5s ease-in 38.5s forwards, fishes-small-move 9.5s linear 38.5s forwards, fishes-small-move 9.5s linear 48s forwards;
-      -moz-animation: fadeIn 0.5s ease-in 38.5s forwards, fishes-small-move 9.5s linear 38.5s forwards, fishes-small-move 9.5s linear 48s forwards;
-      animation: fadeIn 0.5s ease-in 38.5s forwards, fishes-small-move 9.5s linear 38.5s forwards, fishes-small-move 9.5s linear 48s forwards; }
+      -webkit-animation: fadeIn 0.5s ease-in 38s forwards, fishes-small-move 9.5s linear 38s forwards, fishes-small-move 9.5s linear 48s forwards, fishes-small-move 0.1s linear 100s reverse forwards, fishes-small-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132s forwards, fishes-small-move 9.5s linear 132s forwards, fishes-small-move 9.5s linear 142s forwards;
+      -moz-animation: fadeIn 0.5s ease-in 38s forwards, fishes-small-move 9.5s linear 38s forwards, fishes-small-move 9.5s linear 48s forwards, fishes-small-move 0.1s linear 100s reverse forwards, fishes-small-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132s forwards, fishes-small-move 9.5s linear 132s forwards, fishes-small-move 9.5s linear 142s forwards;
+      animation: fadeIn 0.5s ease-in 38s forwards, fishes-small-move 9.5s linear 38s forwards, fishes-small-move 9.5s linear 48s forwards, fishes-small-move 0.1s linear 100s reverse forwards, fishes-small-move 0.1s linear 100.1s reverse forwards, fadeIn 0.1s ease-in 100.2s reverse forwards, fadeIn 0.5s ease-in 132s forwards, fishes-small-move 9.5s linear 132s forwards, fishes-small-move 9.5s linear 142s forwards; }
     .loaded .scene-second .fish-small {
       position: absolute;
       height: 18px;
@@ -844,18 +841,18 @@ body {
       width: 30px;
       height: 30px;
       border: 2px solid #A9FFC9;
-      -webkit-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards;
-      -moz-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards;
-      animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards; }
+      -webkit-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 136s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 145.5s forwards;
+      -moz-animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 136s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 145.5s forwards;
+      animation: bubble-in 1s ease-in 42s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 51.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 136s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 145.5s forwards; }
     .loaded .scene-second .fish-bubble-2 {
       left: 56%;
       bottom: 38%;
       width: 50px;
       height: 50px;
       border: 5px solid #A9FFC9;
-      -webkit-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards;
-      -moz-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards;
-      animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards; }
+      -webkit-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 137s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 146.5s forwards;
+      -moz-animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 137s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 146.5s forwards;
+      animation: bubble-in 1s ease-in 43s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 52.5s forwards, bubble-in 0.1s ease-in 100s reverse forwards, bubble-out 0.1s linear 100.1s reverse forwards, bubble-in 0.1s ease-in 100.2s reverse forwards, bubble-in 1s ease-in 137s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 146.5s forwards; }
     .loaded .scene-second .fish-bubble-3 {
       left: 50%;
       bottom: 47%;
@@ -863,9 +860,9 @@ body {
       height: 175px;
       border: 8px solid #A9FFC9;
       background-color: #F0F8FF;
-      -webkit-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards;
-      -moz-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards;
-      animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards; }
+      -webkit-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards, bubble-zoom 0.1s linear 100s reverse forwards, bubble-in 0.1s ease-in 100.1s reverse forwards, bubble-out 0.1s linear 100.2s reverse forwards, bubble-in 0.1s ease-in 100.3s reverse forwards, bubble-in 1s ease-in 138s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 147.5s forwards, bubble-zoom 1s linear 150s forwards;
+      -moz-animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards, bubble-zoom 0.1s linear 100s reverse forwards, bubble-in 0.1s ease-in 100.1s reverse forwards, bubble-out 0.1s linear 100.2s reverse forwards, bubble-in 0.1s ease-in 100.3s reverse forwards, bubble-in 1s ease-in 138s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 147.5s forwards, bubble-zoom 1s linear 150s forwards;
+      animation: bubble-in 1s ease-in 44s forwards, bubble-out 0.1s linear 48s forwards, bubble-in 1s ease-in 53.5s forwards, bubble-zoom 1s linear 56s forwards, bubble-zoom 0.1s linear 100s reverse forwards, bubble-in 0.1s ease-in 100.1s reverse forwards, bubble-out 0.1s linear 100.2s reverse forwards, bubble-in 0.1s ease-in 100.3s reverse forwards, bubble-in 1s ease-in 138s forwards, bubble-out 0.1s linear 142s forwards, bubble-in 1s ease-in 147.5s forwards, bubble-zoom 1s linear 150s forwards; }
     .loaded .scene-second .desert {
       position: absolute;
       bottom: 0;
@@ -877,9 +874,9 @@ body {
       -ms-transform: translateY(40px);
       -o-transform: translateY(40px);
       transform: translateY(40px);
-      -webkit-animation: desert-zoom 1s linear 56s forwards;
-      -moz-animation: desert-zoom 1s linear 56s forwards;
-      animation: desert-zoom 1s linear 56s forwards; }
+      -webkit-animation: desert-zoom 1s linear 56s forwards, desert-zoom 0.1s linear 100s reverse forwards, desert-zoom 1s linear 150s forwards;
+      -moz-animation: desert-zoom 1s linear 56s forwards, desert-zoom 0.1s linear 100s reverse forwards, desert-zoom 1s linear 150s forwards;
+      animation: desert-zoom 1s linear 56s forwards, desert-zoom 0.1s linear 100s reverse forwards, desert-zoom 1s linear 150s forwards; }
     .loaded .scene-second .cactus {
       position: absolute;
       left: 50%;
@@ -892,9 +889,9 @@ body {
       -ms-transform: translateX(-50%) scale(1);
       -o-transform: translateX(-50%) scale(1);
       transform: translateX(-50%) scale(1);
-      -webkit-animation: cactus-zoom 1s linear 56s forwards;
-      -moz-animation: cactus-zoom 1s linear 56s forwards;
-      animation: cactus-zoom 1s linear 56s forwards; }
+      -webkit-animation: cactus-zoom 1s linear 56s forwards, cactus-zoom 0.1s linear 100s reverse forwards, cactus-zoom 1s linear 150s forwards;
+      -moz-animation: cactus-zoom 1s linear 56s forwards, cactus-zoom 0.1s linear 100s reverse forwards, cactus-zoom 1s linear 150s forwards;
+      animation: cactus-zoom 1s linear 56s forwards, cactus-zoom 0.1s linear 100s reverse forwards, cactus-zoom 1s linear 150s forwards; }
       .loaded .scene-second .cactus .left-eye {
         left: 34px;
         top: 40px;
@@ -933,9 +930,9 @@ body {
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0);
-      -webkit-animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards;
-      -moz-animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards;
-      animation: pink-flower-in 0.8s ease-out 45.5s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards; }
+      -webkit-animation: pink-flower-in 0.8s ease-out 45s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards, pink-flower-in 0.1s ease-out 100s reverse forwards, pink-flower-out 0.1s linear 100.1s reverse forwards, pink-flower-in 0.1s ease-out 100.2s reverse forwards, pink-flower-in 0.8s ease-out 139s forwards, pink-flower-out 0.1s linear 142.5s forwards, pink-flower-in 0.8s ease-out 149s forwards;
+      -moz-animation: pink-flower-in 0.8s ease-out 45s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards, pink-flower-in 0.1s ease-out 100s reverse forwards, pink-flower-out 0.1s linear 100.1s reverse forwards, pink-flower-in 0.1s ease-out 100.2s reverse forwards, pink-flower-in 0.8s ease-out 139s forwards, pink-flower-out 0.1s linear 142.5s forwards, pink-flower-in 0.8s ease-out 149s forwards;
+      animation: pink-flower-in 0.8s ease-out 45s forwards, pink-flower-out 0.1s linear 48.5s forwards, pink-flower-in 0.8s ease-out 55s forwards, pink-flower-in 0.1s ease-out 100s reverse forwards, pink-flower-out 0.1s linear 100.1s reverse forwards, pink-flower-in 0.1s ease-out 100.2s reverse forwards, pink-flower-in 0.8s ease-out 139s forwards, pink-flower-out 0.1s linear 142.5s forwards, pink-flower-in 0.8s ease-out 149s forwards; }
 @-webkit-keyframes scene-second-center-in {
   0% {
     width: 0%; }
@@ -1438,9 +1435,9 @@ body {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-animation: scene-third-center-zoom-out 1.5s linear 60s forwards;
-    -moz-animation: scene-third-center-zoom-out 1.5s linear 60s forwards;
-    animation: scene-third-center-zoom-out 1.5s linear 60s forwards; }
+    -webkit-animation: scene-third-center-zoom-out 1.5s linear 76s forwards, fadeOut 0.5s linear 110s forwards;
+    -moz-animation: scene-third-center-zoom-out 1.5s linear 76s forwards, fadeOut 0.5s linear 110s forwards;
+    animation: scene-third-center-zoom-out 1.5s linear 76s forwards, fadeOut 0.5s linear 110s forwards; }
     .loaded .scene-third section {
       position: absolute;
       top: 0;
@@ -1464,9 +1461,9 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      -webkit-animation: jackalope-run 4s linear 61.5s forwards;
-      -moz-animation: jackalope-run 4s linear 61.5s forwards;
-      animation: jackalope-run 4s linear 61.5s forwards; }
+      -webkit-animation: jackalope-run 4s linear 77.5s forwards;
+      -moz-animation: jackalope-run 4s linear 77.5s forwards;
+      animation: jackalope-run 4s linear 77.5s forwards; }
       .loaded .scene-third .jackalope .left-eye {
         top: 10px;
         left: 20px;
@@ -1475,9 +1472,9 @@ body {
         -ms-transform: scale(1, 1.6);
         -o-transform: scale(1, 1.6);
         transform: scale(1, 1.6);
-        -webkit-animation: eye-blink 3s linear 61.5s infinite;
-        -moz-animation: eye-blink 3s linear 61.5s infinite;
-        animation: eye-blink 3s linear 61.5s infinite; }
+        -webkit-animation: eye-blink 3s linear 77.5s infinite;
+        -moz-animation: eye-blink 3s linear 77.5s infinite;
+        animation: eye-blink 3s linear 77.5s infinite; }
       .loaded .scene-third .jackalope .right-eye {
         top: 10px;
         left: 30px;
@@ -1486,9 +1483,9 @@ body {
         -ms-transform: scale(1, 1.6);
         -o-transform: scale(1, 1.6);
         transform: scale(1, 1.6);
-        -webkit-animation: eye-blink 3s linear 61.5s infinite;
-        -moz-animation: eye-blink 3s linear 61.5s infinite;
-        animation: eye-blink 3s linear 61.5s infinite; }
+        -webkit-animation: eye-blink 3s linear 77.5s infinite;
+        -moz-animation: eye-blink 3s linear 77.5s infinite;
+        animation: eye-blink 3s linear 77.5s infinite; }
     .loaded .scene-third .jackalope.shadow {
       -webkit-transform-origin: bottom;
       -moz-transform-origin: bottom;
@@ -1520,9 +1517,9 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      -webkit-animation: snow-ball-fall 1s ease-in 65s forwards;
-      -moz-animation: snow-ball-fall 1s ease-in 65s forwards;
-      animation: snow-ball-fall 1s ease-in 65s forwards; }
+      -webkit-animation: snow-ball-fall 1s ease-in 81s forwards;
+      -moz-animation: snow-ball-fall 1s ease-in 81s forwards;
+      animation: snow-ball-fall 1s ease-in 81s forwards; }
     .loaded .scene-third .snow-ball.reflect {
       bottom: -100%;
       opacity: 0.3;
@@ -1532,9 +1529,9 @@ body {
       -ms-transform: translateX(-50%) scaleY(-1);
       -o-transform: translateX(-50%) scaleY(-1);
       transform: translateX(-50%) scaleY(-1);
-      -webkit-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
-      -moz-animation: snow-ball-fall-reflect 1s ease-in 65s forwards;
-      animation: snow-ball-fall-reflect 1s ease-in 65s forwards; }
+      -webkit-animation: snow-ball-fall-reflect 1s ease-in 81s forwards;
+      -moz-animation: snow-ball-fall-reflect 1s ease-in 81s forwards;
+      animation: snow-ball-fall-reflect 1s ease-in 81s forwards; }
 @-webkit-keyframes scene-third-center-zoom-out {
   0% {
     -webkit-transform: scale(0);

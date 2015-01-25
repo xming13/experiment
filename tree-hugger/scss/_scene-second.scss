@@ -1,5 +1,9 @@
 @import "bourbon/bourbon";
 
+$scene-second-start-1: 29.5s;
+$scene-second-start-2: 123.5s;
+$scene-second-reverse: 100s;
+
 /* Second Scene */
 .scene-second {
   position: absolute;
@@ -9,7 +13,11 @@
   width: 0%;
   overflow: hidden;
   @include transform(translateX(-50%));
-  @include animation(scene-second-center-in .5s ease-out 29s forwards);
+  @include animation(
+      scene-second-center-in .5s ease-out ($scene-second-start-1 - .5s) forwards,
+      scene-second-center-in .1s ease-out $scene-second-reverse reverse forwards,
+      scene-second-center-in .5s ease-out ($scene-second-start-2 - .5s) forwards
+  );
 
   section {
     position: absolute;
@@ -26,8 +34,15 @@
     width: 100%;
     @include transform(translateY(80%));
     @include animation(
-        sea-layers-down 1s ease-out 30s forwards,
-        sea-layers-up .5s ease-in 36s forwards);
+        sea-layers-down 1s ease-out ($scene-second-start-1 + .5s) forwards,
+        sea-layers-up .5s ease-in ($scene-second-start-1 + 6.5s) forwards,
+
+        sea-layers-up .1s ease-in ($scene-second-reverse) reverse forwards,
+        sea-layers-down .1s ease-out ($scene-second-reverse + .1s) reverse forwards,
+
+        sea-layers-down 1s ease-out ($scene-second-start-2 + .5s) forwards,
+        sea-layers-up .5s ease-in ($scene-second-start-2 + 6.5s) forwards
+    );
   }
   .sea-layer {
     position: absolute;
@@ -77,8 +92,15 @@
     z-index: 1;
     @include transform(translateX(-50%));
     @include animation(
-        turtle-fly 2s ease-in 30s forwards,
-        turtle-dive 2s ease-in 36s forwards);
+        turtle-fly 2s ease-in ($scene-second-start-1 + .5s) forwards,
+        turtle-dive 2s ease-in ($scene-second-start-1 + 6.5s) forwards,
+
+        turtle-dive .1s ease-in ($scene-second-reverse) reverse forwards,
+        turtle-fly .1s ease-in ($scene-second-reverse + .1s) reverse forwards,
+
+        turtle-fly 2s ease-in ($scene-second-start-2 + .5s) forwards,
+        turtle-dive 2s ease-in ($scene-second-start-2 + 6.5s) forwards
+    );
   }
   .cloud {
     position: absolute;
@@ -86,9 +108,18 @@
     height: 110px;
     background: url('../img/cloud.png');
     @include animation(
-        cloud-down 2s ease-out 31s forwards,
-        cloud-left 3.5s linear 33s forwards,
-        cloud-up .5s ease-out 36s forwards);
+        cloud-down 2s ease-out ($scene-second-start-1 + 1.5s) forwards,
+        cloud-left 3.5s linear ($scene-second-start-1 + 3.5s) forwards,
+        cloud-up .5s ease-out ($scene-second-start-1 + 6.5s) forwards,
+
+        cloud-up .1s ease-out ($scene-second-reverse) reverse forwards,
+        cloud-left .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        cloud-down .1s ease-out ($scene-second-reverse + .2s) reverse forwards,
+
+        cloud-down 2s ease-out ($scene-second-start-2 + 1.5s) forwards,
+        cloud-left 3.5s linear ($scene-second-start-2 + 3.5s) forwards,
+        cloud-up .5s ease-out ($scene-second-start-2 + 6.5s) forwards
+    );
 
     .left-eye {
       top: 46px;
@@ -127,7 +158,11 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    @include animation(fadeIn 1s ease-in 38.5s forwards);
+    @include animation(
+        fadeIn 1s ease-in ($scene-second-start-1 + 8.5s) forwards,
+        fadeIn .1s ease-in ($scene-second-reverse) reverse forwards,
+        fadeIn 1s ease-in ($scene-second-start-2 + 8.5s) forwards
+    );
   }
   .sea-bed {
     position: absolute;
@@ -136,7 +171,11 @@
     height: 30px;
     background: #A96747;
     opacity: 0;
-    @include animation(fadeIn .5s ease-in 36s forwards);
+    @include animation(
+        fadeIn .5s ease-in ($scene-second-start-1 + 6.5s) forwards,
+        fadeIn .1s ease-in ($scene-second-reverse) reverse forwards,
+        fadeIn .5s ease-in ($scene-second-start-2 + 6.5s) forwards
+    );
   }
 
   .sea-grass {
@@ -173,22 +212,38 @@
   }
   .sea-grass-bubble-1.one,
   .sea-grass-bubble-2.one {
-    @include animation(sea-grass-bubble 4s ease-in 39.5s 4);
+    @include animation(
+        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 9.5s) 4,
+        sea-grass-bubble .1s ease-in ($scene-second-reverse) reverse 4,
+        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 9.5s) 4
+    );
   }
   .sea-grass-bubble-1.two,
   .sea-grass-bubble-2.two {
-    @include animation(sea-grass-bubble 4s ease-in 41s 4);
+    @include animation(
+        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 11.5s) 4,
+        sea-grass-bubble .1s ease-in ($scene-second-reverse) reverse 4,
+        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 11.5s) 4
+    );
   }
   .sea-grass-bubble-1.three,
   .sea-grass-bubble-2.three {
-    @include animation(sea-grass-bubble 4s ease-in 42.5s 4);
+    @include animation(
+        sea-grass-bubble 4s ease-in ($scene-second-start-1 + 12.5s) 4,
+        sea-grass-bubble .1s ease-in ($scene-second-reverse) reverse 4,
+        sea-grass-bubble 4s ease-in ($scene-second-start-2 + 12.5s) 4
+    );
   }
 
   /* Fish Wrapper */
   .fish-wrapper {
     z-index: 2;
     @include transform(scaleX(-1));
-    @include animation(fish-wrapper-flip .1s linear 48.5s forwards);
+    @include animation(
+        fish-wrapper-flip .1s linear ($scene-second-start-1 + 19s) forwards,
+        fish-wrapper-flip .1s linear ($scene-second-reverse) reverse forwards,
+        fish-wrapper-flip .1s linear ($scene-second-start-2 + 19s) forwards
+    );
   }
   .fish {
     position: absolute;
@@ -200,9 +255,18 @@
     opacity: 0;
     @include transform(translateX(-50%));
     @include animation(
-        fadeIn .5s ease-in 38.5s forwards,
-        fish-move 5.5s linear 39s forwards,
-        fish-move 5.5s linear 48.5s forwards);
+        fadeIn .5s ease-in ($scene-second-start-1 + 9s) forwards,
+        fish-move 5.5s linear ($scene-second-start-1 + 9.5s) forwards,
+        fish-move 5.5s linear ($scene-second-start-1 + 19s) forwards,
+
+        fish-move .1s linear ($scene-second-reverse) reverse forwards,
+        fish-move .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        fadeIn .1s ease-in ($scene-second-reverse + .2s) reverse forwards,
+
+        fadeIn .5s ease-in ($scene-second-start-2 + 9s) forwards,
+        fish-move 5.5s linear ($scene-second-start-2 + 9.5s) forwards,
+        fish-move 5.5s linear ($scene-second-start-2 + 19s) forwards
+    );
   }
 
   .fishes-small {
@@ -213,9 +277,18 @@
     height: 100%;
     opacity: 0;
     @include animation(
-        fadeIn .5s ease-in 38.5s forwards,
-        fishes-small-move 9.5s linear 38.5s forwards,
-        fishes-small-move 9.5s linear 48s forwards);
+        fadeIn .5s ease-in ($scene-second-start-1 + 8.5s) forwards,
+        fishes-small-move 9.5s linear ($scene-second-start-1 + 8.5s) forwards,
+        fishes-small-move 9.5s linear ($scene-second-start-1 + 18.5s) forwards,
+
+        fishes-small-move .1s linear ($scene-second-reverse) reverse forwards,
+        fishes-small-move .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        fadeIn .1s ease-in ($scene-second-reverse + .2s) reverse forwards,
+
+        fadeIn .5s ease-in ($scene-second-start-2 + 8.5s) forwards,
+        fishes-small-move 9.5s linear ($scene-second-start-2 + 8.5s) forwards,
+        fishes-small-move 9.5s linear ($scene-second-start-2 + 18.5s) forwards
+    );
   }
   .fish-small {
     position: absolute;
@@ -272,9 +345,18 @@
     height: 30px;
     border: 2px solid #A9FFC9;
     @include animation(
-        bubble-in 1s ease-in 42s forwards,
-        bubble-out .1s linear 48s forwards,
-        bubble-in 1s ease-in 51.5s forwards);
+        bubble-in 1s ease-in ($scene-second-start-1 + 12.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-1 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-1 + 22s) forwards,
+
+        bubble-in .1s ease-in ($scene-second-reverse) reverse forwards,
+        bubble-out .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        bubble-in .1s ease-in ($scene-second-reverse + .2s) reverse forwards,
+
+        bubble-in 1s ease-in ($scene-second-start-2 + 12.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-2 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-2 + 22s) forwards
+    );
   }
   .fish-bubble-2 {
     left: 56%;
@@ -283,9 +365,18 @@
     height: 50px;
     border: 5px solid #A9FFC9;
     @include animation(
-        bubble-in 1s ease-in 43s forwards,
-        bubble-out .1s linear 48s forwards,
-        bubble-in 1s ease-in 52.5s forwards);
+        bubble-in 1s ease-in ($scene-second-start-1 + 13.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-1 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-1 + 23s) forwards,
+
+        bubble-in .1s ease-in ($scene-second-reverse) reverse forwards,
+        bubble-out .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        bubble-in .1s ease-in ($scene-second-reverse + .2s) reverse forwards,
+
+        bubble-in 1s ease-in ($scene-second-start-2 + 13.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-2 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-2 + 23s) forwards
+    );
   }
   .fish-bubble-3 {
     left: 50%;
@@ -295,10 +386,21 @@
     border: 8px solid #A9FFC9;
     background-color: #F0F8FF;
     @include animation(
-        bubble-in 1s ease-in 44s forwards,
-        bubble-out .1s linear 48s forwards,
-        bubble-in 1s ease-in 53.5s forwards,
-        bubble-zoom 1s linear 56s forwards);
+        bubble-in 1s ease-in ($scene-second-start-1 + 14.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-1 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-1 + 24s) forwards,
+        bubble-zoom 1s linear ($scene-second-start-1 + 26.5s) forwards,
+
+        bubble-zoom .1s linear ($scene-second-reverse) reverse forwards,
+        bubble-in .1s ease-in ($scene-second-reverse + .1s) reverse forwards,
+        bubble-out .1s linear ($scene-second-reverse + .2s) reverse forwards,
+        bubble-in .1s ease-in ($scene-second-reverse + .3s) reverse forwards,
+
+        bubble-in 1s ease-in ($scene-second-start-2 + 14.5s) forwards,
+        bubble-out .1s linear ($scene-second-start-2 + 18.5s) forwards,
+        bubble-in 1s ease-in ($scene-second-start-2 + 24s) forwards,
+        bubble-zoom 1s linear ($scene-second-start-2 + 26.5s) forwards
+    );
   }
 
   .desert {
@@ -308,7 +410,11 @@
     height: 80px;
     background-color: rgb(254, 222, 196);
     @include transform(translateY(40px));
-    @include animation(desert-zoom 1s linear 56s forwards);
+    @include animation(
+        desert-zoom 1s linear ($scene-second-start-1 + 26.5s) forwards,
+        desert-zoom .1s linear ($scene-second-reverse) reverse forwards,
+        desert-zoom 1s linear ($scene-second-start-2 + 26.5s) forwards
+    );
   }
   .cactus {
     position: absolute;
@@ -319,7 +425,11 @@
     background-image: url('../img/cactus.png');
     //      background-color: #ACFE2F;
     @include transform(translateX(-50%) scale(1));
-    @include animation(cactus-zoom 1s linear 56s forwards);
+    @include animation(
+        cactus-zoom 1s linear ($scene-second-start-1 + 26.5s) forwards,
+        cactus-zoom .1s linear ($scene-second-reverse) reverse forwards,
+        cactus-zoom 1s linear ($scene-second-start-2 + 26.5s) forwards
+    );
 
     .left-eye {
       left: 34px;
@@ -347,9 +457,18 @@
     background: url('../img/cactus-flower.png');
     @include transform(scale(0));
     @include animation(
-        pink-flower-in .8s ease-out 45.5s forwards,
-        pink-flower-out .1s linear 48.5s forwards,
-        pink-flower-in .8s ease-out 55s forwards);
+        pink-flower-in .8s ease-out ($scene-second-start-1 + 15.5s) forwards,
+        pink-flower-out .1s linear ($scene-second-start-1 + 19s) forwards,
+        pink-flower-in .8s ease-out ($scene-second-start-1 + 25.5s) forwards,
+
+        pink-flower-in .1s ease-out ($scene-second-reverse) reverse forwards,
+        pink-flower-out .1s linear ($scene-second-reverse + .1s) reverse forwards,
+        pink-flower-in .1s ease-out ($scene-second-reverse + .2s) reverse forwards,
+
+        pink-flower-in .8s ease-out ($scene-second-start-2 + 15.5s) forwards,
+        pink-flower-out .1s linear ($scene-second-start-2 + 19s) forwards,
+        pink-flower-in .8s ease-out ($scene-second-start-2 + 25.5s) forwards
+    );
   }
 }
 

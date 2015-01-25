@@ -1,5 +1,7 @@
 @import "bourbon/bourbon";
 
+$scene-third-start: 77.5s;
+
 /* Third Scene */
 .scene-third {
   position: absolute;
@@ -10,7 +12,10 @@
   overflow: hidden;
   background-color: #000025;
   @include transform(scale(0));
-  @include animation(scene-third-center-zoom-out 1.5s linear 60s forwards);
+  @include animation(
+      scene-third-center-zoom-out 1.5s linear ($scene-third-start - 1.5s) forwards,
+      fadeOut .5s linear 110s forwards
+  );
 
   section {
     position: absolute;
@@ -34,19 +39,19 @@
     width: 50px;
     background-color: #C6886A;
     @include transform(translateX(-50%));
-    @include animation(jackalope-run 4s linear 61.5s forwards);
+    @include animation(jackalope-run 4s linear $scene-third-start forwards);
 
     .left-eye {
       top: 10px;
       left: 20px;
       @include transform(scale(1,1.6));
-      @include animation(eye-blink 3s linear 61.5s infinite);
+      @include animation(eye-blink 3s linear $scene-third-start infinite);
     }
     .right-eye {
       top: 10px;
       left: 30px;
       @include transform(scale(1,1.6));
-      @include animation(eye-blink 3s linear 61.5s infinite);
+      @include animation(eye-blink 3s linear $scene-third-start infinite);
     }
   }
   .jackalope.shadow {
@@ -66,14 +71,14 @@
     border-radius: 50%;
     @include transform-origin(bottom);
     @include transform(translateX(-50%));
-    @include animation(snow-ball-fall 1s ease-in 65s forwards);
+    @include animation(snow-ball-fall 1s ease-in ($scene-third-start + 3.5s) forwards);
   }
   .snow-ball.reflect {
     bottom: -100%;
     opacity: 0.3;
     z-index: 1;
     @include transform(translateX(-50%) scaleY(-1));
-    @include animation(snow-ball-fall-reflect 1s ease-in 65s forwards);
+    @include animation(snow-ball-fall-reflect 1s ease-in ($scene-third-start + 3.5s) forwards);
   }
 }
 

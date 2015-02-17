@@ -1,0 +1,318 @@
+@import "bourbon/bourbon";
+
+body {
+  background: #FFA2A2;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+.horse,
+.goat,
+.horse-goat {
+  margin-bottom: 80px;
+}
+
+.horse {
+  width: 80px;
+  height: 48px;
+  background: #DD5C24;
+  border-radius: 70% 90% 60% 50%;
+  position: relative;
+  box-shadow: -3px 25px 0 -8px #b78e81;
+  @include transform(rotate(0deg) translate(-2em, 0));
+  @include animation(horse-hop 1s infinite linear);
+  z-index: 1;
+
+  .head {
+    width: 55px;
+    height: 42px;
+    position: relative;
+    background: #DD5C24;
+    border-radius: 50% 100%;
+    left: 52px;
+    top: -21px;
+    z-index: -1;
+    @include transform(rotate(20deg));
+  }
+
+  .tail {
+    position: absolute;
+    width: 12px;
+    height: 32px;
+    background: #7E3510;
+    border-radius: 50% 0% 100% 10%;
+    top: 7px;
+    left: -4px;
+    @include transform(rotate(0deg));
+    @include animation(horse-tail 1s infinite linear);
+  }
+
+  // eye, feet
+  &:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border-radius: 100%;
+    top: 10px;
+    left: -8px;
+    box-shadow: 74px -24px 0 -5px #3f3334,
+    11px 25px 0 #DD5C24,
+    66px 25px 0 #DD5C24;
+    @include animation(horse-kick 1s infinite linear);
+  }
+
+  // hair
+  &:after {
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 15px;
+    border-radius: 50% 0% 60% 10%;
+    background: #7E3510;
+    @include transform(rotate(-58deg));
+    right: 2px;
+    top: -16px;
+  }
+}
+
+@include keyframes(horse-hop) {
+  20% {
+    @include transform(rotate(-10deg) translate(16px, -32px));
+    box-shadow: -3px 57px 0 -10x #b78e81;
+  }
+  40% {
+    @include transform(rotate(10deg) translate(48px, -64px));
+    box-shadow: -3px 61px 0 -12px #b78e81;
+
+  }
+  60%, 75% {
+    @include transform(rotate(0) translate(64px, 0));
+    box-shadow: -3px 25px 0 -10px #b78e81;
+  }
+}
+
+@include keyframes(horse-kick) {
+  40% {
+    box-shadow: 74px -24px 0 -5px #3f3334,
+    7px 29px 0 #DD5C24,
+    70px 29px 0 #DD5C24;
+  }
+}
+
+@include keyframes(horse-tail) {
+  40% {
+    @include transform(rotate(25deg));
+  }
+}
+
+.goat {
+  width: 80px;
+  height: 48px;
+  background: #FFF;
+  border-radius: 70% 90% 60% 50%;
+  position: relative;
+  box-shadow: -3px 25px 0 -8px #b78e81;
+  @include transform(rotate(0deg) translate(-2em, 0));
+  @include animation(goat-hop 1s infinite linear);
+  z-index: 1;
+
+  .head {
+    width: 46px;
+    height: 42px;
+    position: relative;
+    background: #FFF;
+    border-radius: 50% 100%;
+    left: 48px;
+    top: -24px;
+    z-index: -1;
+  }
+
+  //tail, eye, feet
+  &:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white; // tail
+    border-radius: 100%;
+    top: 10px;
+    left: -8px;
+    box-shadow: 75px -28px 0 -5px #3f3334,
+    11px 25px 0 #FFF,
+    66px 25px 0 #FFF;
+    @include animation(goat-kick 1s infinite linear);
+  }
+
+  // horns
+  &:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 26px;
+    background: #B04711;
+    border-radius: 0 100% 0 0;
+    @include transform(rotate(-24deg));
+    right: 17px;
+    top: -47px;
+    box-shadow: -12px 0 0 -1px #B04711;
+  }
+}
+
+@include keyframes(goat-hop) {
+  20% {
+    @include transform(rotate(-10deg) translate(16px, -32px));
+    box-shadow: -3px 57px 0 -10x #b78e81;
+  }
+  40% {
+    @include transform(rotate(10deg) translate(48px, -64px));
+    box-shadow: -3px 61px 0 -12px #b78e81;
+
+  }
+  60%, 75% {
+    @include transform(rotate(0) translate(64px, 0));
+    box-shadow: -3px 25px 0 -10px #b78e81;
+  }
+}
+
+@include keyframes(goat-kick) {
+  40% {
+    box-shadow: 75px -28px 0 -5px #3f3334,
+    7px 29px 0 #FFF,
+    70px 29px 0 #FFF;
+  }
+}
+
+.horse-goat {
+  width: 80px;
+  height: 48px;
+  background: #DD5C24;
+  border-radius: 70% 90% 60% 50%;
+  position: relative;
+  box-shadow: -3px 25px 0 -8px #b78e81;
+  @include transform(rotate(0deg) translate(-2em, 0));
+  @include animation(horse-goat-hop 1s infinite linear);
+  z-index: 1;
+
+  .head {
+    width: 55px;
+    height: 42px;
+    position: relative;
+    background: #DD5C24;
+    border-radius: 50% 100%;
+    left: 52px;
+    top: -21px;
+    z-index: -1;
+    @include transform(rotate(20deg));
+    @include animation(horse-goat-head 1s infinite linear);
+  }
+
+  .tail {
+    position: absolute;
+    width: 12px;
+    height: 32px;
+    background: #7E3510;
+    border-radius: 50% 0% 100% 10%;
+    top: 7px;
+    left: -4px;
+    @include transform(rotate(0deg));
+    @include animation(horse-goat-tail 1s infinite linear);
+  }
+
+  // eye, feet
+  &:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border-radius: 100%;
+    top: 10px;
+    left: -8px;
+    box-shadow: 74px -24px 0 -5px #3f3334,
+    11px 25px 0 #DD5C24,
+    66px 25px 0 #DD5C24;
+    @include animation(horse-goat-kick 1s infinite linear);
+  }
+
+  // hair
+  &:after {
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 15px;
+    background: #7E3510;
+    border-radius: 50% 0% 60% 10%;
+    @include transform(rotate(-58deg));
+    right: 2px;
+    top: -16px;
+    box-shadow: none;
+    @include animation(horse-goat-hair 1s infinite linear);
+  }
+}
+
+@include keyframes(horse-goat-head) {
+  33%, 66% {
+    width: 46px;
+    height: 42px;
+    background: #FFF;
+    left: 48px;
+    top: -24px;
+    @include transform(rotate(0deg));
+  }
+}
+
+@include keyframes(horse-goat-hair) {
+  33%, 66% {
+    width: 10px;
+    height: 26px;
+    background: #B04711;
+    border-radius: 0 100% 0 0;
+    @include transform(rotate(-24deg));
+    right: 17px;
+    top: -47px;
+    box-shadow: -12px 0 0 -1px #B04711;
+  }
+}
+
+@include keyframes(horse-goat-hop) {
+  20% {
+    @include transform(rotate(-10deg) translate(16px, -32px));
+    box-shadow: -3px 57px 0 -10x #b78e81;
+  }
+  40% {
+    @include transform(rotate(10deg) translate(48px, -64px));
+    box-shadow: -3px 61px 0 -12px #b78e81;
+    background: #FFF;
+  }
+  60%, 80% {
+    @include transform(rotate(0) translate(64px, 0));
+    box-shadow: -3px 25px 0 -10px #b78e81;
+    background: #FFF;
+  }
+}
+
+@include keyframes(horse-goat-kick) {
+  40%, 75% {
+    background: #FFF;
+    box-shadow: 75px -28px 0 -5px #3f3334,
+    7px 29px 0 #FFF,
+    70px 29px 0 #FFF;
+  }
+}
+
+@include keyframes(horse-goat-tail) {
+  33%, 66% {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #FFF;
+    opacity: 0;
+  }
+}

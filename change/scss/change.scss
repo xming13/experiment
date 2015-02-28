@@ -41,7 +41,7 @@ body {
 
 .duckling {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 100px;
   height: 100px;
@@ -50,7 +50,7 @@ body {
   .head {
     position: absolute;
     top: 34px;
-    left: 22px;
+    right: 22px;
     width: 40px;
     height: 35px;
     background-color: #FF0;
@@ -59,14 +59,14 @@ body {
   }
 
   .eye {
-    left: 12px;
+    right: 12px;
     top: 12px;
   }
 
   .mouth {
     position: absolute;
     top: 14px;
-    left: -7px;
+    right: -7px;
     width: 13px;
     height: 7px;
     background-color: #f06c00;
@@ -76,7 +76,7 @@ body {
   .body {
     position: absolute;
     bottom: 5px;
-    left: 20px;
+    right: 20px;
     width: 60px;
     height: 40px;
     background-color: #FF0;
@@ -87,15 +87,14 @@ body {
   .foot-wrapper {
     position: absolute;
     bottom: 0;
-    left: 35px;
   }
 
   .foot-left-wrapper {
-    left: 35px;
+    right: 50px;
   }
 
   .foot-right-wrapper {
-    left: 50px;
+    right: 65px;
   }
 
   .foot {
@@ -104,7 +103,7 @@ body {
     width: 0;
     height: 0;
     border-bottom: 10px solid #FF7E00;
-    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
   }
 }
 

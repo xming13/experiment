@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var mainTimeline = new TimelineMax();
+    var mainTimeline = new TimelineMax({paused: true});
     var timeline1 = new TimelineMax();
     var duckTimeline = new TimelineMax();
 
@@ -11,14 +11,16 @@ $(document).ready(function () {
         .to(".sun", 2, { rotation: 180, transformOrigin: window.innerWidth / 2 + "px 50%" }, "end")
         .to(".base", 3, { backgroundColor: "#000" }, "end");
 
-    var stepDuckling = .25;
+    var timeDuckling = 10;
+    var stepDuckling = .5;
+    var repeatDuckling = timeDuckling / stepDuckling / 2 - 1;
     duckTimeline.addLabel("duck")
-        .to(".duckling", 10, { xPercent: "50%", right: "50%", ease: Linear.easeNone }, "duck")
-        .to(".duckling .head", stepDuckling, { x: "-=5", repeat: 39, yoyo: true }, "duck")
-        .to(".duckling .foot-left-wrapper", stepDuckling, { rotation: -360, transformOrigin: "0 -10px", repeat: 19, repeatDelay: stepDuckling }, "duck")
-        .to(".duckling .foot-right-wrapper", stepDuckling, { rotation: -360, transformOrigin: "0 -10px", repeat: 19, repeatDelay: stepDuckling, delay: stepDuckling }, "duck")
-        .to(".duckling .foot.left", stepDuckling, { rotation: "+=360", repeat: 19, repeatDelay: stepDuckling }, "duck")
-        .to(".duckling .foot.right", stepDuckling, { rotation: "+=360", repeat: 19, repeatDelay: stepDuckling, delay: stepDuckling }, "duck");
+        .to(".duckling", timeDuckling, { xPercent: "-50%", left: "50%", ease: Linear.easeNone }, "duck")
+        .to(".duckling .head", stepDuckling, { x: "+=5", repeat: timeDuckling / stepDuckling - 1, yoyo: true }, "duck")
+        .to(".duckling .foot-left-wrapper", stepDuckling, { rotation: 360, transformOrigin: "15px -10px", repeat: repeatDuckling, repeatDelay: stepDuckling }, "duck")
+        .to(".duckling .foot-right-wrapper", stepDuckling, { rotation: 360, transformOrigin: "15px -10px", repeat: repeatDuckling, repeatDelay: stepDuckling, delay: stepDuckling }, "duck")
+        .to(".duckling .foot.left", stepDuckling, { rotation: "-=360", repeat: repeatDuckling, repeatDelay: stepDuckling }, "duck")
+        .to(".duckling .foot.right", stepDuckling, { rotation: "-=360", repeat: repeatDuckling, repeatDelay: stepDuckling, delay: stepDuckling }, "duck");
 
     mainTimeline.add(timeline1, 1);
     mainTimeline.add(duckTimeline, 1);

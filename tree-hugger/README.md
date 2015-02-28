@@ -4,11 +4,11 @@
 Implemented with CSS animation
 
 ## Credits
-(http://rachelnabors.com/css-amv-talk/)
+http://rachelnabors.com/css-amv-talk/
 
-(http://www.rleonardi.com/interactive-resume/)
+http://www.rleonardi.com/interactive-resume/
 
-(http://codepen.io/katydecorah/pen/uIEFy)
+http://codepen.io/katydecorah/pen/uIEFy
 
-(https://dribbble.com/shots/1890934-Sea-life)
+https://dribbble.com/shots/1890934-Sea-life
 

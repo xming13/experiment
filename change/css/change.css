@@ -1,0 +1,184 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden; }
+
+.container {
+  height: 100%; }
+
+.base {
+  position: relative;
+  height: 80%;
+  background-color: #000; }
+
+.sun {
+  position: absolute;
+  top: 80%;
+  width: 100px;
+  height: 100px;
+  background-color: #FF6666;
+  border-radius: 50%; }
+
+.caterpillar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  z-index: 1; }
+
+.duckling {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1; }
+  .duckling .head {
+    position: absolute;
+    top: 34px;
+    left: 22px;
+    width: 40px;
+    height: 35px;
+    background-color: #FF0;
+    border-radius: 50%;
+    z-index: 2; }
+  .duckling .eye {
+    left: 12px;
+    top: 12px; }
+  .duckling .mouth {
+    position: absolute;
+    top: 14px;
+    left: -7px;
+    width: 13px;
+    height: 7px;
+    background-color: #f06c00;
+    border-radius: 75% 50% 50% 75%; }
+  .duckling .body {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    width: 60px;
+    height: 40px;
+    background-color: #FF0;
+    border-radius: 75% 75% 100% 100%;
+    z-index: 1; }
+  .duckling .foot {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #8B6138;
+    border-left: 15px solid transparent; }
+    .duckling .foot.left {
+      left: 35px; }
+    .duckling .foot.right {
+      left: 50px; }
+
+.eye {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #333;
+  -webkit-animation: eye-blink 3s linear infinite;
+  -moz-animation: eye-blink 3s linear infinite;
+  animation: eye-blink 3s linear infinite; }
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  background-color: #A67C52;
+  z-index: 1; }
+
+.grass {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background-color: #8DC63F; }
+
+.grass:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 10px;
+  background: -webkit-linear-gradient(-45deg, transparent 66.6%, #8DC63F 66.67%), -webkit-linear-gradient(45deg, transparent 66.6%, #8DC63F 66.67%);
+  background: linear-gradient(-45deg, transparent 66.6%, #8DC63F 66.67%), linear-gradient(45deg, transparent 66.6%, #8DC63F 66.67%);
+  background-size: 15px 10px; }
+
+.earth {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  /* Fallback (80px) */
+  height: -webkit-calc(70% - 15px);
+  height: calc(70% - 15px);
+  background: -webkit-linear-gradient(-25deg, #A67C52 30%, transparent 30%), -webkit-linear-gradient(25deg, #A67C52 30%, transparent 30%), -webkit-linear-gradient(-25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%), -webkit-linear-gradient(25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%);
+  background: linear-gradient(-25deg, #A67C52 30%, transparent 30%), linear-gradient(25deg, #A67C52 30%, transparent 30%), linear-gradient(-25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%), linear-gradient(25deg, transparent 30%, #8B6138 30%, #8B6138 60%, transparent 60%);
+  background-size: 100px 72px; }
+
+@-webkit-keyframes eye-blink {
+  0% {
+    -webkit-transform: scale(1, 1); }
+  2% {
+    -webkit-transform: scale(1, 0); }
+  4% {
+    -webkit-transform: scale(1, 0); }
+  5% {
+    -webkit-transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1, 1); } }
+@-moz-keyframes eye-blink {
+  0% {
+    -moz-transform: scale(1, 1); }
+  2% {
+    -moz-transform: scale(1, 0); }
+  4% {
+    -moz-transform: scale(1, 0); }
+  5% {
+    -moz-transform: scale(1, 1); }
+  100% {
+    -moz-transform: scale(1, 1); } }
+@keyframes eye-blink {
+  0% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  2% {
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0); }
+  4% {
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0); }
+  5% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+/*# sourceMappingURL=change.css.map */

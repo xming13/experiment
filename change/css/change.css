@@ -68,17 +68,21 @@ body {
     background-color: #FF0;
     border-radius: 75% 75% 100% 100%;
     z-index: 1; }
+  .duckling .foot-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 35px; }
+  .duckling .foot-left-wrapper {
+    left: 35px; }
+  .duckling .foot-right-wrapper {
+    left: 50px; }
   .duckling .foot {
     position: absolute;
     bottom: 0;
     width: 0;
     height: 0;
-    border-bottom: 10px solid #8B6138;
+    border-bottom: 10px solid #FF7E00;
     border-left: 15px solid transparent; }
-    .duckling .foot.left {
-      left: 35px; }
-    .duckling .foot.right {
-      left: 50px; }
 
 .eye {
   width: 7px;
@@ -130,24 +134,16 @@ body {
 @-webkit-keyframes eye-blink {
   0% {
     -webkit-transform: scale(1, 1); }
-  2% {
+  2%, 4% {
     -webkit-transform: scale(1, 0); }
-  4% {
-    -webkit-transform: scale(1, 0); }
-  5% {
-    -webkit-transform: scale(1, 1); }
-  100% {
+  5%, 100% {
     -webkit-transform: scale(1, 1); } }
 @-moz-keyframes eye-blink {
   0% {
     -moz-transform: scale(1, 1); }
-  2% {
+  2%, 4% {
     -moz-transform: scale(1, 0); }
-  4% {
-    -moz-transform: scale(1, 0); }
-  5% {
-    -moz-transform: scale(1, 1); }
-  100% {
+  5%, 100% {
     -moz-transform: scale(1, 1); } }
 @keyframes eye-blink {
   0% {
@@ -156,25 +152,13 @@ body {
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1); }
-  2% {
+  2%, 4% {
     -webkit-transform: scale(1, 0);
     -moz-transform: scale(1, 0);
     -ms-transform: scale(1, 0);
     -o-transform: scale(1, 0);
     transform: scale(1, 0); }
-  4% {
-    -webkit-transform: scale(1, 0);
-    -moz-transform: scale(1, 0);
-    -ms-transform: scale(1, 0);
-    -o-transform: scale(1, 0);
-    transform: scale(1, 0); }
-  5% {
-    -webkit-transform: scale(1, 1);
-    -moz-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  100% {
+  5%, 100% {
     -webkit-transform: scale(1, 1);
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);

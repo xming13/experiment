@@ -84,21 +84,27 @@ body {
     z-index: 1;
   }
 
+  .foot-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 35px;
+  }
+
+  .foot-left-wrapper {
+    left: 35px;
+  }
+
+  .foot-right-wrapper {
+    left: 50px;
+  }
+
   .foot {
     position: absolute;
     bottom: 0;
     width: 0;
     height: 0;
-    border-bottom: 10px solid #8B6138;
+    border-bottom: 10px solid #FF7E00;
     border-left: 15px solid transparent;
-
-    &.left {
-      left: 35px;
-    }
-
-    &.right {
-      left: 50px;
-    }
   }
 }
 
@@ -153,8 +159,6 @@ body {
 
 @include keyframes(eye-blink) {
   0% { @include transform(scale(1,1)); }
-  2% { @include transform(scale(1,0)); }
-  4% { @include transform(scale(1,0)); }
-  5% { @include transform(scale(1,1)); }
-  100% { @include transform(scale(1,1)); }
+  2%, 4% { @include transform(scale(1,0)); }
+  5%, 100% { @include transform(scale(1,1)); }
 }

@@ -34,6 +34,7 @@ body {
   bottom: 0;
   width: 130px;
   height: 30px;
+  @include transform(translateX(-100%));
   z-index: 1;
 
   .eye {
@@ -41,49 +42,21 @@ body {
     top: 5px;
   }
 
-  .part {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .part1 { left: 80px; }
-  .part2 { left: 60px; }
-  .part3 { left: 40px; }
-  .part4 { left: 20px; }
-  .part5 { left: 0px; }
-
   .body {
     position: absolute;
     left: 0;
     width: 30px;
     height: 30px;
     z-index: 1;
-    bottom: 2px;
     background-color: #00ff00;
     border-radius: 50%;
   }
 
-  .foot-wrapper {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .foot-left-wrapper {
-    left: 7px;
-  }
-
-  .foot-right-wrapper {
-    left: 18px;
-  }
-
-  .foot {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 5px solid #1CA000;
-    border-right: 5px solid transparent;
-  }
+  .body1 { left: 80px; }
+  .body2 { left: 60px; }
+  .body3 { left: 40px; }
+  .body4 { left: 20px; }
+  .body5 { left: 0px; }
 }
 
 .duckling {

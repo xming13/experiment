@@ -54,7 +54,7 @@ void draw() {
 
     // text
     textSize(32);
-    fill(255 - frameCount % 256, 0, 0);
+    fill(random(0,255), random(0, 255), random(0, 255));
     if (frameCount % 15 < 10) {
         text('Save me, Tabris!', (width - imgCactus.width) / 2 - 50, height - 120 - imgCactus.height);
     }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Web - Processing.js Test</title>
+    <script src="js/processing.min.js"></script>
+</head>
+<body>
+<h1>Waiting</h1>
+
+<canvas id="canvas1"></canvas>
+<script type="application/processing" data-processing-target="canvas1">
+/* @pjs preload="img/cactus.png,img/cactus-flower.png"; */
+PImage img;
+float radius = 10.0;
+int X, Y;
+int delay = 32;
+
+void setup() {
+    size(600, 600);
+    frameRate(15);
+    background(#F0F8FF);
+
+    noStroke();
+    fill(#fedec4);
+    rect(0, height - 100, width, 100);
+
+    imgCactus = loadImage("img/cactus.png");
+    image(imgCactus, (width - imgCactus.width) / 2, height - 100 - imgCactus.height);
+
+    imgFlower = loadImage("img/cactus-flower.png");
+    image(imgFlower, width / 2 + imgCactus.width / 4 - imgFlower.width / 2, height - 100 - imgCactus.height);
+
+    X = width / 2;
+    Y = height / 2;
+}
+
+void draw() {
+    radius = 20 * sin( frameCount / 10);
+
+    fill(0);
+    stroke(255);
+
+    ellipse(X - 10, height - 100 - imgCactus.height / 2, 10, radius);
+    ellipse(X + 10, height - 100 - imgCactus.height / 2, 10, radius);
+}
+
+
+</script>
+<script>
+    function sketchProc(processing) {
+        // Override draw function, by default it will be called 60 times per second
+        processing.draw = function () {
+            // determine center and max clock arm length
+            var centerX = processing.width / 2, centerY = processing.height / 2;
+            var maxArmLength = Math.min(centerX, centerY);
+
+            function drawArm(position, lengthScale, weight) {
+                processing.strokeWeight(weight);
+                processing.line(centerX, centerY,
+                        centerX + Math.sin(position * 2 * Math.PI) * lengthScale * maxArmLength,
+                        centerY - Math.cos(position * 2 * Math.PI) * lengthScale * maxArmLength);
+            }
+
+            // erase background
+            processing.background(224);
+
+            var now = new Date();
+
+            // Moving hours arm by small increments
+            var hoursPosition = (now.getHours() % 12 + now.getMinutes() / 60) / 12;
+            drawArm(hoursPosition, 0.5, 5);
+
+            // Moving minutes arm by small increments
+            var minutesPosition = (now.getMinutes() + now.getSeconds() / 60) / 60;
+            drawArm(minutesPosition, 0.80, 3);
+
+            // Moving hour arm by second increments
+            var secondsPosition = now.getSeconds() / 60;
+            drawArm(secondsPosition, 0.90, 1);
+        };
+    }
+
+    var canvas = document.getElementById("canvas1");
+    // attaching the sketchProc function to the canvas
+    //    var processingInstance = new Processing(canvas, sketchProc);
+</script>
+</body>
+</html>

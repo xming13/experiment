@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>famo.us circles sample</title>
+  <link type="text/css" href="//code.famo.us/famous/0.2/famous.css" rel="stylesheet" />
+  <script type="text/javascript" src="//code.famo.us/lib/require.js"></script>
+  <script type="text/javascript" src="//code.famo.us/famous/0.2/famous.js"></script>
+  <script type="text/javascript">
+require(['famous/core/Engine', 'famous/core/Surface', 'famous/core/Transform', 'famous/core/Modifier', 'famous/physics/PhysicsEngine', 'famous/physics/bodies/Circle', 'famous/physics/constraints/Collision', 'famous/physics/constraints/Walls'], function() {
+  var Engine = require('famous/core/Engine');
+  var Surface = require('famous/core/Surface');
+  var Modifier = require('famous/core/Modifier');
+
+  var PhysicsEngine = require('famous/physics/PhysicsEngine');
+  var Circle = require('famous/physics/bodies/Circle');
+  var Collision = require('famous/physics/constraints/Collision');
+  var Walls = require('famous/physics/constraints/Walls');
+ 
+  var context = Engine.createContext();
+  var physicsEngine = new PhysicsEngine();
+  var collision = new Collision();  
+  var walls = new Walls(Walls.DEFAULT_OPTIONS);
+
+  var circles = [];
+  var createCircle = function() {
+    var surface = new Surface ({
+      size: [40, 40],
+      properties: {
+        backgroundColor: 'lightblue',
+        border: '1px solid blue',
+        borderRadius: '20px'
+      }
+    });
+    var circle = new Circle({radius: 20});
+    circle.setPosition([Math.random() * 10, Math.random() * 10]);
+    physicsEngine.addBody(circle);
+    surface.on('click', function(){
+      circle.setVelocity([0.5, -2, 0]);
+    });
+    physicsEngine.attach(collision, circles, circle);
+    circles.push(circle);
+
+    // workaround for physicsEngine.attach(walls, circle);
+    // see famous/physics #12
+    for (var key in walls.components) {
+      physicsEngine.attach(walls.components[key], circle);
+    }
+
+    var modifier = new Modifier({origin: [0.5, 0.5]});
+    context.add(modifier).add(surface);
+    Engine.on('prerender', function() {
+      modifier.setTransform(circle.getTransform());
+    });
+  };
+
+  for (var i = 0; i < 50; i++) {
+    createCircle();
+  }
+
+});
+  </script>
+</head>
+<body></body>
+</html>

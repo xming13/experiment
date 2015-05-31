@@ -121,11 +121,9 @@ section {
 }
 #white .tree-center {
     background-color: #FFFFFF;
+    height: 295px;
 }
 
-#white .tree-center {
-    height: 290px;
-}
 /* step 2 */
 
 .csstransforms #content {
@@ -208,43 +206,40 @@ section {
 .tree-center {
     display: inline-block;
     width: 160px;
-    height: 95px;
+    height: 102px;
     position: absolute;
     left: 80px;
-    top: 100px;
+    top: 96px;
 }
 
 .tree-left {
     position: absolute;
+    right: 239px;
 }
 .tree-left1 {
     top: 100px;
-    left: 15px;
     border-left: 65px solid transparent;
     border-bottom: 65px solid;
 }
 .tree-left2 {
     top: 165px;
-    left: 10px;
     border-left: 70px solid transparent;
     border-bottom: 70px solid;
 }
 .tree-left3 {
     top: 235px;
-    left: 5px;
     border-left: 75px solid transparent;
     border-bottom: 75px solid;
 }
 .tree-left4 {
     top: 310px;
-    left: 0;
     border-left: 80px solid transparent;
     border-bottom: 80px solid;
 }
 
 .tree-right {
     position: absolute;
-    left: 240px;
+    left: 239px;
 }
 .tree-right1 {
     top: 100px;

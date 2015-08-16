@@ -1,0 +1,328 @@
+/* Reset */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f6d2ff;
+    color: #444;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+// Main Styling
+.box {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#content {
+    height: 100%;
+}
+
+.jumbotron {
+    min-height: 250px;
+    background: white;
+    width: 100%;
+}
+
+#panel-container {
+    position: relative;
+}
+
+.panel {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#panel-main {
+    width: 200px;
+
+    ul li {
+        margin: 0 0 5px;
+        background: #b7009d;
+
+        a {
+            display: block;
+            padding: 8px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &.disable {
+            background: #999;
+
+            a {
+                cursor: auto;
+            }
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px;
+    border: 5px solid rgb(72, 0, 97);
+    border-radius: 10px;
+    background: rgb(161, 0, 255);
+    font: 20px Handlee, cursive;
+    color: #fff;
+    cursor: pointer;
+}
+
+#back {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+}
+
+.important {
+    font-size: 15px;
+    color: #F2C777;
+    margin-bottom: 10px;
+}
+
+.msg-warning {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.info-display {
+    display: inline-block;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #40F223;
+    border-radius: 4px;
+    color: #088409;
+    background-color: #EAFFB6;
+}
+
+#pid {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #0c6ba1;
+    font-weight: 600;
+}
+
+//Chat Styling
+.connection {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background: black;
+    color: #ddd;
+
+    .messages {
+        border: 1px solid gray;
+        overflow-y: scroll;
+        overflow-wrap: break-word;
+
+        div {
+            padding: 0 10px;
+        }
+
+        em {
+            color: #fff;
+            padding: 0 10px;
+        }
+
+        &.messages-game {
+            height: calc(50% - 16px);
+            line-height: 28px;
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        &.messages-chat {
+            height: calc(50% - 16px);
+            letter-spacing: 1px;
+            color: #00ff00;
+            line-height: 20px;
+            font-family: 'Handlee', cursive;
+        }
+    }
+
+    .messages-input {
+        border: 1px solid #fff;
+
+        .input-chat {
+            height: 28px;
+            width: calc(100% - 30px);
+            padding: 0 5px;
+            border: none;
+            font: normal 15px/20px 'Handlee', cursive;
+            background: #000;
+            color: #00ff00;
+            letter-spacing: 1px;
+        }
+
+        .icon-chat {
+            height: 28px;
+            width: 28px;
+            padding: 2px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    }
+}
+
+.peer {
+    color: #ffd54f;
+    font-weight: 600;
+}
+
+.you {
+    color: #1cffff;
+    font-weight: 600;
+}
+
+// Game grid styling
+.game-grid {
+    padding: 3px;
+    display: inline-block;
+    width: 152px;
+    height: 144px;
+    background: #3C3F3D;
+
+    div {
+        width: 40px;
+        height: 40px;
+        background: #888;
+        display: inline-block;
+        text-align: center;
+        line-height: 40px;
+        margin: 3px;
+    }
+}
+
+#gameboard {
+    padding: 20px;
+
+    .my-grid div.available {
+        background: #ABFFC4;
+    }
+    .opp-grid div.available {
+        background: #FFDBD8;
+    }
+
+    .my-grid div.selected {
+        background: green;
+    }
+    .opp-grid div.selected {
+        background: red;
+    }
+    .my-grid div.current,
+    .opp-grid div.current {
+        box-shadow: 0 0px 25px #7400AD inset;
+    }
+
+    &.todo,
+    &.ok {
+        .my-grid div.available:hover {
+            background: #37ff3c;
+            cursor: pointer;
+        }
+
+        .opp-grid div.available:hover {
+            background: #ff85ae;
+            cursor: pointer;
+        }
+    }
+
+    &.todo {
+        .select {
+            display: inline-block;
+        }
+        .btn-done,
+        .waiting {
+            display: none;
+        }
+    }
+
+    &.ok {
+        .btn-done {
+            display: inline-block;
+        }
+        .select,
+        .waiting {
+            display: none;
+        }
+    }
+
+    &.done {
+        .select,
+        .btn-done {
+            display: none;
+        }
+        .waiting {
+            display: inline-block;
+        }
+    }
+}
+
+.grid-wrapper {
+    display: inline-block;
+}
+
+//Progress bar styling
+.progressbar {
+    width: 150px;
+    height: 22px;
+    border: 1px solid #111;
+    background-color: #292929;
+    margin-bottom: 10px;
+
+    div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px;
+        width: 100%;
+        background-color: #FF3535;
+    }
+}

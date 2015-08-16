@@ -1,0 +1,244 @@
+/* Reset */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f6d2ff;
+  color: #444; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.box {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+
+#content {
+  height: 100%; }
+
+.jumbotron {
+  min-height: 250px;
+  background: white;
+  width: 100%; }
+
+#panel-container {
+  position: relative; }
+
+.panel {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px; }
+
+#panel-main {
+  width: 200px; }
+  #panel-main ul li {
+    margin: 0 0 5px;
+    background: #b7009d; }
+    #panel-main ul li a {
+      display: block;
+      padding: 8px;
+      color: #fff;
+      cursor: pointer; }
+    #panel-main ul li.disable {
+      background: #999; }
+      #panel-main ul li.disable a {
+        cursor: auto; }
+
+.btn {
+  display: inline-block;
+  padding: 5px;
+  border: 5px solid #480061;
+  border-radius: 10px;
+  background: #a100ff;
+  font: 20px Handlee, cursive;
+  color: #fff;
+  cursor: pointer; }
+
+#back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999; }
+
+.important {
+  font-size: 15px;
+  color: #F2C777;
+  margin-bottom: 10px; }
+
+.msg-warning {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
+  background-color: #333;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+
+.info-display {
+  display: inline-block;
+  padding: 15px;
+  margin: 15px 0;
+  border: 1px solid #40F223;
+  border-radius: 4px;
+  color: #088409;
+  background-color: #EAFFB6; }
+
+#pid {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #0c6ba1;
+  font-weight: 600; }
+
+.connection {
+  position: absolute;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  background: black;
+  color: #ddd; }
+  .connection .messages {
+    border: 1px solid gray;
+    overflow-y: scroll;
+    overflow-wrap: break-word; }
+    .connection .messages div {
+      padding: 0 10px; }
+    .connection .messages em {
+      color: #fff;
+      padding: 0 10px; }
+    .connection .messages.messages-game {
+      height: calc(50% - 16px);
+      line-height: 28px;
+      font-family: 'Architects Daughter', cursive; }
+    .connection .messages.messages-chat {
+      height: calc(50% - 16px);
+      letter-spacing: 1px;
+      color: #00ff00;
+      line-height: 20px;
+      font-family: 'Handlee', cursive; }
+  .connection .messages-input {
+    border: 1px solid #fff; }
+    .connection .messages-input .input-chat {
+      height: 28px;
+      width: calc(100% - 30px);
+      padding: 0 5px;
+      border: none;
+      font: normal 15px/20px 'Handlee', cursive;
+      background: #000;
+      color: #00ff00;
+      letter-spacing: 1px; }
+    .connection .messages-input .icon-chat {
+      height: 28px;
+      width: 28px;
+      padding: 2px;
+      vertical-align: middle;
+      cursor: pointer; }
+
+.peer {
+  color: #ffd54f;
+  font-weight: 600; }
+
+.you {
+  color: #1cffff;
+  font-weight: 600; }
+
+.game-grid {
+  padding: 3px;
+  display: inline-block;
+  width: 152px;
+  height: 144px;
+  background: #3C3F3D; }
+  .game-grid div {
+    width: 40px;
+    height: 40px;
+    background: #888;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    margin: 3px; }
+
+#gameboard {
+  padding: 20px; }
+  #gameboard .my-grid div.available {
+    background: #ABFFC4; }
+  #gameboard .opp-grid div.available {
+    background: #FFDBD8; }
+  #gameboard .my-grid div.selected {
+    background: green; }
+  #gameboard .opp-grid div.selected {
+    background: red; }
+  #gameboard .my-grid div.current,
+  #gameboard .opp-grid div.current {
+    box-shadow: 0 0px 25px #7400AD inset; }
+  #gameboard.todo .my-grid div.available:hover, #gameboard.ok .my-grid div.available:hover {
+    background: #37ff3c;
+    cursor: pointer; }
+  #gameboard.todo .opp-grid div.available:hover, #gameboard.ok .opp-grid div.available:hover {
+    background: #ff85ae;
+    cursor: pointer; }
+  #gameboard.todo .select {
+    display: inline-block; }
+  #gameboard.todo .btn-done,
+  #gameboard.todo .waiting {
+    display: none; }
+  #gameboard.ok .btn-done {
+    display: inline-block; }
+  #gameboard.ok .select,
+  #gameboard.ok .waiting {
+    display: none; }
+  #gameboard.done .select,
+  #gameboard.done .btn-done {
+    display: none; }
+  #gameboard.done .waiting {
+    display: inline-block; }
+
+.grid-wrapper {
+  display: inline-block; }
+
+.progressbar {
+  width: 150px;
+  height: 22px;
+  border: 1px solid #111;
+  background-color: #292929;
+  margin-bottom: 10px; }
+  .progressbar div {
+    height: 100%;
+    color: #fff;
+    text-align: right;
+    line-height: 22px;
+    width: 100%;
+    background-color: #FF3535; }
+
+/*# sourceMappingURL=app.css.map */

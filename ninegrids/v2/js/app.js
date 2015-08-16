@@ -533,7 +533,7 @@ XMing.GameManager = new function () {
         progress(100, $('#my-hp-bar'));
         progress(100, $('#opp-hp-bar'));
         $(".my-grid div, .opp-grid div").removeClass("selected current").addClass("available");
-        $('.my-grid div[data-value="5"], .opp-grid div[data-value="5"]').addClass("selected");
+        $('.my-grid div[data-value="5"], .opp-grid div[data-value="5"]').addClass("current");
 
         m.roundNumber++;
     }

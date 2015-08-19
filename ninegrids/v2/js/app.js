@@ -81,11 +81,10 @@ XMing.GameManager = new function () {
                     type: DATA.MESSAGE,
                     message: $(".input-chat").val()
                 });
-                messagesChat.append(TEMPLATE.myMessage({
+                appendChatMessage(TEMPLATE.myMessage({
                     message: $(".input-chat").val()
                 }));
                 $(".input-chat").val('');
-                m.scrollChatMessagesToBottom();
             };
 
             $(".input-chat").keydown(function (e) {
@@ -152,11 +151,10 @@ XMing.GameManager = new function () {
                     $('body').on('click', '.restart', function () {
                         restartGame();
 
-                        messagesGame.append(TEMPLATE.newGame());
-                        messagesGame.append(TEMPLATE.actionPhase({
+                        appendGameMessage(TEMPLATE.newGame());
+                        appendGameMessage(TEMPLATE.actionPhase({
                             roundNumber: m.roundNumber
                         }));
-                        m.scrollGameMessagesToBottom();
 
                         c.send({
                             type: DATA.GAME_RESTART
@@ -183,7 +181,7 @@ XMing.GameManager = new function () {
                     // update global variable
                     m.oppPos = oppPos;
 
-                    messagesGame.append(TEMPLATE.battlePhase({
+                    appendGameMessage(TEMPLATE.battlePhase({
                         roundNumber: m.roundNumber
                     }));
 
@@ -191,14 +189,14 @@ XMing.GameManager = new function () {
                         m.myHp -= m.DAMAGE;
                         progress(m.myHp, $('#my-hp-bar'));
 
-                        messagesGame.append(TEMPLATE.oppAttackSuccess({
+                        appendGameMessage(TEMPLATE.oppAttackSuccess({
                             peer: c.peer,
                             damage: m.DAMAGE,
                             oppTarget: oppTarget
                         }));
                     }
                     else {
-                        messagesGame.append(TEMPLATE.oppAttackFail({
+                        appendGameMessage(TEMPLATE.oppAttackFail({
                             peer: c.peer,
                             myPos: myPos,
                             oppTarget: oppTarget
@@ -209,14 +207,14 @@ XMing.GameManager = new function () {
                         m.oppHp -= m.DAMAGE;
                         progress(m.oppHp, $('#opp-hp-bar'));
 
-                        messagesGame.append(TEMPLATE.myAttackSuccess({
+                        appendGameMessage(TEMPLATE.myAttackSuccess({
                             peer: c.peer,
                             damage: m.DAMAGE,
                             myTarget: myTarget
                         }));
                     }
                     else {
-                        messagesGame.append(TEMPLATE.myAttackFail({
+                        appendGameMessage(TEMPLATE.myAttackFail({
                             peer: c.peer,
                             myTarget: myTarget,
                             oppPos: oppPos
@@ -238,7 +236,7 @@ XMing.GameManager = new function () {
                     });
 
                     checkGameOver();
-                    m.scrollGameMessagesToBottom();
+
 
                     // reset myPos and myTarget for next round
                     //m.myPos = m.myTarget = -1;
@@ -248,18 +246,16 @@ XMing.GameManager = new function () {
                 };
 
                 if (data.type == DATA.MESSAGE) {
-                    messagesChat.append(TEMPLATE.oppMessage({
+                    appendChatMessage(TEMPLATE.oppMessage({
                         peer: c.peer,
                         message: data.message
                     }));
-                    m.scrollChatMessagesToBottom();
                 } else if (data.type == DATA.ROUND_START) {
                     m.myActionDone = m.oppActionDone = false;
                     m.roundNumber++;
-                    messagesGame.append(TEMPLATE.actionPhase({
+                    appendGameMessage(TEMPLATE.actionPhase({
                         roundNumber: m.roundNumber
                     }));
-                    m.scrollGameMessagesToBottom();
                 } else if (data.type == DATA.ACTION_DONE) {
                     m.oppActionDone = true;
 
@@ -295,21 +291,21 @@ XMing.GameManager = new function () {
                     if (!m.isGameOver) {
                         // new round start!
                         m.roundNumber++;
-                        $(".messages-game").append(TEMPLATE.actionPhase({
+                        appendGameMessage(TEMPLATE.actionPhase({
                             roundNumber: m.roundNumber
                         }));
-                        m.scrollGameMessagesToBottom();
                         c.send({
                             type: DATA.ROUND_START
                         });
+                        m.myActionDone = m.oppActionDone = false;
                     }
                 } else if (data.type === DATA.GAME_RESTART) {
                     restartGame();
-                    messagesGame.append(TEMPLATE.newGame());
-                    messagesGame.append(TEMPLATE.actionPhase({
+
+                    appendGameMessage(TEMPLATE.newGame());
+                    appendGameMessage(TEMPLATE.actionPhase({
                         roundNumber: m.roundNumber
                     }));
-                    m.scrollGameMessagesToBottom();
                 } else {
                     console.log('unknown data');
                 }
@@ -329,20 +325,7 @@ XMing.GameManager = new function () {
         m.connectedPeers[c.peer] = 1;
     };
 
-    this.scrollGameMessagesToBottom = function () {
-        $(".messages-game").animate({
-            scrollTop: $(".messages-game")[0].scrollHeight
-        }, 500);
-    };
-    this.scrollChatMessagesToBottom = function () {
-        $(".messages-chat").animate({
-            scrollTop: $(".messages-chat")[0].scrollHeight
-        }, 500);
-    };
-
     this.init = function () {
-        var self = this;
-
         // navigate to create connection screen
         $("#create").click(function () {
             $(".panel, #instruction").fadeOut('fast');
@@ -359,7 +342,7 @@ XMing.GameManager = new function () {
         $("#back").click(function () {
             $(".panel, #back").fadeOut('fast');
             $("#panel-main").fadeIn('fast');
-            self.destroy();
+            m.destroy();
         });
 
         // create new connection
@@ -369,26 +352,26 @@ XMing.GameManager = new function () {
             if (usernameHost === '') {
                 swal('Oops..', 'Please enter a username!', 'error');
             } else {
-                self.peer = new Peer(usernameHost, {
+                m.peer = new Peer(usernameHost, {
                     key: 'j4a6ijvcn8z1tt9'
                 });
 
-                self.peer.on('open', function (id) {
+                m.peer.on('open', function (id) {
                     $('#pid').text(id);
                     $("#instruction").fadeIn('fast');
                 });
 
-                self.peer.on('connection', function (c) {
+                m.peer.on('connection', function (c) {
                     console.log('on connection');
-                    self.isGameHost = true;
-                    self.connect(c);
+                    m.isGameHost = true;
+                    m.connect(c);
 
                     $('#opp-name').html(c.peer);
                     $("#gameboard").fadeIn('fast');
                     $("#content").fadeOut('fast');
                 });
 
-                self.peer.on('error', function (err) {
+                m.peer.on('error', function (err) {
                     swal('Oops..', err, 'error');
                 });
             }
@@ -402,8 +385,8 @@ XMing.GameManager = new function () {
                 swal('Oops..', 'Please enter your friend\'s ID!', 'error');
             } else {
                 var requestedPeer = $('#rid').val();
-                if (!self.connectedPeers[requestedPeer]) {
-                    self.peer = new Peer($("#username-join").val(), {
+                if (!m.connectedPeers[requestedPeer]) {
+                    m.peer = new Peer($("#username-join").val(), {
                         key: 'j4a6ijvcn8z1tt9',
                         debug: 3,
                         logFunction: function () {
@@ -415,7 +398,7 @@ XMing.GameManager = new function () {
                     // pending peerjs team to enable this feature for me!
                     // console.log(self.peer.listAllPeers());
 
-                    var c = self.peer.connect(requestedPeer, {
+                    var c = m.peer.connect(requestedPeer, {
                         label: 'game',
                         serialization: 'json',
                         metadata: {
@@ -425,18 +408,17 @@ XMing.GameManager = new function () {
 
                     c.on('open', function () {
                         console.log('connect open - start');
-                        self.connect(c);
-                        self.isGameHost = false;
+                        m.connect(c);
+                        m.isGameHost = false;
                         $('#opp-name').html(requestedPeer);
                         $("#gameboard").fadeIn('fast');
                         $("#content").fadeOut('fast');
 
                         // new round start!
                         m.roundNumber++;
-                        $(".messages-game").append(TEMPLATE.actionPhase({
+                        appendGameMessage(TEMPLATE.actionPhase({
                             roundNumber: m.roundNumber
                         }));
-                        m.scrollGameMessagesToBottom();
                         c.send({
                             type: DATA.ROUND_START
                         });
@@ -449,7 +431,7 @@ XMing.GameManager = new function () {
                         swal('Oops..', err, 'error');
                     });
 
-                    self.connectedPeers[requestedPeer] = 1;
+                    m.connectedPeers[requestedPeer] = 1;
                 } else {
                     console.log('self.connectedPeers[requestedPeer] exists!');
                 }
@@ -458,7 +440,7 @@ XMing.GameManager = new function () {
 
         // Close a connection
         $('#close').click(function () {
-            self.eachActiveConnection(function (c) {
+            m.eachActiveConnection(function (c) {
                 c.close();
             });
         });
@@ -491,9 +473,39 @@ XMing.GameManager = new function () {
         });
     };
 
+    function appendGameMessage(message) {
+        $('.messages-game')
+            .append(message)
+            .animate({
+                scrollTop: this.scrollHeight
+            }, 500);
+    };
+
+    function appendChatMessage(message) {
+        $('.messages-chat')
+            .append(message)
+            .animate({
+                scrollTop: this.scrollHeight
+            }, 500);
+    }
+
     function progress(percent, $elem) {
-        var progressBarWidth = percent * $elem.width() / 100;
-        $elem.find('div').animate({width: progressBarWidth}, 500).html(percent);
+        percent = parseInt(percent);
+        var $div = $elem.find('div');
+        var originalPercent = parseInt($div.html());
+
+        $div.animate({width: percent * $elem.width() / 100}, 500);
+        $({
+            counter: originalPercent
+        }).animate({
+                counter: percent
+            }, {
+                duration: 500,
+                easing: 'swing',
+                step: function () {
+                    $div.text(Math.ceil(this.counter));
+                }
+            });
     }
 
     function getAvailableMoves(current) {

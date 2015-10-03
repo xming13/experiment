@@ -1,0 +1,55 @@
+
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin bg-image($img) {
+  background-image: url("../assets/#{$img}");
+  background-repeat: no-repeat;
+}
+
+@mixin txt-replace($image){
+  display: block;
+  text-indent: -20000px;
+  width: 42px;
+  height: 42px;
+  background-image: url('../assets/#{$image}');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+// Media query
+
+@mixin mq($break) {
+
+  @if $break == "small" {
+    @media (max-width: $brkpoint-s) {
+      @content;
+    }
+  }
+  @else if $break == "medium" {
+    @media (max-width: $brkpoint-md) {
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (max-width: $brkpoint-l) {
+      @content;
+    }
+  }
+  @else if $break == "x-large" {
+    @media (max-width: $brkpoint-xl) {
+      @content;
+    }
+  }
+
+
+}

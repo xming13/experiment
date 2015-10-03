@@ -1,0 +1,26 @@
+{
+  "name": "links",
+  "version": "1.0",
+  "homepage": "https://github.com/Petecass/links",
+  "authors": [
+    "Pete Cass <pete.h.cass@gmail.com>"
+  ],
+  "description": "A test project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4"
+
+  },
+  "dependencies": {
+
+    "jquery": "~2.1.4"
+
+  }
+}

@@ -1,0 +1,96 @@
+
+@import "libraries/bourbon/bourbon.scss";
+@import "libraries/neat/neat.scss";
+@import "utilities/index.scss";
+@import "base/index.scss";
+@import "modules/index.scss";
+
+.intro {
+	padding: 20px;
+	background-color: #F7F7F7;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.items {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+	
+	li {
+		display: inline-block;
+		border-radius: 10px;
+
+		&.item-firefox {
+			background-color: rgba(240, 50, 50, .8);
+			
+			&:hover {
+				background-color: rgba(240, 50, 50, 1);
+			}
+		}
+		&.item-cat {
+			background-color: rgba(50, 50, 240, .8);
+		
+			&:hover {
+				background-color: rgba(50, 50, 240, 1);
+			}
+		}
+		&.item-goat {
+			background-color: rgba(50, 240, 50, .7);
+		
+			&:hover {
+				background-color: rgba(50, 240, 50, 1);
+			}
+		}
+		
+		a {
+			display: block;
+			padding: 10px;
+			color: #FFF;
+			text-decoration: none;
+		}
+	}
+}
+
+.wrapper {
+	padding: 20px;
+	height: 328px;
+	width: 33.3%;
+	-webkit-transition: width .2s ease-out;
+    transition: width .2s ease-out;
+	float: left;
+}
+
+.wrapper-md {
+	height: 299px;
+}
+
+.wrapper-sm {
+	height: 270px;
+}
+
+.wrapper-xs {
+	height: 241px;	
+}
+
+.firefox {
+	background-color: #FFE6E6;
+}
+
+.cat {
+	background-color: #E6E6FF;
+}
+.goat {
+	background-color: #E6FFE6;
+}
+
+@media (max-width: 983px) {
+	.wrapper {
+		width: 50%;
+	}
+}
+
+@media (max-width: 655px) {
+	.wrapper {
+		width: 100%;
+	}
+}
